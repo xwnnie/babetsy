@@ -9,3 +9,8 @@ class ReviewForm(FlaskForm):
     content = TextAreaField('content', validators=[DataRequired()])
     created_at = StringField('created_at') 
     updated_at = StringField('updated_at')
+
+
+class UpdateReviewForm(FlaskForm):
+    content = TextAreaField('content', validators=[DataRequired()])
+    updated_at = StringField('updated_at')

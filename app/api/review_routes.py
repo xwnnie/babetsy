@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import db, Review
-from app.forms.review_form import ReviewForm
+from app.forms.review_form import ReviewForm, UpdateReviewForm
 
 review_routes = Blueprint('reviews', __name__)
 
@@ -27,7 +27,6 @@ def create_review():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         # if current_user.id == int(form.data['author_id']):
-        print("submitted")
         review = Review(
             author_id=int(form.data['author_id']),
             product_id=int(form.data['product_id']),
@@ -41,27 +40,24 @@ def create_review():
     return{'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-@review_routes.route('', methods=["POST"])
+@review_routes.route('/<int:id>', methods=["PUT"])
 @login_required
-def create_review():
+def update_review(id):
     """
-    Creates a review
+    Updates a review
     """
-    form = ReviewForm()
+    form = UpdateReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         # if current_user.id == int(form.data['author_id']):
-        print("submitted")
-        review = Review(
-            author_id=int(form.data['author_id']),
-            product_id=int(form.data['product_id']),
-            content=form.data['content'],
-            created_at=form.data['created_at'],
-            updated_at=form.data['updated_at']
-        )
-        db.session.add(review)
-        db.session.commit()
-        return review.to_dict()
+        review = Review.query.get(id)
+        if review:
+            review.content=form.data['content'],
+            review.updated_at=form.data['updated_at']
+            db.session.commit()
+            return review.to_dict()
+        else:
+            return {'errors': ['Review not found.']}, 404
     return{'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 # @order_routes.route('/<order_number>', methods=['DELETE'])
