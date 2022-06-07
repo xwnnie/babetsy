@@ -41,7 +41,7 @@ def create_order():
 
 @order_routes.route('/<order_number>', methods=['DELETE'])
 @login_required
-def product(order_number):
+def delete_order(order_number):
     """
     Delete all orders associated to a order_number 
     """

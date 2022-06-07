@@ -60,17 +60,16 @@ def update_review(id):
             return {'errors': ['Review not found.']}, 404
     return{'errors': validation_errors_to_error_messages(form.errors)}, 401
 
-# @order_routes.route('/<order_number>', methods=['DELETE'])
-# @login_required
-# def product(order_number):
-#     """
-#     Delete all orders associated to a order_number 
-#     """
-#     orders = Order.query.filter(Order.order_number == order_number).all()
-#     if orders:
-#         for order in orders:
-#             db.session.delete(order)
-#         db.session.commit()
-#         return {"message": f'all orders associated to {order_number} successfully deleted'}
-#     else:
-#         return {'errors': ['Orders not found.']}, 404
+@review_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_review(id):
+    """
+    Delete all orders associated to a order_number 
+    """
+    review = Review.query.get(id)
+    if review:
+        db.session.delete(review)
+        db.session.commit()
+        return {"message": f'Review {id} successfully deleted'}
+    else:
+        return {'errors': ['Review not found.']}, 404
