@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import LogoutButton from "../auth/LogoutButton";
 // import "./index.css";
 
 const MyNav = () => {
+  const cartItems = useSelector(state => state.cart);
+  let cartItemsCount = 0;
+
+  for (let value of Object.values(cartItems)) {
+    cartItemsCount += value.count
+  }
+
   return (
     <nav>
       <div>
@@ -15,7 +23,7 @@ const MyNav = () => {
           Favorites
         </Link>
         <Link to={`/cart`} exact="true">
-          Shopping bag
+          Shopping bag({cartItemsCount})
         </Link>
         <LogoutButton />
       </div>

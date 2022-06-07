@@ -27,7 +27,7 @@ const SingleProduct = () => {
         className={"plus-button" + (cartItem ? " selected" : "")}
         onClick={addToCart}
       >
-        <i className="fas fa-plus" />
+        <i className="fas fa-plus" /> Add to Bag
       </button>
       <div>
         Reviews
