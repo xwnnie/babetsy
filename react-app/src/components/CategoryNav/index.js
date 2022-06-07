@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 import "./index.css";
 
@@ -12,9 +12,13 @@ const CategoryNav = () => {
     { id: 5, name: "Decor" },
     { id: 6, name: "Toys" },
   ];
+  const history = useHistory();
+  const handleOnClick = () => {
+      history.push("/")
+  }
   return (
     <nav className="logo-category-container">
-      <div>LOGO</div>
+      <div onClick={handleOnClick}>LOGO</div>
       <div className="category-nav">
         {categories.map((category) => (
             <NavLink
