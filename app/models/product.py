@@ -9,7 +9,7 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=False)
     price = db.Column(db.Numeric(10, 2), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
-    image_url = db.Column(db.String(255), nullable=False)
+    image_url = db.Column(db.String(1000), nullable=False)
 
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
     category = db.relationship("Category", back_populates="products")

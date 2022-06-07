@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { authenticate } from "./store/session";
 import { loadProducts } from "./store/products";
 
 import CategoryNav from './components/CategoryNav';
+import MyNav from './components/MyNav';
 import HomePage from './components/HomePage';
 import Products from './components/Products';
 import SingleProduct from './components/SingleProduct';
+import Cart from './components/Cart';
 
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+import NavBar from './components/AuthNav';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -21,6 +23,8 @@ import User from './components/User';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+
+  const sessionUser = useSelector(state => state.session.user);
 
   useEffect(() => {
     (async() => {
@@ -41,13 +45,23 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      {sessionUser ? <MyNav /> : <NavBar />}
       <CategoryNav />
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />
         </Route>
-        <Route path={["/clothing", "/furniture", "/bedding", "/bath", "/decor", "/toys"]} exact={true}>
+        <Route
+          path={[
+            "/clothing",
+            "/furniture",
+            "/bedding",
+            "/bath",
+            "/decor",
+            "/toys",
+          ]}
+          exact={true}
+        >
           <Products />
         </Route>
         <Route path="/products/:productId" exact={true}>
@@ -61,6 +75,9 @@ function App() {
         </Route> */}
         <ProtectedRoute path="/my-account" exact={true}>
           {/* <UsersList /> */}
+        </ProtectedRoute>
+        <ProtectedRoute path="/cart" exact={true}>
+          <Cart />
         </ProtectedRoute>
         {/* <ProtectedRoute path="/users" exact={true}>
           <UsersList />
