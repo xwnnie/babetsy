@@ -1,0 +1,26 @@
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 40px;
+    padding: 30px 30px 40px 30px;
+}
+
+.product-card {
+    width: fit-content;
+}
+
+.product-card img {
+    width: 300px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .products-project {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .products-project {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

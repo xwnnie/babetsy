@@ -20,14 +20,14 @@ const SingleProduct = () => {
     <div>
       <img src={product.image_url} alt={product.name} />
       <div>{product.id}</div>
-      <div>{product.price}</div>
+      <div>${product.price}</div>
       <div>{product.name}</div>
       <div>{product.description}</div>
       <button
         className={"plus-button" + (cartItem ? " selected" : "")}
         onClick={addToCart}
       >
-        <i className="fas fa-plus" /> Add to Bag
+        <i className="fa-solid fa-bag-shopping" />  Add to Bag
       </button>
       <div>
         Reviews
