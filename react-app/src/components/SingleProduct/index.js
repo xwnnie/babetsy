@@ -1,16 +1,18 @@
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addItem, updateCount, getCartItemById } from "../../store/cart";
+import { addItem, updateCount } from "../../store/cart";
 
 const SingleProduct = () => {
     const dispatch = useDispatch();
   const { productId } = useParams();
   const product = useSelector((state) => state.products[productId]);
   const reviews = Object.values(product?.reviews);
-  let cartItem;
+  let cartItem = useSelector((state) => state.cart[productId]);
   const addToCart = () => {
-    if (cartItem) return dispatch(updateCount(product.id, cartItem.count + 1));
+    if (cartItem) {
+        return dispatch(updateCount(product.id, cartItem.count + 1))
+    };
     dispatch(addItem(product.id));
   };
 
@@ -23,9 +25,7 @@ const SingleProduct = () => {
       <div>{product.description}</div>
       <button
         className={"plus-button" + (cartItem ? " selected" : "")}
-        //!!START SILENT
         onClick={addToCart}
-        //!!END
       >
         <i className="fas fa-plus" />
       </button>
