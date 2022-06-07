@@ -17,7 +17,6 @@ def validation_errors_to_error_messages(validation_errors):
 
 
 @product_routes.route('/')
-@login_required
 def products():
     """
     Gets all products
@@ -27,7 +26,6 @@ def products():
 
 
 @product_routes.route('/<int:id>')
-@login_required
 def product(id):
     """
     Gets a single product
