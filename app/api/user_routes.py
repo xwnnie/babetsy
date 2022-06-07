@@ -50,3 +50,6 @@ def update_address(id):
         else:
             return {'errors': ['User does not exist']}, 404
     return{'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+
