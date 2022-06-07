@@ -7,6 +7,7 @@ import { loadProducts } from "./store/products";
 
 import HomePage from './components/HomePage';
 import Products from './components/Products';
+import SingleProduct from './components/SingleProduct';
 
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
@@ -47,12 +48,15 @@ function App() {
         <Route path="/products" exact={true}>
           <Products />
         </Route>
+        <Route path="/products/:productId" exact={true}>
+          <SingleProduct />
+        </Route>
         <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
-        <Route path="/sign-up" exact={true}>
+        {/* <Route path="/sign-up" exact={true}>
           <SignUpForm />
-        </Route>
+        </Route> */}
         <ProtectedRoute path="/my-account" exact={true}>
           {/* <UsersList /> */}
         </ProtectedRoute>
