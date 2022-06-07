@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
-from app.models import db, User
+from app.models import db, User, Product
 from app.forms.address_form import AddressForm
 
 user_routes = Blueprint('users', __name__)
@@ -52,4 +52,27 @@ def update_address(id):
     return{'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
+@user_routes.route('/<int:user_id>/favorites/<int:product_id>', methods=["POST"])
+@login_required
+def add_favorite(user_id, product_id):
+    user = User.query.get(user_id)
+    product = Product.query.get(product_id)
+    if user and product:
+        user.favorite_products.append(product)
+        db.session.commit()
+        return {"message": "favorite successfully added"}
+    else:
+        return {'errors': ['User or Product does not exist']}, 404
 
+
+@user_routes.route('/<int:user_id>/favorites/<int:product_id>', methods=["DELETE"])
+@login_required
+def delete_favorite(user_id, product_id):
+    user = User.query.get(user_id)
+    product = Product.query.get(product_id)
+    if user and product:
+        user.favorite_products.remove(product)
+        db.session.commit()
+        return {"message": "favorite successfully deleted"}
+    else:
+        return {'errors': ['User or Product does not exist']}, 404
