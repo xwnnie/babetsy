@@ -12,3 +12,7 @@
 .category-nav a {
     margin: 10px;
 }
+
+.nav-logo {
+    cursor: pointer;
+}

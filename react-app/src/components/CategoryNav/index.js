@@ -18,7 +18,7 @@ const CategoryNav = () => {
   }
   return (
     <nav className="logo-category-container">
-      <div onClick={handleOnClick}>LOGO</div>
+      <div onClick={handleOnClick} className="nav-logo">LOGO</div>
       <div className="category-nav">
         {categories.map((category) => (
             <NavLink

@@ -1,10 +1,18 @@
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { addItem, updateCount, getCartItemById } from "../../store/cart";
 
 const SingleProduct = () => {
+    const dispatch = useDispatch();
   const { productId } = useParams();
   const product = useSelector((state) => state.products[productId]);
   const reviews = Object.values(product?.reviews);
+  let cartItem;
+  const addToCart = () => {
+    if (cartItem) return dispatch(updateCount(product.id, cartItem.count + 1));
+    dispatch(addItem(product.id));
+  };
 
   return (
     <div>
@@ -13,10 +21,18 @@ const SingleProduct = () => {
       <div>{product.price}</div>
       <div>{product.name}</div>
       <div>{product.description}</div>
+      <button
+        className={"plus-button" + (cartItem ? " selected" : "")}
+        //!!START SILENT
+        onClick={addToCart}
+        //!!END
+      >
+        <i className="fas fa-plus" />
+      </button>
       <div>
-          Reviews
+        Reviews
         {reviews.map((review) => (
-          <div>
+          <div key={review.id}>
             <div>{review.content}</div>
             <div>{review.author_name}</div>
           </div>

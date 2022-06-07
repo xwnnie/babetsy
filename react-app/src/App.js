@@ -10,6 +10,7 @@ import MyNav from './components/MyNav';
 import HomePage from './components/HomePage';
 import Products from './components/Products';
 import SingleProduct from './components/SingleProduct';
+import Cart from './components/Cart';
 
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
@@ -50,7 +51,17 @@ function App() {
         <Route path="/" exact={true}>
           <HomePage />
         </Route>
-        <Route path={["/clothing", "/furniture", "/bedding", "/bath", "/decor", "/toys"]} exact={true}>
+        <Route
+          path={[
+            "/clothing",
+            "/furniture",
+            "/bedding",
+            "/bath",
+            "/decor",
+            "/toys",
+          ]}
+          exact={true}
+        >
           <Products />
         </Route>
         <Route path="/products/:productId" exact={true}>
@@ -64,6 +75,9 @@ function App() {
         </Route> */}
         <ProtectedRoute path="/my-account" exact={true}>
           {/* <UsersList /> */}
+        </ProtectedRoute>
+        <ProtectedRoute path="/cart" exact={true}>
+          <Cart />
         </ProtectedRoute>
         {/* <ProtectedRoute path="/users" exact={true}>
           <UsersList />

@@ -8,13 +8,13 @@ const MyNav = () => {
   return (
     <nav>
       <div>
-        <Link to={`/my-account`} exact={true}>
+        <Link to={`/my-account`} exact="true">
           My Account
         </Link>
-        <Link to={`/favorites`} exact={true}>
+        <Link to={`/favorites`} exact="true">
           Favorites
         </Link>
-        <Link to={`/cart`} exact={true}>
+        <Link to={`/cart`} exact="true">
           Shopping bag
         </Link>
         <LogoutButton />
