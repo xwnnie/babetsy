@@ -37,6 +37,6 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'address': self.address,
-            'reviews': self.reviews,
-            'orders': self.orders
+            'reviews': {review.id: review.to_dict() for review in self.reviews},
+            'orders': {order.id: order.to_dict() for order in self.orders}
         }
