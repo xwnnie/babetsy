@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { authenticate } from "./store/session";
 import { loadProducts } from "./store/products";
 
+import CategoryNav from './components/CategoryNav';
 import HomePage from './components/HomePage';
 import Products from './components/Products';
 import SingleProduct from './components/SingleProduct';
@@ -41,11 +42,12 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <CategoryNav />
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />
         </Route>
-        <Route path="/products" exact={true}>
+        <Route path={["/clothing", "/furniture", "/bedding", "/bath", "/decor", "/toys"]} exact={true}>
           <Products />
         </Route>
         <Route path="/products/:productId" exact={true}>
@@ -60,12 +62,12 @@ function App() {
         <ProtectedRoute path="/my-account" exact={true}>
           {/* <UsersList /> */}
         </ProtectedRoute>
-        <ProtectedRoute path="/users" exact={true}>
+        {/* <ProtectedRoute path="/users" exact={true}>
           <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
   );

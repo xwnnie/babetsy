@@ -1,0 +1,14 @@
+.logo-category-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-nav {
+    display: flex;
+    align-items: center;
+}
+
+.category-nav a {
+    margin: 10px;
+}

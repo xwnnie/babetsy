@@ -1,14 +1,37 @@
 import { useSelector } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Products = () => {
-    const productsObj = useSelector(state => state.products);
-    const products = Object.values(productsObj)
+  const history = useHistory();
+  useLocation();   //cause re-render after path changes
+
+  const categories = {
+    clothing: 1,
+    furniture: 2,
+    bedding: 3,
+    bath: 4,
+    decor: 5,
+    toys: 6,
+  };
+  const categoryName = history.location.pathname.slice(1);
+  const categoryId = categories[categoryName];
+
+  const productsObj = useSelector((state) => state.products);
+  let products = Object.values(productsObj);
+  products = products.filter((product) => product.category_id === categoryId);
+
+  const handleOnClick = (id) => {
+    history.push(`/products/${id}`);
+  };
   return (
     <div>
-      <h1>Products</h1>
+      <h1>{categoryName}</h1>
       {products.map((product) => (
-        <div key={product.id}>
+        <div key={product.id} onClick={(e) => handleOnClick(product.id)}>
+          <img src={product.image_url} alt={product.name} />
           <div>{product.id}</div>
+          <div>{product.price}</div>
           <div>{product.name}</div>
         </div>
       ))}

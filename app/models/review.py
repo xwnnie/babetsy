@@ -23,6 +23,7 @@ class Review(db.Model):
             "content": self.content,
             "product_id": self.product_id,
             "author_id": self.author_id,
+            "author_name": self.author.username,
             "created_at": self.created_at,
             "updated_at": self.updated_at
         }
