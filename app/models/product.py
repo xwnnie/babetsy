@@ -26,7 +26,7 @@ class Product(db.Model):
             "id": self.id,
             "name": self.name,
             "description": self.description,
-            "price": self.price,
+            "price": float(self.price),
             "quantity": self.quantity,
             "image_url": self.image_url,
             "category_id": self.category_id
