@@ -29,5 +29,6 @@ class Product(db.Model):
             "price": float(self.price),
             "quantity": self.quantity,
             "image_url": self.image_url,
-            "category_id": self.category_id
+            "category_id": self.category_id,
+            "reviews": {review.id: review.to_dict() for review in self.reviews}
         }
