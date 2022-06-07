@@ -12,7 +12,7 @@ class Product(db.Model):
     image_url = db.Column(db.String(255), nullable=False)
 
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
-    category = db.relationship("Category", back_populates="product")
+    category = db.relationship("Category", back_populates="products")
 
     reviews = db.relationship("Review", back_populates="product")
 

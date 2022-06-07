@@ -18,7 +18,7 @@ class User(db.Model, UserMixin):
     orders = db.relationship("Order", back_populates="buyer")
 
     favorite_products = db.relationship(
-        "Product", back_populates="users", secondary=favorites)
+        "Product", back_populates="favored_by", secondary=favorites)
 
     @property
     def password(self):
