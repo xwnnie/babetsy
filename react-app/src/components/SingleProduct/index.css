@@ -1,0 +1,15 @@
+.single-product-container {
+    display: flex;
+}
+
+.single-product-img {
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 500px;
+}
+
+.single-product-info {
+    margin-top: 80px;
+    margin-left: 80px;
+    width: 700px;
+}

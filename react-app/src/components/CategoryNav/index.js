@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 
+import logo from "../../images/logo.png";
+
 import "./index.css";
 
 const CategoryNav = () => {
@@ -19,16 +21,17 @@ const CategoryNav = () => {
   return (
     <nav className="logo-category-container">
       <div onClick={handleOnClick} className="nav-logo">LOGO</div>
+      {/* <img onClick={handleOnClick} className="nav-logo" src={logo} /> */}
       <div className="category-nav">
         {categories.map((category) => (
-            <NavLink
-              to={`/${category.name.toLowerCase()}`}
-              exact={true}
-              activeClassName="active"
-              key={category.id}
-            >
-              {category.name}
-            </NavLink>
+          <NavLink
+            to={`/${category.name.toLowerCase()}`}
+            exact={true}
+            activeClassName="active"
+            key={category.id}
+          >
+            {category.name}
+          </NavLink>
         ))}
       </div>
     </nav>
