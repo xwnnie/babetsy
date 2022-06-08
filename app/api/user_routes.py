@@ -1,7 +1,8 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
-from app.models import db, User, Product
+from app.models import db, User, Product, Order
 from app.forms.address_form import AddressForm
+from sqlalchemy import distinct
 
 user_routes = Blueprint('users', __name__)
 
@@ -30,7 +31,14 @@ def user(id):
     Gets a user's info, order history, favorites
     """
     user = User.query.get(id)
-    return user.to_dict()
+    user_dict = user.to_dict()
+    # orders = user_dict["orders"]
+    orders = Order.query.filter(Order.buyer_id == id).distinct(Order.order_number).all()
+    order_numbers = [order.order_number for order in orders]
+    for order_number in order_numbers:
+        all_orders = Order.query.filter(Order.order_number == order_number).all()
+        user_dict["orders"][order_number] = [order.to_dict() for order in all_orders]
+    return user_dict
 
 
 @user_routes.route('/<int:id>', methods=["PUT"])
