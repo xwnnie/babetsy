@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { reset } from "../../store/cart";
 import { addOrder } from "../../store/orders";
 
@@ -7,6 +8,7 @@ import "./Cart.css";
 
 function Cart() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const products = useSelector((state) => state.products);
   const sessionUser = useSelector(state => state.session.user);
@@ -41,15 +43,18 @@ function Cart() {
       Math.random(100000000000000, 999999999999999) * 1000000000000000
     );
 
+    let createdAt = new Date()
+
     const payload = {
       buyer_id: sessionUser.id,
       products: cartItems,
       order_number: `ORDER_${orderNumber}`,
-      created_at: new Date()
+      created_at: createdAt.toString()
     }
     console.log("********", payload)
     dispatch(reset());
     dispatch(addOrder(payload))
+    history.push("/my-account")
   };
 
   return (

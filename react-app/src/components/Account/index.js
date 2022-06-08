@@ -7,8 +7,8 @@ const Account = () => {
     let purchases;
 
     orders.sort((a, b) => {
-    const keyA = new Date(a[0].created_at);
-    const keyB = new Date(b[0].created_at);
+    const keyA = new Date(a[0]?.created_at);
+    const keyB = new Date(b[0]?.created_at);
     return keyA > keyB ? -1 : 1;
     });
 
@@ -19,7 +19,7 @@ const Account = () => {
                 purchases = Object.values(order)
                 // console.log("!!!!!!!!!", purchases)
                return (
-                 <div>
+                 <div key={order.id}>
                    <div>{purchases[0].order_number}</div>
                    <div>placed on: {purchases[0].created_at}</div>
                    <div>Items:</div>
