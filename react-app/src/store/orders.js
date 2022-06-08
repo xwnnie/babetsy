@@ -47,7 +47,7 @@ export const addOrder = (payload) => async (dispatch) => {
 
 
 export const cancelOrder = (orderNumber) => async (dispatch) => {
-  const response = await fetch(`/api/order/${orderNumber}`, {
+  const response = await fetch(`/api/orders/${orderNumber}`, {
     method: "DELETE",
   });
 
