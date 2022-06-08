@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { addItem, updateCount } from "../../store/cart";
@@ -7,11 +7,18 @@ import "./index.css";
 
 const SingleProduct = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
   const { productId } = useParams();
   const product = useSelector((state) => state.products[productId]);
   const reviews = Object.values(product?.reviews);
   let cartItem = useSelector((state) => state.cart[productId]);
+  const sessionUser = useSelector((state) => state.session.user);
   const addToCart = () => {
+    if (!sessionUser) {
+      alert("login to use this feature. redirecting... ");
+      history.push("/login")
+      return
+    }
     if (cartItem) {
         return dispatch(updateCount(product.id, cartItem.count + 1))
     };
