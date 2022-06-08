@@ -37,7 +37,6 @@ const Products = () => {
             className="product-card"
           >
             <img src={product.image_url} alt={product.name} />
-            <div>{product.id}</div>
             <div>${product.price}</div>
             <div>{product.name}</div>
           </div>
