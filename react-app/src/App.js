@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { authenticate } from "./store/session";
 import { loadProducts } from "./store/products";
+import { setOrders } from "./store/orders";
 
 import CategoryNav from "./components/CategoryNav";
 import MyNav from "./components/MyNav";
@@ -11,6 +12,7 @@ import HomePage from "./components/HomePage";
 import Products from "./components/Products";
 import SingleProduct from "./components/SingleProduct";
 import Cart from "./components/Cart";
+import Account from "./components/Account";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -44,7 +46,7 @@ function App() {
         const res = await fetch(`/api/users/${sessionUser.id}`);
         if (res.ok) {
           const data = await res.json();
-          // dispatch(setOrders(data.orders));
+          dispatch(setOrders(data.orders));
           // dispatch(setFavorites(data.favorite_products));
         }
       }
@@ -83,21 +85,12 @@ function App() {
         <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
-        {/* <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route> */}
-        <ProtectedRoute path="/my-account" exact={true}>
-          {/* <UsersList /> */}
-        </ProtectedRoute>
-        <ProtectedRoute path="/cart" exact={true}>
+        <ProtectedRoute path="/cart" exact={true} loaded={loaded}>
           <Cart />
         </ProtectedRoute>
-        {/* <ProtectedRoute path="/users" exact={true}>
-          <UsersList />
+        <ProtectedRoute path="/my-account" exact={true} loaded={loaded}>
+          <Account />
         </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-        </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
   );

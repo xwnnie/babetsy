@@ -77,7 +77,7 @@ const orderReducer = (state = initialState, action) => {
     case CREATE_ORDER:
       return {
         ...state,
-        [action.orderNumber]: action.order,
+        [action.order.order_number]: action.order,
       };
     case REMOVE_ORDER:
       let newState = { ...state };

@@ -23,5 +23,6 @@ class Order(db.Model):
             "quantity": self.quantity,
             "product_id": self.product_id,
             "buyer_id": self.buyer_id,
-            "order_number": self.order_number
+            "order_number": self.order_number,
+            "created_at": self.created_at
         }

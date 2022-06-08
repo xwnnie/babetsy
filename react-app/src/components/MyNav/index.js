@@ -7,10 +7,10 @@ import "./index.css";
 
 const MyNav = () => {
   const cartItems = useSelector((state) => state.cart);
-  let cartItemsCount = 0;
+  let cartItemsQuantity = 0;
 
   for (let value of Object.values(cartItems)) {
-    cartItemsCount += value.count;
+    cartItemsQuantity += value.quantity;
   }
 
   return (
@@ -22,7 +22,7 @@ const MyNav = () => {
         Favorites
       </Link>
       <Link to={`/cart`} exact="true">
-        Shopping bag({cartItemsCount})
+        Shopping bag({cartItemsQuantity})
       </Link>
       <LogoutButton />
     </div>

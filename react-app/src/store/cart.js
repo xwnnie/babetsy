@@ -1,6 +1,6 @@
 const ADD_ITEM = "cart/ADD_ITEM";
 const REMOVE_ITEM = "cart/REMOVE_ITEM";
-const UPDATE_COUNT = "cart/UPDATE_COUNT";
+const UPDATE_QUANTITY = "cart/UPDATE_QUANTITY";
 const RESET = "cart/RESET";
 
 /* ----- ACTIONS ------ */
@@ -12,12 +12,12 @@ export const addItem = (productId) => {
   };
 };
 
-export const updateCount = (productId, count) => {
-  if (count < 1) return removeItem(productId);
+export const updateQuantity = (productId, quantity) => {
+  if (quantity < 1) return removeItem(productId);
   return {
-    type: UPDATE_COUNT,
+    type: UPDATE_QUANTITY,
     productId,
-    count,
+    quantity,
   };
 };
 
@@ -44,15 +44,15 @@ export default function cartReducer(state = initialState, action) {
         ...state,
         [action.productId]: {
             id: action.productId,
-            count: 1,
+            quantity: 1,
         }
       };
-    case UPDATE_COUNT:
+    case UPDATE_QUANTITY:
       return {
         ...state,
         [action.productId]: {
         ...state[action.productId],
-        count: action.count,
+        quantity: action.quantity,
         }
       };
     case REMOVE_ITEM:

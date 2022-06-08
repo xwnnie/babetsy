@@ -1,7 +1,7 @@
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addItem, updateCount } from "../../store/cart";
+import { addItem, updateQuantity } from "../../store/cart";
 
 import "./index.css";
 
@@ -20,7 +20,7 @@ const SingleProduct = () => {
       return
     }
     if (cartItem) {
-        return dispatch(updateCount(product.id, cartItem.count + 1))
+        return dispatch(updateQuantity(product.id, cartItem.quantity + 1));
     };
     dispatch(addItem(product.id));
   };
