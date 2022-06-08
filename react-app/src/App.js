@@ -12,7 +12,8 @@ import HomePage from "./components/HomePage";
 import Products from "./components/Products";
 import SingleProduct from "./components/SingleProduct";
 import Cart from "./components/Cart";
-import Account from "./components/Account";
+import OrderHistory from "./components/OrderHistory";
+import MyAccount from "./components/MyAccount";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -89,7 +90,7 @@ function App() {
           <Cart />
         </ProtectedRoute>
         <ProtectedRoute path="/my-account" exact={true} loaded={loaded}>
-          <Account />
+          <MyAccount />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
