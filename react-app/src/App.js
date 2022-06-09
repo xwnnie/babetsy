@@ -92,6 +92,9 @@ function App() {
         <ProtectedRoute path="/my-account" exact={true} loaded={loaded}>
           <MyAccount />
         </ProtectedRoute>
+        <ProtectedRoute path="/my-orders" exact={true} loaded={loaded}>
+          <OrderHistory />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

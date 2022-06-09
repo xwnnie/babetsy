@@ -61,7 +61,7 @@ function Cart() {
       <div className="cart-header">Shopping Bag</div>
       <div className="cart-container">
         {!cartItems || !cartItems.length ? (
-          <div className="cart">
+          <div className="cart-no-items-msg">
             No items in the cart. Start selecting items to purchase.
           </div>
         ) : (
@@ -84,10 +84,13 @@ function Cart() {
           <hr />
           <div className="order-review-line">
             <span>Total: </span>
-            <span>{Math.round((value + shipping) * 100) / 100}</span>
+            <span>${Math.round((value + shipping) * 100) / 100}</span>
           </div>
-          <button onClick={onSubmit} className="checkout-btn">
-            Continue to checkout
+          <button
+            onClick={!cartItems || !cartItems.length ? null : onSubmit}
+            className={`checkout-btn ${!cartItems || !cartItems.length ? "no-item" : null}`}
+          >
+            <span>Continue to checkout</span>
           </button>
         </div>
       </div>

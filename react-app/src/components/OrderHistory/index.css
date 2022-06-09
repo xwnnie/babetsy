@@ -1,0 +1,10 @@
+.account-container #note {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.single-order-container {
+    background-color: white;
+    margin-bottom: 10px;
+}
