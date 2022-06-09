@@ -7,7 +7,7 @@ const SingleReview = ({ product, myReviews }) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
 
-  const [showForm, setShowForm] = useState(false);
+  const [showCreateForm, setShowCreateForm] = useState(false);
   const [content, setContent] = useState("");
 
   const handleOnSubmit = async (e) => {
@@ -18,12 +18,12 @@ const SingleReview = ({ product, myReviews }) => {
       author_id: sessionUser.id,
     };
     await dispatch(addReview(payload));
-    setShowForm(false);
+    setShowCreateForm(false);
   };
   const reviewForm = (
     <form onSubmit={handleOnSubmit}>
       <textarea value={content} onChange={(e) => setContent(e.target.value)} />
-      <button type="cancel" onClick={() => setShowForm(false)}>
+      <button type="cancel" onClick={() => setShowCreateForm(false)}>
         Cancel
       </button>
       <button type="submit">Add</button>
@@ -35,15 +35,17 @@ const SingleReview = ({ product, myReviews }) => {
       <img src={product?.image_url} className="review-img" />
       <div>
         <div className="review-product-name">{product?.name}</div>
-        <div>My review: </div>
-        <div className="review-content">
-          {product?.id in myReviews ? (
-            myReviews[product.id].content
-          ) : !showForm ? (
-            <button onClick={() => setShowForm(true)}>Add Review</button>
-          ) : null}
-          {showForm ? reviewForm : null}
-        </div>
+        {product?.id in myReviews ? (
+          <div className="review-content">
+            <div>My review: </div>
+            <div>{myReviews[product.id].content}</div>
+            <button>Edit Review</button>
+            <button>Delete Review</button>
+          </div>
+        ) : !showCreateForm ? (
+          <button onClick={() => setShowCreateForm(true)}>Add Review</button>
+        ) : null}
+        {showCreateForm ? reviewForm : null}
       </div>
     </div>
   );
