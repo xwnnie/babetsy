@@ -4,13 +4,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { addReview, updateReview } from "../../store/reviews";
 import DeleteReviewBtn from "../DeleteReview";
 
-const SingleReview = ({ product, myReviews }) => {
+const SingleReview = ({ product }) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
+  let reviews = useSelector((state) => state.reviews);
+  reviews = Object.values(reviews);
+  let currReview = reviews.filter(
+    (review) =>
+      review.author_id === sessionUser.id && review.product_id === product.id
+  );
+  currReview = currReview[0];
+  // console.log(currReview)
 
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [showEditForm, setShowEditForm] = useState(false);
-  const [content, setContent] = useState("" || myReviews[product.id]?.content);
+  const [content, setContent] = useState("" || currReview?.content);
 
   const handleCreateOnSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +29,7 @@ const SingleReview = ({ product, myReviews }) => {
     };
     await dispatch(addReview(payload));
     setShowCreateForm(false);
+    // setContent("")
   };
 
   const handleEditOnSubmit = async (e) => {
@@ -28,8 +37,9 @@ const SingleReview = ({ product, myReviews }) => {
     const payload = {
       content,
     };
-    await dispatch(updateReview(payload, product.id));
+    await dispatch(updateReview(payload, currReview.id));
     setShowEditForm(false);
+    // setContent("");
   };
 
   const reviewForm = (
@@ -57,16 +67,16 @@ const SingleReview = ({ product, myReviews }) => {
       <img src={product?.image_url} className="review-img" />
       <div>
         <div className="review-product-name">{product?.name}</div>
-        {product?.id in myReviews ? (
+        {currReview ? (
           <div className="review-content">
             <div>My review: </div>
-            <div>{myReviews[product.id].content}</div>
+            <div>{currReview.content}</div>
             {!showEditForm ? (
               <div>
                 <button onClick={() => setShowEditForm(true)}>
                   Edit Review
                 </button>
-                <DeleteReviewBtn reviewId={myReviews[product.id].id}/>
+                <DeleteReviewBtn reviewId={currReview?.id} />
               </div>
             ) : null}
           </div>
