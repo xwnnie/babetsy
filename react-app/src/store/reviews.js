@@ -27,7 +27,7 @@ const initialState = {};
 
 const reviewReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_PRODUCTS:
+    case SET_REVIEWS:
       return { ...state, ...action.reviews };
     default:
       return state;

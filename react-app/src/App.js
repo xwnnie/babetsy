@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { authenticate } from "./store/session";
 import { loadProducts } from "./store/products";
+import { loadReviews } from "./store/reviews";
 import { setOrders } from "./store/orders";
 
 import CategoryNav from "./components/CategoryNav";
@@ -37,6 +38,7 @@ function App() {
   useEffect(() => {
     (async () => {
       dispatch(loadProducts());
+      dispatch(loadReviews());
     })();
   }, [dispatch]);
 
