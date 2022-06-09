@@ -21,7 +21,6 @@ function Cart() {
     name: products[item.id]?.name,
     image_url: products[item.id]?.image_url,
   }));
-  //   console.log("******", cartItems);
 
   let value = cartItems.reduce(
     (accu, item) => accu + item.quantity * item.price,
@@ -29,15 +28,6 @@ function Cart() {
   );
   value = Math.round(value * 100) / 100;
   let shipping = value > 25 ? 0 : 9.99;
-
-  // if (!cartItems || !cartItems.length)
-  //   return (
-  //     <div className="cart">
-  //       No items in the cart. Start selecting items to purchase.
-  //     </div>
-  //   );
-
-  // console.log("******", cartItems)
 
   const onSubmit = (e) => {
     e.preventDefault();
