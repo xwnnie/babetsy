@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addReview } from "../../store/reviews";
+import { addReview, updateReview } from "../../store/reviews";
 
 const SingleReview = ({ product, myReviews }) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
 
   const [showCreateForm, setShowCreateForm] = useState(false);
-  const [content, setContent] = useState("");
+  const [showEditForm, setShowEditForm] = useState(false);
+  const [content, setContent] = useState("" || myReviews[product.id]?.content);
 
-  const handleOnSubmit = async (e) => {
+  const handleCreateOnSubmit = async (e) => {
     e.preventDefault();
     const payload = {
       content,
@@ -20,13 +21,33 @@ const SingleReview = ({ product, myReviews }) => {
     await dispatch(addReview(payload));
     setShowCreateForm(false);
   };
+
+  const handleEditOnSubmit = async (e) => {
+    e.preventDefault();
+    const payload = {
+      content,
+    };
+    await dispatch(updateReview(payload, product.id));
+    setShowEditForm(false);
+  };
+
   const reviewForm = (
-    <form onSubmit={handleOnSubmit}>
+    <form onSubmit={handleCreateOnSubmit}>
       <textarea value={content} onChange={(e) => setContent(e.target.value)} />
       <button type="cancel" onClick={() => setShowCreateForm(false)}>
         Cancel
       </button>
       <button type="submit">Add</button>
+    </form>
+  );
+
+  const editReviewForm = (
+    <form onSubmit={handleEditOnSubmit}>
+      <textarea value={content} onChange={(e) => setContent(e.target.value)} />
+      <button type="cancel" onClick={() => setShowCreateForm(false)}>
+        Cancel
+      </button>
+      <button type="submit">Update</button>
     </form>
   );
 
@@ -39,13 +60,20 @@ const SingleReview = ({ product, myReviews }) => {
           <div className="review-content">
             <div>My review: </div>
             <div>{myReviews[product.id].content}</div>
-            <button>Edit Review</button>
-            <button>Delete Review</button>
+            {!showEditForm ? (
+              <div>
+                <button onClick={() => setShowEditForm(true)}>
+                  Edit Review
+                </button>
+                <button>Delete Review</button>
+              </div>
+            ) : null}
           </div>
         ) : !showCreateForm ? (
           <button onClick={() => setShowCreateForm(true)}>Add Review</button>
         ) : null}
         {showCreateForm ? reviewForm : null}
+        {showEditForm ? editReviewForm : null}
       </div>
     </div>
   );

@@ -42,21 +42,6 @@ const MyReviews = () => {
         </div>
         {purchasedProducts.map((product) => (
             <SingleReview product={product} myReviews={myReviews}/>
-        //   <div className="my-review-container">
-        //     <img src={product?.image_url} className="review-img" />
-        //     <div>
-        //       <div className="review-product-name">{product?.name}</div>
-        //       <div>My review: </div>
-        //       <div className="review-content">
-        //         {product?.id in myReviews ? (
-        //           myReviews[product.id].content
-        //         ) : (
-        //           <button onClick={() => setShowForm(true)}>Add Review</button>
-        //         )}
-        //         {showForm ? reviewForm() : null}
-        //       </div>
-        //     </div>
-        //   </div>
         )
         )}
       </div>

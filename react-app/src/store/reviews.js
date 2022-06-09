@@ -1,5 +1,6 @@
 const SET_REVIEWS = "products/SET_REVIEWS";
 const CREATE_REVIEW = "projects/CREATE_REVIEW";
+const EDIT_REVIEW = "projects/EDIT_REVIEW";
 
 export const setReviews = (reviews) => {
   return {
@@ -11,6 +12,13 @@ export const setReviews = (reviews) => {
 export const createReview = (review) => {
   return {
     type: CREATE_REVIEW,
+    review,
+  };
+};
+
+export const editReview = (review) => {
+  return {
+    type: EDIT_REVIEW,
     review,
   };
 };
@@ -53,6 +61,29 @@ export const addReview = (payload) => async (dispatch) => {
   }
 };
 
+export const updateReview = (payload, reviewId) => async (dispatch) => {
+  const response = await fetch(`/api/reviews/${reviewId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(editReview(data));
+    return null;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ["An error occurred. Please try again."];
+  }
+};
+
+
 const initialState = {};
 
 const reviewReducer = (state = initialState, action) => {
@@ -60,6 +91,11 @@ const reviewReducer = (state = initialState, action) => {
     case SET_REVIEWS:
       return { ...state, ...action.reviews };
     case CREATE_REVIEW:
+      return {
+        ...state,
+        [action.review.id]: action.review,
+      };
+    case EDIT_REVIEW:
       return {
         ...state,
         [action.review.id]: action.review,
