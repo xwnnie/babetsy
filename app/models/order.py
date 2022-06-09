@@ -7,7 +7,7 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     quantity = db.Column(db.Integer, nullable=False)
     order_number = db.Column(db.String(100), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.now())
+    created_at = db.Column(db.String, nullable=False)
 
     product_id = db.Column(db.Integer, db.ForeignKey(
         "products.id"), nullable=False)
@@ -23,5 +23,6 @@ class Order(db.Model):
             "quantity": self.quantity,
             "product_id": self.product_id,
             "buyer_id": self.buyer_id,
-            "order_number": self.order_number
+            "order_number": self.order_number,
+            "created_at": self.created_at
         }

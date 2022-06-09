@@ -32,7 +32,6 @@ def user(id):
     """
     user = User.query.get(id)
     user_dict = user.to_dict()
-    # orders = user_dict["orders"]
     orders = Order.query.filter(Order.buyer_id == id).distinct(Order.order_number).all()
     order_numbers = [order.order_number for order in orders]
     for order_number in order_numbers:

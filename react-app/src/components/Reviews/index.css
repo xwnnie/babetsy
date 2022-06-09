@@ -1,0 +1,55 @@
+.reviews-container {
+    height: 100vh;
+    width: 500px;
+    margin-right: 0px;
+}
+
+.reviews-header {
+    margin: auto;
+    margin-top: 50px;
+    width: fit-content;
+    line-height: 1.2;
+    font-weight: 600;
+    font-size: 25px;
+    font-stretch: extra-expanded;
+}
+
+.close-modal-btn {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.reviews-list {
+    margin: 30px;
+}
+
+.review-author, .review-date {
+    font-size: 13px;
+    padding-top: 2px;
+    color: rgb(51, 49, 49);
+}
+
+
+
+.reviews-modal-container{
+    position: absolute;
+    right: 0px;
+    animation: fadeInRight 0.2s;
+}
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

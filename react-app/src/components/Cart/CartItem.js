@@ -1,48 +1,50 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { updateCount, removeItem } from "../../store/cart";
-
+import { updateQuantity, removeItem } from "../../store/cart";
 
 function CartItem({ item }) {
   const dispatch = useDispatch();
-  const [count, setCount] = useState(item.count);
+  const [quantity, setQuantity] = useState(item.quantity);
 
   useEffect(() => {
-    setCount(item.count);
-  }, [item.count]);
+    setQuantity(item.quantity);
+  }, [item.quantity]);
 
   return (
-    <li className="cart-item">
-      <div className="cart-item-header">{item.name}</div>
-      <div className="cart-item-menu">
-        <input
-          type="number"
-          value={count}
-          onChange={(e) => setCount(e.target.value)}
-          onBlur={() => dispatch(updateCount(item.id, Number(count)))}
-        />
-        <button
-          className="cart-item-button"
-          onClick={() => dispatch(updateCount(item.id, item.count + 1))}
-        >
-          +
-        </button>
-        <button
-          className="cart-item-button"
-          onClick={() => dispatch(updateCount(item.id, item.count - 1))}
-          //!!END
-        >
-          -
-        </button>
-        <button
-          className="cart-item-button"
-          onClick={() => dispatch(removeItem(item.id))}
-        >
-          Remove
-        </button>
+    <div className="cart-item">
+      <img src={item.image_url} alt={item.name} className="cart-img" />
+      <div>
+        <div className="cart-item-header">{item.name}</div>
+        <div className="cart-item-price">${item.price}</div>
+        <div className="cart-item-menu">
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+            onBlur={() => dispatch(updateQuantity(item.id, Number(quantity)))}
+          />
+          <button
+            className="cart-item-button"
+            onClick={() => dispatch(updateQuantity(item.id, item.quantity - 1))}
+          >
+            -
+          </button>
+          <button
+            className="cart-item-button"
+            onClick={() => dispatch(updateQuantity(item.id, item.quantity + 1))}
+          >
+            +
+          </button>
+          <button
+            className="cart-item-button"
+            onClick={() => dispatch(removeItem(item.id))}
+          >
+            <span class="material-symbols-outlined">delete</span>
+          </button>
+        </div>
       </div>
-    </li>
+    </div>
   );
 }
 

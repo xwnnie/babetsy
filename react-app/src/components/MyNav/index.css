@@ -1,0 +1,9 @@
+.my-nav-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.my-nav-container a {
+    margin-right: 10px;
+}

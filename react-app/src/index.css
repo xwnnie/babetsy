@@ -2,4 +2,13 @@
 a {
     text-decoration: none;
     cursor: pointer;
+    color: black
 }
+body {
+    font-family: 'PT Sans', sans-serif;;
+    /* font-family: 'Quicksand', sans-serif; */
+}
+
+/* a:active {
+    text-decoration: underline;
+} */

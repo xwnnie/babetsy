@@ -12,4 +12,15 @@
     margin-top: 80px;
     margin-left: 80px;
     width: 700px;
+    position: relative;
+}
+
+.fave-heart {
+    position: absolute;
+    top: 5px;
+    right: 30px
+}
+
+.fave-heart:hover {
+    fill: red
 }

@@ -30,13 +30,13 @@ def create_order():
             for product in payload["products"]:
                 order = Order(
                     buyer_id=int(payload['buyer_id']),
-                    product_id=int(product['product_id']),
+                    product_id=int(product['id']),
                     quantity=int(product['quantity']),
                     order_number=payload['order_number'],
                     created_at=payload['created_at']
                 )
-                if order:
-                    print("new order")
+                # if order:
+                #     print("new order")
                 db.session.add(order)
             db.session.commit()
             order_number = payload['order_number']
@@ -91,6 +91,6 @@ def delete_order(order_number):
         for order in orders:
             db.session.delete(order)
         db.session.commit()
-        return {"message": f'all orders associated to {order_number} successfully deleted'}
+        return {"message": f'all purchases associated to {order_number} successfully deleted'}
     else:
-        return {'errors': ['Orders not found.']}, 404
+        return {'errors': ['Order {order_number} not found.']}, 404

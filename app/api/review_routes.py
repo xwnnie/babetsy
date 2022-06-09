@@ -64,7 +64,7 @@ def update_review(id):
 @login_required
 def delete_review(id):
     """
-    Delete all orders associated to a order_number 
+    Deletes a review
     """
     review = Review.query.get(id)
     if review:

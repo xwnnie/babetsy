@@ -47,7 +47,7 @@ export const addOrder = (payload) => async (dispatch) => {
 
 
 export const cancelOrder = (orderNumber) => async (dispatch) => {
-  const response = await fetch(`/api/order/${orderNumber}`, {
+  const response = await fetch(`/api/orders/${orderNumber}`, {
     method: "DELETE",
   });
 
@@ -74,15 +74,20 @@ const orderReducer = (state = initialState, action) => {
         ...state,
         ...action.orders,
       };
-    case CREATE_ORDER:
-      return {
-        ...state,
-        [action.orderNumber]: action.order,
-      };
-    case REMOVE_ORDER:
+    case CREATE_ORDER:{
+      let newState = {...state};
+      newState = Object.assign(action.order, newState);
+      return newState
+    }
+      // return {
+      //   ...state,
+      //   [action.order[0].order_number]: action.order,
+      // };
+    case REMOVE_ORDER:{
       let newState = { ...state };
       delete newState[action.orderNumber];
       return newState;
+    }
     default:
       return state;
   }
