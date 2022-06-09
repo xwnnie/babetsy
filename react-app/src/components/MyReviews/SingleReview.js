@@ -1,12 +1,32 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addReview } from "../../store/reviews";
 
 const SingleReview = ({ product, myReviews }) => {
+  const dispatch = useDispatch();
+  const sessionUser = useSelector((state) => state.session.user);
+
   const [showForm, setShowForm] = useState(false);
+  const [content, setContent] = useState("");
+
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    const payload = {
+      content,
+      product_id: product.id,
+      author_id: sessionUser.id,
+    };
+    await dispatch(addReview(payload));
+    setShowForm(false);
+  };
   const reviewForm = (
-    <form>
-      <textarea />
-      <button onClick={() => setShowForm(false)}>Cancel</button>
-      <button onClick={() => setShowForm(false)}>Add</button>
+    <form onSubmit={handleOnSubmit}>
+      <textarea value={content} onChange={(e) => setContent(e.target.value)} />
+      <button type="cancel" onClick={() => setShowForm(false)}>
+        Cancel
+      </button>
+      <button type="submit">Add</button>
     </form>
   );
 
