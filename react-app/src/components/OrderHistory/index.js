@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
 import CancelOrderBtn from "./CancelOrderBtn";
+import EditAddressBtn from "../EditAddress";
 
 const OrderHistory = () => {
   let orders = useSelector((state) => state.orders);
@@ -26,6 +27,7 @@ const OrderHistory = () => {
             <div>{purchases[0].order_number}</div>
             <div>placed on: {purchases[0].created_at}</div>
             {new Date() - new Date(purchases[0].created_at) < 3600000? <CancelOrderBtn orderNumber={purchases[0].order_number} /> : null}
+            {new Date() - new Date(purchases[0].created_at) < 3600000? <EditAddressBtn /> : null}
             <div>Items:</div>
             {purchases.map((item) => (
               <div key={item.product_id}>
