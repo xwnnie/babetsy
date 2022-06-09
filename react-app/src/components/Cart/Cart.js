@@ -21,20 +21,13 @@ function Cart() {
     name: products[item.id]?.name,
     image_url: products[item.id]?.image_url,
   }));
-  //   console.log("******", cartItems);
 
-  let value = cartItems.reduce((accu, item) => accu + item.quantity * item.price, 0);
-  value = Math.round(value * 100) / 100
+  let value = cartItems.reduce(
+    (accu, item) => accu + item.quantity * item.price,
+    0
+  );
+  value = Math.round(value * 100) / 100;
   let shipping = value > 25 ? 0 : 9.99;
-
-  if (!cartItems || !cartItems.length)
-    return (
-      <div className="cart">
-        No items in the cart. Start selecting items to purchase.
-      </div>
-    );
-
-  // console.log("******", cartItems)
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -60,25 +53,45 @@ function Cart() {
     console.log("********", payload);
     dispatch(reset());
     dispatch(addOrder(payload));
-    history.push("/my-account");
+    history.push("/my-orders");
   };
 
   return (
     <div className="cart">
       <div className="cart-header">Shopping Bag</div>
       <div className="cart-container">
-        <div className="cart-items-list">
+        {!cartItems || !cartItems.length ? (
+          <div className="cart-no-items-msg">
+            No items in the cart. Start selecting items to purchase.
+          </div>
+        ) : (
+          <div className="cart-items-list">
             {cartItems.map((item) => (
               <CartItem key={item.id} item={item} />
             ))}
-        </div>
+          </div>
+        )}
+
         {/* <hr /> */}
         <div className="order-review">
-          <div>Order Value: ${value}</div>
-          <div>Shipping: {shipping === 0? "Free" : "$9.99"}</div>
+          <div className="order-review-line">
+            <span>Order Value:</span> <span>${value}</span>
+          </div>
+          <div className="order-review-line">
+            <span>Shipping:</span>{" "}
+            <span>{shipping === 0 ? "Free" : "$9.99"}</span>
+          </div>
           <hr />
-          <div>Total: {Math.round((value + shipping) * 100) / 100}</div>
-          <button onClick={onSubmit}>Checkout</button>
+          <div className="order-review-line">
+            <span>Total: </span>
+            <span>${Math.round((value + shipping) * 100) / 100}</span>
+          </div>
+          <button
+            onClick={!cartItems || !cartItems.length ? null : onSubmit}
+            className={`checkout-btn ${!cartItems || !cartItems.length ? "no-item" : null}`}
+          >
+            <span>Continue to checkout</span>
+          </button>
         </div>
       </div>
     </div>

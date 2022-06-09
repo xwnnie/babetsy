@@ -1,0 +1,19 @@
+.my-review-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+.review-img {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.review-product-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.review-content {
+    font-size: 16px;
+}

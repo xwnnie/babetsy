@@ -8,23 +8,26 @@ import ShowReviewsBtn from "../Reviews";
 import "./index.css";
 
 const SingleProduct = () => {
-    const dispatch = useDispatch();
-    const history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
   const { productId } = useParams();
   const product = useSelector((state) => state.products[productId]);
-  let reviews;
-  if (product?.reviews) reviews = Object.values(product?.reviews);
+
+  let reviews = useSelector((state) => state.reviews);
+  reviews = Object.values(reviews);
+  reviews = reviews.filter(review => review.product_id === parseInt(productId));
+
   let cartItem = useSelector((state) => state.cart[productId]);
   const sessionUser = useSelector((state) => state.session.user);
   const addToCart = () => {
     if (!sessionUser) {
       alert("login to use this feature. redirecting... ");
-      history.push("/login")
-      return
+      history.push("/login");
+      return;
     }
     if (cartItem) {
-        return dispatch(updateQuantity(product.id, cartItem.quantity + 1));
-    };
+      return dispatch(updateQuantity(product.id, cartItem.quantity + 1));
+    }
     dispatch(addItem(product.id));
   };
 

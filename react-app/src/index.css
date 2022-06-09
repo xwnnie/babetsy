@@ -5,7 +5,8 @@ a {
     color: black
 }
 body {
-    font-family: 'PT Sans', sans-serif;;
+    font-family: 'PT Sans', sans-serif;
+    background-color: #faf9f8;
     /* font-family: 'Quicksand', sans-serif; */
 }
 

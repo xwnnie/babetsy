@@ -17,6 +17,15 @@ def validation_errors_to_error_messages(validation_errors):
     return errorMessages
 
 
+@review_routes.route('')
+# @login_required
+def reviews():
+    """
+    Gets all reviews
+    """
+    reviews = Review.query.all()
+    return {review.id: review.to_dict() for review in reviews}
+
 @review_routes.route('', methods=["POST"])
 @login_required
 def create_review():
