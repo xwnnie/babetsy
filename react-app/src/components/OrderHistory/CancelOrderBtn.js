@@ -7,7 +7,7 @@ const CancelOrderBtn = ({ orderNumber }) => {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Cancel Order</button>
+      <button onClick={() => setShowModal(true)}>Cancel</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CancelOrderForm setShowModal={setShowModal} orderNumber={orderNumber} />

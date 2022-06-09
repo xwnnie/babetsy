@@ -12,8 +12,53 @@
     position: relative;
 }
 
+.single-order-container button {
+    /* border: 1px solid rgb(214, 3, 3); */
+    border: none;
+    background-color: white;
+    margin-right: 15px;
+    margin-top: 5px;
+    color: rgb(214, 3, 3);
+    cursor: pointer;
+}
+
 .order-placed-date {
     position: absolute;
     top: 15px;
     right: 15px
+}
+
+.order-table {
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid rgb(203, 203, 203);
+    margin-top: 10px;
+}
+
+.order-table-header {
+    /* background: rgb(241, 241, 241); */
+    border-radius: 6px 6px 0px 0px;
+    height: 25px;
+    width: 100%;
+}
+
+.order-table-header>th {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(66, 66, 66);
+    border-bottom: 1px solid rgb(185, 184, 184);
+}
+
+.order-item-row > td {
+    font-size: 14px;
+    text-align: left;
+    padding-left: 20px;
+    height: 100%;
+}
+
+.order-item-row a td{
+    width: 300px;
 }
