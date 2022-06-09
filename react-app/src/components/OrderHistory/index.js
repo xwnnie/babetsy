@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import CancelOrderBtn from "./CancelOrderBtn";
 import EditAddressBtn from "../EditAddress";
@@ -28,10 +29,11 @@ const OrderHistory = () => {
         </div>
         {orders.map((order) => {
           purchases = Object.values(order);
+          let date = new Date(purchases[0].created_at);
           return (
             <div key={purchases[0].order_number} className="single-order-container">
               <div>{purchases[0].order_number}</div>
-              <div>placed on: {purchases[0].created_at}</div>
+              <div className="order-placed-date">{date.toDateString()}</div>
               {new Date() - new Date(purchases[0].created_at) < 3600000 ? (
                 <CancelOrderBtn orderNumber={purchases[0].order_number} />
               ) : null}
@@ -41,8 +43,7 @@ const OrderHistory = () => {
               <div>Items:</div>
               {purchases.map((item) => (
                 <div key={item.product_id}>
-                  <div>name: {products[item?.product_id]?.name}</div>
-                  <div>product id: {item.product_id}</div>
+                  <Link to={`/products/${item.product_id}`}><div>name: {products[item?.product_id]?.name}</div></Link>
                   <div>quantity: {item.quantity}</div>
                 </div>
               ))}

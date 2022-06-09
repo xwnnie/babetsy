@@ -53,7 +53,7 @@ function Cart() {
     console.log("********", payload);
     dispatch(reset());
     dispatch(addOrder(payload));
-    history.push("/my-account");
+    history.push("/my-orders");
   };
 
   return (

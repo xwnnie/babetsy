@@ -14,13 +14,12 @@ import SingleProduct from "./components/SingleProduct";
 import Cart from "./components/Cart";
 import OrderHistory from "./components/OrderHistory";
 import MyAccount from "./components/MyAccount";
+import MyReviews from "./components/MyReviews";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/AuthNav";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import UsersList from "./components/UsersList";
-import User from "./components/User";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -94,6 +93,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/my-orders" exact={true} loaded={loaded}>
           <OrderHistory />
+        </ProtectedRoute>
+        <ProtectedRoute path="/my-reviews" exact={true} loaded={loaded}>
+          <MyReviews />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
