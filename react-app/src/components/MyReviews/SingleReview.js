@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { addReview, updateReview } from "../../store/reviews";
+import DeleteReviewBtn from "../DeleteReview";
 
 const SingleReview = ({ product, myReviews }) => {
   const dispatch = useDispatch();
@@ -65,7 +66,7 @@ const SingleReview = ({ product, myReviews }) => {
                 <button onClick={() => setShowEditForm(true)}>
                   Edit Review
                 </button>
-                <button>Delete Review</button>
+                <DeleteReviewBtn reviewId={myReviews[product.id].id}/>
               </div>
             ) : null}
           </div>

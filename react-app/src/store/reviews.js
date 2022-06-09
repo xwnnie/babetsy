@@ -1,6 +1,7 @@
 const SET_REVIEWS = "products/SET_REVIEWS";
-const CREATE_REVIEW = "projects/CREATE_REVIEW";
-const EDIT_REVIEW = "projects/EDIT_REVIEW";
+const CREATE_REVIEW = "products/CREATE_REVIEW";
+const EDIT_REVIEW = "products/EDIT_REVIEW";
+const REMOVE_REVIEW = "products/REMOVE_REVIEW";
 
 export const setReviews = (reviews) => {
   return {
@@ -20,6 +21,13 @@ export const editReview = (review) => {
   return {
     type: EDIT_REVIEW,
     review,
+  };
+};
+
+export const removeReview = (reviewId) => {
+  return {
+    type: REMOVE_REVIEW,
+    reviewId,
   };
 };
 
@@ -83,6 +91,25 @@ export const updateReview = (payload, reviewId) => async (dispatch) => {
   }
 };
 
+export const deleteReview = (reviewId) => async (dispatch) => {
+  const response = await fetch(`/api/reviews/${reviewId}`, {
+    method: "DELETE",
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(removeReview(reviewId));
+    return data;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data;
+    }
+  } else {
+    return ["An error occurred. Please try again."];
+  }
+};
+
 
 const initialState = {};
 
@@ -100,6 +127,10 @@ const reviewReducer = (state = initialState, action) => {
         ...state,
         [action.review.id]: action.review,
       };
+    case REMOVE_REVIEW:
+      let newState = { ...state };
+      delete newState[action.reviewId];
+      return newState;
     default:
       return state;
   }
