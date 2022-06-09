@@ -1,0 +1,74 @@
+.home-page-container {
+    width: 900px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.ad-1 {
+    height: 500px;
+    background-image: url("https://lp2.hm.com/hmgoepprod?set=width[1920],quality[80],options[limit]&source=url[https://www2.hm.com/content/dam/home_s05/may_2022/7065f/7065F-3x2-kids-beach-accessories.jpg]&scale=width[global.width],height[15000],options[global.options]&sink=format[jpg],quality[global.quality]");
+    background-size: cover;
+}
+
+.ad-text {
+    margin: auto;
+    width: fit-content;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ad-text h1 {
+    color: white;
+    font-size: 40px;
+}
+
+.ad-text button {
+    background-color: white;
+    /* border: 1px solid rgb(66, 63, 63); */
+    border: none;
+    border-radius: 2px;
+    padding: 8px 12px;
+    width: fit-content;
+    margin: auto;
+}
+
+.ad-text button:hover {
+    /* background-color: rgb(203, 197, 197); */
+    cursor: pointer;
+}
+
+.ad-donate {
+    height: 150px;
+    background-image: url("https://www2.hm.com/content/dam/hm/TOOLBOX/Local%20Activities/2021_s03/april/8343_LocalActivation_Summer21_SB_02-3x1.jpg");
+    background-size: cover;  
+    margin-top: 10px;
+}
+
+.ad-donate-text {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ad-donate p {
+    width: 650px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    /* font-weight: bold; */
+}
+
+.ad-donate a {
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 8px 12px;
+    width: fit-content;
+    margin: auto;
+}
