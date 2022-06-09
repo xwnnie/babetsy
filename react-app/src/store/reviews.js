@@ -8,11 +8,11 @@ export const setReviews = (reviews) => {
 };
 
 export const loadReviews = () => async (dispatch) => {
-  const response = await fetch(`/api/products`);
+  const response = await fetch(`/api/reviews`);
 
   if (response.ok) {
-    const products = await response.json();
-    dispatch(setProducts(products));
+    const reviews = await response.json();
+    dispatch(setReviews(reviews));
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
@@ -25,12 +25,12 @@ export const loadReviews = () => async (dispatch) => {
 
 const initialState = {};
 
-const productReducer = (state = initialState, action) => {
+const reviewReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_PRODUCTS:
-      return { ...state, ...action.products };
+      return { ...state, ...action.reviews };
     default:
       return state;
   }
 };
-export default productReducer;
+export default reviewReducer;
