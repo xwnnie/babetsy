@@ -28,8 +28,6 @@ const Products = () => {
     history.push(`/products/${id}`);
   };
   return (
-    <div>
-      {/* <h1>{categoryName}</h1> */}
       <div className="products-container">
         {products.map((product) => (
           <div key={product.id} className="product-card">
@@ -40,11 +38,10 @@ const Products = () => {
               onClick={(e) => handleOnClick(product.id)}
             />
             <div>${product.price}</div>
-            <div>{product.name}</div>
+            <div className="products-page-name">{product.name}</div>
           </div>
         ))}
       </div>
-    </div>
   );
 };
 

@@ -7,15 +7,15 @@ const DeleteReviewBtn = ({ reviewId }) => {
 
   return (
     <>
-      <button className="table-delete-btn" onClick={() => setShowModal(true)}>
-        Delete Review
+      <button
+        className="table-delete-btn review-edit-btns"
+        onClick={() => setShowModal(true)}
+      >
+        <i className="fa-solid fa-trash-can" />
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <DeleteReviewForm
-            setShowModal={setShowModal}
-            reviewId={reviewId}
-          />
+          <DeleteReviewForm setShowModal={setShowModal} reviewId={reviewId} />
         </Modal>
       )}
     </>

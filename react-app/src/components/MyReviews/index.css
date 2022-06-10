@@ -11,9 +11,11 @@
 
 .review-product-name {
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .review-content {
     font-size: 16px;
+    background-color: white;
+    padding: 10px;
 }

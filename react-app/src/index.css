@@ -10,6 +10,18 @@ body {
     /* font-family: 'Quicksand', sans-serif; */
 }
 
+button {
+    cursor: pointer;
+}
+
+textarea {
+    font-family: inherit;
+}
+
+input, textarea:focus {
+    outline: none;
+}
+
 /* a:active {
     text-decoration: underline;
 } */

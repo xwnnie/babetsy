@@ -21,10 +21,10 @@
     content: "\f08a";
     position: absolute;
     top: 30px;
-    right: 14%;
+    right: 12%;
     visibility: visible;
-    color: rgb(79, 74, 74);
-    font-size: 30px;
+    color: rgb(165, 100, 100);
+    font-size: 24px;
     z-index: 10;
 }
 
@@ -34,7 +34,6 @@
     content: "\f004";
     position: absolute;
     color: rgb(214, 3, 3);
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 900;
-    /* fill: rgb(214, 3, 3); */
 }
