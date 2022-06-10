@@ -49,45 +49,81 @@ const SingleReview = ({ product }) => {
   };
 
   const reviewForm = (
-    <form onSubmit={handleCreateOnSubmit}>
-      <textarea value={content} onChange={(e) => setContent(e.target.value)} />
-      <button type="cancel" onClick={() => setShowCreateForm(false)}>
-        Cancel
-      </button>
-      <button type="submit">Add</button>
+    <form onSubmit={handleCreateOnSubmit} className="review-form">
+      <textarea
+        className="review-textarea"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+      />
+      <div className="review-form-btn-container">
+        <button
+          className="review-cancel-btn"
+          type="cancel"
+          onClick={() => setShowCreateForm(false)}
+        >
+          Cancel
+        </button>
+        <button className="review-submit-btn" type="submit">
+          Add
+        </button>
+      </div>
     </form>
   );
 
   const editReviewForm = (
-    <form onSubmit={handleEditOnSubmit}>
-      <textarea value={content} onChange={(e) => setContent(e.target.value)} />
-      <button type="cancel" onClick={() => setShowCreateForm(false)}>
-        Cancel
-      </button>
-      <button type="submit">Update</button>
+    <form onSubmit={handleEditOnSubmit} className="review-form">
+      <textarea
+        className="review-textarea"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+      />
+      <div className="review-form-btn-container">
+        <button
+          type="cancel"
+          className="review-cancel-btn"
+          onClick={() => setShowCreateForm(false)}
+        >
+          Cancel
+        </button>
+        <button type="submit" className="review-submit-btn">
+          Update
+        </button>
+      </div>
     </form>
   );
 
   return (
     <div className="my-review-container">
-      <Link to={`/products/${product.id}`}><img src={product?.image_url} className="review-img" /></Link>
+      <Link to={`/products/${product.id}`}>
+        <img src={product?.image_url} className="review-img" />
+      </Link>
       <div>
-        <Link to={`/products/${product.id}`}><div className="review-product-name">{product?.name}</div></Link>
+        <Link to={`/products/${product.id}`}>
+          <div className="review-product-name">{product?.name}</div>
+        </Link>
         {currReview ? (
           <div className="review-content">
-            <div>My review: </div>
+            {/* <div>My review: </div> */}
             <div>{currReview.content}</div>
             {!showEditForm ? (
               <div>
-                <button onClick={() => setShowEditForm(true)}>
-                  Edit Review
+                <button
+                  onClick={() => setShowEditForm(true)}
+                  className="review-edit-btns"
+                >
+                  <i className="fa-solid fa-pen-to-square" />
                 </button>
                 <DeleteReviewBtn reviewId={currReview?.id} />
               </div>
             ) : null}
           </div>
         ) : !showCreateForm ? (
-          <button onClick={() => setShowCreateForm(true)}>Add Review</button>
+          <button
+            className="review-submit-btn"
+            onClick={() => setShowCreateForm(true)}
+          >
+            Add Review
+          </button>
         ) : null}
         {showCreateForm ? reviewForm : null}
         {showEditForm ? editReviewForm : null}
