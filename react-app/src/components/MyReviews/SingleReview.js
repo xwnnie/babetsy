@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { addReview, updateReview } from "../../store/reviews";
 import DeleteReviewBtn from "../DeleteReview";
@@ -69,9 +70,9 @@ const SingleReview = ({ product }) => {
 
   return (
     <div className="my-review-container">
-      <img src={product?.image_url} className="review-img" />
+      <Link to={`/products/${product.id}`}><img src={product?.image_url} className="review-img" /></Link>
       <div>
-        <div className="review-product-name">{product?.name}</div>
+        <Link to={`/products/${product.id}`}><div className="review-product-name">{product?.name}</div></Link>
         {currReview ? (
           <div className="review-content">
             <div>My review: </div>

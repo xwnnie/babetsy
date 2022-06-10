@@ -6,6 +6,7 @@ import { authenticate } from "./store/session";
 import { loadProducts } from "./store/products";
 import { loadReviews } from "./store/reviews";
 import { setOrders } from "./store/orders";
+import { setFavorites } from "./store/favorites";
 
 import CategoryNav from "./components/CategoryNav";
 import MyNav from "./components/MyNav";
@@ -49,7 +50,7 @@ function App() {
         if (res.ok) {
           const data = await res.json();
           dispatch(setOrders(data.orders));
-          // dispatch(setFavorites(data.favorite_products));
+          dispatch(setFavorites(data.favorite_products));
         }
       }
       setLoaded(true);

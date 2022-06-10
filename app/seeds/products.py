@@ -254,6 +254,88 @@ def seed_products():
             "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fac%2Fb5%2Facb50af6539a73ce6acd15b530029d47c5f85bba.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_newbornbaby_clothing_jumperssweatshirts_cardigans%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
             "category_id": 1
         },
+        {
+            "name": "Disney Winnie the Pooh Organic Muslin Swaddle Set",
+            "price": 64.99,
+            "quantity": 1000000,
+            "description": "Bundle baby up with this cozy swaddle set, inspired by Disney Winnie the Pooh. Each blanket is made from breathable pure organic cotton muslin in charming prints inspired by Winnie the Pooh. Plus, they're OEKO-TEX® certified, which means they're verified to be safe from over 300 harmful substances, for a healthier naptime.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202222/0003/disney-winnie-the-pooh-organic-muslin-swaddle-set-1-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "Flora Baby Bedding",
+            "price": 164.99,
+            "quantity": 1000000,
+            "description": "Make the nursery bloom with the cheerful colors of springtime flowers. Featuring painterly patterns and handstitched details, this coordinated bedding keeps them warm and cozy.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202204/0243/flora-baby-bedding-1-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "Fuzzy Luxe Cable Knit Baby Blanket",
+            "price": 39.99,
+            "quantity": 1000000,
+            "description": "Always ready for sweater weather, our fuzzy luxe blanket is cute, cozy and classic. Perfect for snuggles, it’s made with a nylon/viscose blend that’s loved for its softness and breathability. The cable-knit design adds a dose of cozy style to any outing.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202222/0017/fuzzy-luxe-cable-knit-baby-blanket-1-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "Emery Lion Baby Quilt",
+            "price": 129.99,
+            "quantity": 1000000,
+            "description": "This Emery Lion Quilt brings a cheery, colorful look to their crib. Woven from pure linen, this animal-inspired quilt features bright embroidery of so-cute lions and tigers.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202215/0094/emery-lion-baby-quilt-1-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "Unicorn Shaped Pillow",
+            "price": 34.99,
+            "quantity": 1000000,
+            "description": "This magical unicorn pillow is all about cuddles. Perfect for naptime, reading time and playtime, they'll love cuddling up with this new friend.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202210/0057/unicorn-shaped-pillow-1-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "Rainbow Unicorn Toddler Bedding",
+            "price": 129.99,
+            "quantity": 1000000,
+            "description": "Inspire their most magical dreams with our enchanting unicorn toddler bedding. The quilt is hand decorated with frolicking unicorns, vibrant manes and dazzling shooting stars. Crafted from soft pure cotton, it’s stitched over poly-cotton fill for lightweight warmth and lasting comfort. Pair with a unicorn sheet set or an organic white sheet set. Finish the look with a rainbow pillow.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0036/rainbow-unicorn-toddler-bedding-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "Dump Truck Sound Pillow",
+            "price": 49.99,
+            "quantity": 1000000,
+            "description": "They'll rest easy with a hard working pillow. Featuring a cool dump truck design and fanciful embroidery, this fun pillow makes truck engine and trumpet horn sounds with just the push of a button.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202222/0002/dump-truck-sound-pillow-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "west elm kids x pbk x Sarah Sherman Samuel Arches Twin Over Twin Bunk Bed",
+            "price": 2799.99,
+            "quantity": 1000000,
+            "description": "Their space will shape up nicely when you add this arched bunk bed. Its sturdy, expertly crafted wooden frame adds a hint of rustic charm, while its grand scale creates a striking silhouette. Great for smaller bedrooms, this piece also sleeps two for the space of one. Designed in collaboration with west elm and celebrated interiors expert, Sarah Sherman Samuel.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202208/0221/sarah-sherman-samuel-arches-twin-over-twin-bunk-bed-1-o.jpg",
+            "category_id": 2
+        },        
+        {
+            "name": "Camden House Bed",
+            "price": 799.99,
+            "quantity": 1000000,
+            "description": "Take blanket forts to the next level with our Camden House Bed. This piece is made from quality materials that last.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202222/0020/camden-house-bed-2-o.jpg",
+            "category_id": 2
+        },
+        {
+            "name": "Romantic Toy Bin",
+            "price": 299.99,
+            "quantity": 1000000,
+            "description": "Keep their little fingers safe and make clean-up fun with an open toy bin. Built-in cubbies put toys within reach and fixed dividers organize books, toys and everything else.",
+            "image_url": " https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202204/0029/romantic-toy-bin-o.jpg",
+            "category_id": 2
+        },
+       
+
     ]
 
     for p in products:

@@ -1,0 +1,40 @@
+#faves-page-star {
+    padding-bottom: 15px;
+    margin-left: 90px;
+    font-size: 50px;
+}
+
+#faves-comment-link {
+    color: white;
+    font-size: 50px;
+    padding-top: 34px;
+}
+
+.star {
+    visibility: hidden;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.star:before {
+    content: "\2606";
+    position: absolute;
+    right: 14%;
+    /* top: 130px; */
+    visibility: visible;
+    color: yellow;
+    text-shadow: 0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+.star:checked:before {
+    content: "\2605";
+    position: absolute;
+    color: yellow;
+}
