@@ -1,8 +1,6 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 
-import logo from "../../images/logo.png";
-
 import "./index.css";
 
 const CategoryNav = () => {
