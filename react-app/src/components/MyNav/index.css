@@ -2,8 +2,71 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
+    margin-top: 25px;
+}
+
+.nav-icon {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.nav-link-div {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    /* font-weight: 100; */
 }
 
 .my-nav-container a {
     margin-right: 10px;
 }
+
+.logout-btn {
+    border: none;
+    width: fit-content;
+    color: rgb(121, 117, 117);
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.logout-btn:active {
+    color: rgb(214, 3, 3);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    font-size: 14px;
+    padding: 6px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* .nav-link-text {
+    font-size: 13px;
+    font-weight: 100;
+} */

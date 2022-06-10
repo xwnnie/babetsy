@@ -39,7 +39,7 @@ function Cart() {
     );
 
     let orderNumber = Math.floor(
-      Math.random(100000000000000, 999999999999999) * 1000000000000000
+      Math.random(1000000000000000, 999999999999999) * 1000000000000000
     );
 
     let createdAt = new Date();
@@ -50,7 +50,7 @@ function Cart() {
       order_number: `ORDER_${orderNumber}`,
       created_at: createdAt.toString(),
     };
-    console.log("********", payload);
+    // console.log("********", payload);
     dispatch(reset());
     dispatch(addOrder(payload));
     history.push("/my-orders");
@@ -62,7 +62,7 @@ function Cart() {
       <div className="cart-container">
         {!cartItems || !cartItems.length ? (
           <div className="cart-no-items-msg">
-            No items in the cart. Start selecting items to purchase.
+           Your shopping bag is empty!
           </div>
         ) : (
           <div className="cart-items-list">

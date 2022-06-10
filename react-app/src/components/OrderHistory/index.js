@@ -31,7 +31,10 @@ const OrderHistory = () => {
           purchases = Object.values(order);
           let date = new Date(purchases[0].created_at);
           return (
-            <div key={purchases[0].order_number} className="single-order-container">
+            <div
+              key={purchases[0].order_number}
+              className="single-order-container"
+            >
               <div>{purchases[0].order_number}</div>
               <div className="order-placed-date">{date.toDateString()}</div>
               {new Date() - new Date(purchases[0].created_at) < 3600000 ? (
@@ -40,13 +43,29 @@ const OrderHistory = () => {
               {new Date() - new Date(purchases[0].created_at) < 3600000 ? (
                 <EditAddressBtn />
               ) : null}
-              <div>Items:</div>
-              {purchases.map((item) => (
-                <div key={item.product_id}>
-                  <Link to={`/products/${item.product_id}`}><div>name: {products[item?.product_id]?.name}</div></Link>
-                  <div>quantity: {item.quantity}</div>
-                </div>
-              ))}
+              {/* <div>Order detail:</div> */}
+              <table className="order-table">
+                <thead>
+                  <tr className="order-table-header">
+                    <th>ITEM</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {purchases.map((item) => (
+                    <tr key={item.product_id} className="order-item-row">
+                      <Link to={`/products/${item.product_id}`}>
+                        <td>{products[item?.product_id]?.name}</td>
+                      </Link>
+                      <td>${products[item?.product_id]?.price}</td>
+                      <td>{item.quantity}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              {/* <hr /> */}
             </div>
           );
         })}

@@ -11,7 +11,7 @@ const SingleReview = ({ product }) => {
   reviews = Object.values(reviews);
   let currReview = reviews.filter(
     (review) =>
-      review.author_id === sessionUser.id && review.product_id === product.id
+      review.author_id === sessionUser?.id && review.product_id === product.id
   );
   currReview = currReview[0];
   // console.log(currReview)
@@ -21,11 +21,14 @@ const SingleReview = ({ product }) => {
   const [content, setContent] = useState("" || currReview?.content);
 
   const handleCreateOnSubmit = async (e) => {
+      let createdAt = new Date();
     e.preventDefault();
     const payload = {
       content,
       product_id: product.id,
       author_id: sessionUser.id,
+      created_at: createdAt.toString(),
+      updated_at: createdAt.toString(),
     };
     await dispatch(addReview(payload));
     setShowCreateForm(false);
@@ -34,8 +37,10 @@ const SingleReview = ({ product }) => {
 
   const handleEditOnSubmit = async (e) => {
     e.preventDefault();
+    let updatedAt = new Date();
     const payload = {
       content,
+      updated_at: updatedAt.toString()
     };
     await dispatch(updateReview(payload, currReview.id));
     setShowEditForm(false);
