@@ -11,7 +11,7 @@ const SingleReview = ({ product }) => {
   reviews = Object.values(reviews);
   let currReview = reviews.filter(
     (review) =>
-      review.author_id === sessionUser.id && review.product_id === product.id
+      review.author_id === sessionUser?.id && review.product_id === product.id
   );
   currReview = currReview[0];
   // console.log(currReview)

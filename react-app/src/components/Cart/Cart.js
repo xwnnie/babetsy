@@ -62,7 +62,7 @@ function Cart() {
       <div className="cart-container">
         {!cartItems || !cartItems.length ? (
           <div className="cart-no-items-msg">
-            No items in the cart. Start selecting items to purchase.
+           Your shopping bag is empty!
           </div>
         ) : (
           <div className="cart-items-list">

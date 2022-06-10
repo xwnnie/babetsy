@@ -20,7 +20,7 @@ const CategoryNav = () => {
   }
   return (
     <nav className="logo-category-container">
-      <div onClick={handleOnClick} className="nav-logo">LOGO</div>
+      <div onClick={handleOnClick} className="nav-logo">BABETSY</div>
       {/* <img onClick={handleOnClick} className="nav-logo" src={logo} /> */}
       <div className="category-nav">
         {categories.map((category) => (
