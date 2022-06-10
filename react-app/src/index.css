@@ -10,6 +10,10 @@ body {
     /* font-family: 'Quicksand', sans-serif; */
 }
 
+button {
+    cursor: pointer;
+}
+
 /* a:active {
     text-decoration: underline;
 } */
