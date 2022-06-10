@@ -28,7 +28,7 @@ const Products = () => {
   };
   return (
     <div>
-      <h1>{categoryName}</h1>
+      {/* <h1>{categoryName}</h1> */}
       <div className="products-container">
         {products.map((product) => (
           <div

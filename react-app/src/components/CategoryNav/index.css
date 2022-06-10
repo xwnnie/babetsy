@@ -13,6 +13,10 @@
     margin: 10px;
 }
 
+.category-nav a.active {
+    color:rgb(214, 3, 3);
+}
+
 .nav-logo {
     font-size: 30px;
     color:rgb(184, 7, 7);

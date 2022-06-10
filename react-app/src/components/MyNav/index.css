@@ -31,7 +31,7 @@
     cursor: pointer;
 }
 
-.logout-btn:active {
+.logout-btn:hover {
     color: rgb(214, 3, 3);
 }
 
