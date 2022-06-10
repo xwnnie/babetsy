@@ -15,16 +15,26 @@ const MyNav = () => {
 
   return (
     <div className="my-nav-container">
-      <Link to={`/my-account`} exact="true">
-        My Account
-      </Link>
+      <div className="dropdown">
+        <Link to={`/my-account`} exact="true" className="dropbtn">
+          My Account
+        </Link>
+        <div class="dropdown-content">
+          <Link to={`/my-account`}>Settings</Link>
+          <Link to={`/my-orders`}>Order History</Link>
+          <Link to={`/my-reviews`}>Reviews</Link>
+          {/* <Link to={`/my-reviews`}>
+            <LogoutButton />
+          </Link> */}
+          <LogoutButton />
+        </div>
+      </div>
       <Link to={`/favorites`} exact="true">
         Favorites
       </Link>
       <Link to={`/cart`} exact="true">
         Shopping bag({cartItemsQuantity})
       </Link>
-      <LogoutButton />
     </div>
   );
 };
