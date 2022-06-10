@@ -15,9 +15,9 @@
     position: relative;
 }
 
-.fave-heart {
+.single-product-container .heart {
     position: absolute;
-    top: 5px;
+    top: -45px;
     right: 30px
 }
 

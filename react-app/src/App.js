@@ -6,6 +6,7 @@ import { authenticate } from "./store/session";
 import { loadProducts } from "./store/products";
 import { loadReviews } from "./store/reviews";
 import { setOrders } from "./store/orders";
+import { setFavorites } from "./store/favorites";
 
 import CategoryNav from "./components/CategoryNav";
 import MyNav from "./components/MyNav";
@@ -16,6 +17,8 @@ import Cart from "./components/Cart";
 import OrderHistory from "./components/OrderHistory";
 import MyAccount from "./components/MyAccount";
 import MyReviews from "./components/MyReviews";
+import MyFaves from "./components/MyFaves";
+import Footer from "./components/Footer";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -49,7 +52,7 @@ function App() {
         if (res.ok) {
           const data = await res.json();
           dispatch(setOrders(data.orders));
-          // dispatch(setFavorites(data.favorite_products));
+          dispatch(setFavorites(data.favorite_products));
         }
       }
       setLoaded(true);
@@ -64,6 +67,7 @@ function App() {
     <BrowserRouter>
       {sessionUser ? <MyNav /> : <NavBar />}
       <CategoryNav />
+      <Footer />
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />
@@ -101,6 +105,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/my-reviews" exact={true} loaded={loaded}>
           <MyReviews />
+        </ProtectedRoute>
+        <ProtectedRoute path="/my-favorites" exact={true} loaded={loaded}>
+          <MyFaves />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

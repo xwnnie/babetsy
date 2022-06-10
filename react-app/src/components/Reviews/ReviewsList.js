@@ -4,7 +4,7 @@ const ReviewsList = ({ setShowModal, reviews }) => {
     <div className="reviews-container">
       <div className="reviews-header">Reviews ({reviews.length})</div>
       <button onClick={() => setShowModal(false)} className="close-modal-btn">
-        <span class="material-symbols-outlined">close</span>
+        <span className="material-symbols-outlined">close</span>
       </button>
       <div className="reviews-list">
         {reviews.map((review) => {

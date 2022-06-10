@@ -1,0 +1,40 @@
+#faves-page-heart {
+    padding-bottom: 15px;
+    margin-left: 90px;
+    font-size: 50px;
+}
+
+#faves-comment-link {
+    color: white;
+    font-size: 50px;
+    padding-top: 34px;
+}
+
+.heart {
+    visibility: hidden;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.heart:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f08a";
+    position: absolute;
+    top: 30px;
+    right: 14%;
+    visibility: visible;
+    color: rgb(79, 74, 74);
+    font-size: 30px;
+    z-index: 10;
+}
+
+
+.heart:checked:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f004";
+    position: absolute;
+    color: rgb(214, 3, 3);
+    font-size: 30px;
+    font-weight: 900;
+    /* fill: rgb(214, 3, 3); */
+}

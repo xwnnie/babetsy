@@ -28,19 +28,19 @@ function CartItem({ item }) {
             className="cart-item-button"
             onClick={() => dispatch(updateQuantity(item.id, item.quantity - 1))}
           >
-            <span class="material-symbols-outlined">remove</span>
+            <span className="material-symbols-outlined">remove</span>
           </button>
           <button
             className="cart-item-button"
             onClick={() => dispatch(updateQuantity(item.id, item.quantity + 1))}
           >
-            <span class="material-symbols-outlined">add</span>
+            <span className="material-symbols-outlined">add</span>
           </button>
           <button
             className="cart-item-button"
             onClick={() => dispatch(removeItem(item.id))}
           >
-            <span class="material-symbols-outlined">delete</span>
+            <span className="material-symbols-outlined">delete</span>
           </button>
         </div>
       </div>

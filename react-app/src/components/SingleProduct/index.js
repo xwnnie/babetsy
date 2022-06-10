@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addItem, updateQuantity } from "../../store/cart";
 
 import ShowReviewsBtn from "../Reviews";
+import FaveHeart from "../FaveHeart";
 
 import "./index.css";
 
@@ -39,11 +40,9 @@ const SingleProduct = () => {
         className="single-product-img"
       />
       <div className="single-product-info">
+        <FaveHeart productId={parseInt(productId)} />
         <div>{product?.name}</div>
         <div>${product?.price}</div>
-        <div className="fave-heart">
-          <span class="material-symbols-outlined">favorite</span>
-        </div>
         <button
           className={"plus-button" + (cartItem ? " selected" : "")}
           onClick={addToCart}

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import FaveHeart from "../FaveHeart";
 
 import "./index.css";
 
@@ -28,15 +29,16 @@ const Products = () => {
   };
   return (
     <div>
-      <h1>{categoryName}</h1>
+      {/* <h1>{categoryName}</h1> */}
       <div className="products-container">
         {products.map((product) => (
-          <div
-            key={product.id}
-            onClick={(e) => handleOnClick(product.id)}
-            className="product-card"
-          >
-            <img src={product.image_url} alt={product.name} />
+          <div key={product.id} className="product-card">
+            <FaveHeart productId={product.id} />
+            <img
+              src={product.image_url}
+              alt={product.name}
+              onClick={(e) => handleOnClick(product.id)}
+            />
             <div>${product.price}</div>
             <div>{product.name}</div>
           </div>
