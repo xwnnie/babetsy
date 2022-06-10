@@ -18,6 +18,7 @@ import OrderHistory from "./components/OrderHistory";
 import MyAccount from "./components/MyAccount";
 import MyReviews from "./components/MyReviews";
 import MyFaves from "./components/MyFaves";
+import Footer from "./components/Footer";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -66,6 +67,7 @@ function App() {
     <BrowserRouter>
       {sessionUser ? <MyNav /> : <NavBar />}
       <CategoryNav />
+      <Footer />
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />

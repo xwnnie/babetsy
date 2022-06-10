@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: fit-content;
+    font-size: 14px;
+}
+
+.footer a {
+    margin-left: 5px;
+}

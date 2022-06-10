@@ -1,37 +1,32 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-// import { getFaves, addFave, removeFave } from "../../store/faves.js";
+import { addFavorite, unFavorite} from "../../store/favorites";
 
-import "./FaveStar.css";
+import "./index.css";
 
-const FaveStar = ({ photoId }) => {
+const FaveHeart = ({ productId }) => {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  let faves = useSelector((state) => state.faves);
-  let isFave = faves[photoId] ? true : false;
-  //   const [fave, setFave] = useState(isFave);
-
-  useEffect(() => {
-    dispatch(getFaves(sessionUser.id));
-  }, [dispatch]);
+  let favorites = useSelector((state) => state.favorites);
+  let isFave = favorites.includes(productId) ? true : false;
 
   const handleCheckboxChange = async (checked) => {
     if (checked) {
       //   setFave(true);
-      dispatch(addFave(sessionUser.id, photoId));
+      dispatch(addFavorite(sessionUser.id, productId));
     } else {
       //   setFave(false);
-      dispatch(removeFave(sessionUser.id, photoId));
+      dispatch(unFavorite(sessionUser.id, productId));
     }
   };
 
   return (
     <input
-      className="star"
-      id="faves-page-star"
+      className="heart"
+      id="faves-page-heart"
       type="checkbox"
       name="addFave"
       checked={isFave}
@@ -42,4 +37,4 @@ const FaveStar = ({ photoId }) => {
   );
 };
 
-export default FaveStar;
+export default FaveHeart;
