@@ -17,6 +17,7 @@ import Cart from "./components/Cart";
 import OrderHistory from "./components/OrderHistory";
 import MyAccount from "./components/MyAccount";
 import MyReviews from "./components/MyReviews";
+import MyFaves from "./components/MyFaves";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -102,6 +103,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/my-reviews" exact={true} loaded={loaded}>
           <MyReviews />
+        </ProtectedRoute>
+        <ProtectedRoute path="/my-favorites" exact={true} loaded={loaded}>
+          <MyFaves />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

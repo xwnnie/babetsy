@@ -42,7 +42,7 @@ const SingleProduct = () => {
         <div>{product?.name}</div>
         <div>${product?.price}</div>
         <div className="fave-heart">
-          <span class="material-symbols-outlined">favorite</span>
+          <span className="material-symbols-outlined">favorite</span>
         </div>
         <button
           className={"plus-button" + (cartItem ? " selected" : "")}
