@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import { addOrder } from "../../store/orders";
 import { reset } from "../../store/cart";
@@ -58,6 +58,10 @@ function CheckOut() {
 
   return (
     <div className="cart">
+      <Link to="/cart" className="back-to-cart-link">
+        <span class="material-symbols-outlined">keyboard_backspace</span> 
+        <span className="back-to-cart-link-text">Back to shopping bag</span>
+      </Link>
       <div className="cart-header">Check Out</div>
       <div className="cart-container">
         <div className="order-detail-container">
