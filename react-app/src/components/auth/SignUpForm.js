@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import { Redirect, Link } from 'react-router-dom';
-import { signUp } from '../../store/session';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Redirect, Link } from "react-router-dom";
+import { signUp } from "../../store/session";
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
-  const [address, setAddress] = useState('');
-  const user = useSelector(state => state.session.user);
+  const [username, setUsername] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+
+  const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password, address));
+      const data = await dispatch(signUp(username, fullName, email, password, phone, address));
       if (data) {
-        setErrors(data)
+        setErrors(data);
       }
     }
   };
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
+  };
+
+  const updateFullName = (e) => {
+    setFullName(e.target.value);
   };
 
   const updateEmail = (e) => {
@@ -39,12 +46,16 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
+  const updatePhone = (e) => {
+    setPhone(e.target.value);
+  };
+
   const updateAddress = (e) => {
-    setAddress(e.target.value)
-  }
+    setAddress(e.target.value);
+  };
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to="/" />;
   }
 
   return (
@@ -62,7 +73,16 @@ const SignUpForm = () => {
             name="username"
             onChange={updateUsername}
             value={username}
-            placeholder="username"
+            placeholder="Username"
+          ></input>
+        </div>
+        <div>
+          <input
+            type="text"
+            name="fullName"
+            onChange={updateFullName}
+            value={fullName}
+            placeholder="Full Name"
           ></input>
         </div>
         <div>
@@ -91,6 +111,15 @@ const SignUpForm = () => {
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}
+          ></input>
+        </div>
+        <div>
+          <input
+            type="text"
+            name="phone"
+            onChange={updatePhone}
+            value={phone}
+            placeholder="Phone Number"
           ></input>
         </div>
         <div>

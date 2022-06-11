@@ -4,6 +4,8 @@ import { useHistory, Link } from "react-router-dom";
 import { addOrder } from "../../store/orders";
 import { reset } from "../../store/cart";
 
+import EditAddressBtn from "../EditAddress";
+
 import "./index.css";
 
 function CheckOut() {
@@ -59,10 +61,15 @@ function CheckOut() {
   return (
     <div className="cart">
       <Link to="/cart" className="back-to-cart-link">
-        <span class="material-symbols-outlined">keyboard_backspace</span> 
+        <span class="material-symbols-outlined">keyboard_backspace</span>
         <span className="back-to-cart-link-text">Back to shopping bag</span>
       </Link>
       <div className="cart-header">Check Out</div>
+      <div>
+        <div>Your shipping address: </div>
+        <div>{sessionUser.address}</div>
+        <EditAddressBtn />
+      </div>
       <div className="cart-container">
         <div className="order-detail-container">
           <div className="">View order details</div>

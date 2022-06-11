@@ -12,6 +12,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     address = db.Column(db.String(255), nullable=False)
+    phone = db.Column(db.String(20), nullable=False)
+    full_name = db.Column(db.String(100), nullable=False)
 
     reviews = db.relationship("Review", back_populates="author")
 
@@ -37,6 +39,8 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'address': self.address,
+            'full_name': self.full_name,
+            'phone': self.phone,
             'reviews': {review.id: review.to_dict() for review in self.reviews},
             'orders': {},
             'favorite_products': [product.id for product in self.favorite_products]
