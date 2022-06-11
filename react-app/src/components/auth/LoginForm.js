@@ -78,7 +78,7 @@ const LoginForm = () => {
           />
         </div>
         <div className="submit-group">
-          <button type="submit" id="login-btn">
+          <button type="submit" className="login-btn">
             Login
           </button>
           <button id="demo-btn" onClick={loginDemo}>

@@ -19,6 +19,11 @@
     padding: 40px;
 }
 
+.signup-form {
+    height: 400px;
+    top: 130px
+}
+
 .login-form-logo {
     font-style: italic;
     width: fit-content;
@@ -47,12 +52,12 @@
     border-radius: 2px;
 }
 
-#login-btn {
+#demo-btn {
     border: 1px solid black;
     background-color: white;
 }
 
-#demo-btn {
+.login-btn {
     background-color: black;
     color: white;
     border: none;
