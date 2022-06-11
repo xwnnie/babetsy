@@ -1,0 +1,40 @@
+#nav-search {
+    position: absolute;
+    top: 130px;
+    right: 150px;
+    border: none;
+    border-radius: 2px;
+    width: 180px;
+    height: 23px;
+    margin-top: 6px;
+    padding-bottom: 6px;
+}
+
+#nav-search input {
+    width: 150px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #faf9f8;
+}
+
+#nav-search input:focus {
+    background-color: #faf9f8;
+}
+
+#nav-search button {
+    background-color: #faf9f8;
+    border: none;
+    height: 19px;
+    cursor: pointer;
+    position: absolute;
+    right: 1%
+}
+
+@media only screen and (max-width: 800px) {
+    #nav-search {
+        right: 50px;
+    }
+    #nav-search input {
+        display: none;
+    }
+}
