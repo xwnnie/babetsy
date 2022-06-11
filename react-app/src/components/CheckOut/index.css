@@ -1,11 +1,14 @@
 .checkout-img {
     width: 100px;
+    height: 100px;
+    float: left;
+    object-fit: cover;
 }
 
 .checkout-items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 500px;
+    width: 450px;
 }
 
 .order-detail-container {

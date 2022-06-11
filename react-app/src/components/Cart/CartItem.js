@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { updateQuantity, removeItem } from "../../store/cart";
 
@@ -13,9 +14,9 @@ function CartItem({ item }) {
 
   return (
     <div className="cart-item">
-      <img src={item.image_url} alt={item.name} className="cart-img" />
+      <Link to={`/products/${item.id}`}><img src={item.image_url} alt={item.name} className="cart-img" /></Link>
       <div>
-        <div className="cart-item-header">{item.name}</div>
+        <Link to={`/products/${item.id}`}><div className="cart-item-header">{item.name}</div></Link>
         <div className="cart-item-price">${item.price}</div>
         <div className="cart-item-menu">
           <input
