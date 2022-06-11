@@ -52,6 +52,8 @@ def update_address(id):
         user = User.query.get(id)
         if user:
             user.address = form.data['address']
+            user.full_name = form.data['full_name']
+            user.phone = form.data['phone']
             db.session.commit()
             return user.to_dict()
         else:

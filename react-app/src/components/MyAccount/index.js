@@ -14,12 +14,10 @@ const MyAccount = () => {
       <div className="account-container ">
         <div>Settings</div>
         <div className="account-details">
-          <div>{sessionUser?.username}</div>
-          <div>First name: </div>
-          <div>Last name: </div>
-          <div>Date of birth</div>
-          <div>Phone number</div>
-          <div>{sessionUser?.address}</div>
+          <div>Username: {sessionUser?.username}</div>
+          <div>Full name: {sessionUser?.full_name}</div>
+          <div>Phone number: {sessionUser?.phone}</div>
+          <div>Address: {sessionUser?.address}</div>
           <EditAddressBtn />
         </div>
 
