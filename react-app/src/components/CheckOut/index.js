@@ -67,7 +67,7 @@ function CheckOut() {
       <div className="cart-header">Check Out</div>
       <div>
         <div>Your shipping address: </div>
-        <div>{sessionUser.address}</div>
+        <div>{sessionUser?.address}</div>
         <EditAddressBtn />
       </div>
       <div className="cart-container">
