@@ -1,5 +1,13 @@
 .account-container {
     position: absolute;
     left: 30%;
-    top: 200px
+    top: 200px;
+    /* background-color: white; */
+    /* width: 700px; */
+}
+
+.account-details {
+    background-color: white;
+    width: 700px;
+    padding: 15px 20px;
 }

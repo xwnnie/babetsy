@@ -23,7 +23,7 @@ const SearchResult = () => {
   return (
     <div className="main-container">
       <div id="search-h2">
-        SHOWING RESULTS FOR
+        Showing Results for
         <span> "{searchQuery}" </span>
       </div>
       {!results.length ? (

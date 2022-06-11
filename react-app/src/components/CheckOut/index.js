@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { reset } from "../../store/cart";
+
 import { addOrder } from "../../store/orders";
+import { reset } from "../../store/cart";
 
-import CartItem from "./CartItem";
-import "./Cart.css";
+import "./index.css";
 
-function Cart() {
+function CheckOut() {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -31,24 +31,47 @@ function Cart() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    history.push("/checkout");
+    window.alert(
+      "Purchased the following:\n" +
+        `${cartItems
+          .map((item) => `${item.quantity} of ${item.name}`)
+          .join("\n")}`
+    );
+
+    let orderNumber = Math.floor(
+      Math.random(1000000000000000, 999999999999999) * 1000000000000000
+    );
+
+    let createdAt = new Date();
+
+    const payload = {
+      buyer_id: sessionUser.id,
+      products: cartItems,
+      order_number: `ORDER_${orderNumber}`,
+      created_at: createdAt.toString(),
+    };
+    // console.log("********", payload);
+    dispatch(reset());
+    dispatch(addOrder(payload));
+    history.push("/my-orders");
   };
 
   return (
     <div className="cart">
-      <div className="cart-header">Shopping Bag</div>
+      <div className="cart-header">Check Out</div>
       <div className="cart-container">
-        {!cartItems || !cartItems.length ? (
-          <div className="cart-no-items-msg">
-           Your shopping bag is empty!
-          </div>
-        ) : (
-          <div className="cart-items-list">
+        <div className="order-detail-container">
+          <div className="">View order details</div>
+          <div className="cart-items-list checkout-items">
             {cartItems.map((item) => (
-              <CartItem key={item.id} item={item} />
+              <div key={item.id}>
+                {" "}
+                <img src={item.image_url} className="checkout-img" />{" "}
+              </div>
             ))}
           </div>
-        )}
+        </div>
+
         <div className="order-review">
           <div className="order-review-line">
             <span>Order Value:</span> <span>${value}</span>
@@ -64,9 +87,11 @@ function Cart() {
           </div>
           <button
             onClick={!cartItems || !cartItems.length ? null : onSubmit}
-            className={`checkout-btn ${!cartItems || !cartItems.length ? "no-item" : null}`}
+            className={`checkout-btn ${
+              !cartItems || !cartItems.length ? "no-item" : null
+            }`}
           >
-            <span>Continue to checkout</span>
+            <span>Complete purchase</span>
           </button>
         </div>
       </div>
@@ -74,4 +99,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default CheckOut;

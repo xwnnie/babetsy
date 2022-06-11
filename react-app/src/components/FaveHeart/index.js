@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { addFavorite, unFavorite} from "../../store/favorites";
 
@@ -7,6 +8,7 @@ import "./index.css";
 
 const FaveHeart = ({ productId }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -14,6 +16,7 @@ const FaveHeart = ({ productId }) => {
   let isFave = favorites.includes(productId) ? true : false;
 
   const handleCheckboxChange = async (checked) => {
+    if (!sessionUser) return history.push("/login");
     if (checked) {
       //   setFave(true);
       dispatch(addFavorite(sessionUser.id, productId));
@@ -21,7 +24,7 @@ const FaveHeart = ({ productId }) => {
       //   setFave(false);
       dispatch(unFavorite(sessionUser.id, productId));
     }
-  };
+  }; 
 
   return (
     <input

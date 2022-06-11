@@ -18,7 +18,7 @@ const MyFaves = () => {
       };
     return (
       <div>
-        {/* <h1>{categoryName}</h1> */}
+        <div className="favorites-header">Favorites</div>
         <div className="products-container">
           {products.map((product) => (
             <div key={product?.id} className="product-card">

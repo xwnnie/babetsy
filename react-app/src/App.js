@@ -21,6 +21,7 @@ import MyFaves from "./components/MyFaves";
 import Footer from "./components/Footer";
 import Search from "./components/Search";
 import SearchResult from "./components/Search/SearchResults";
+import CheckOut from "./components/CheckOut";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -115,6 +116,9 @@ function App() {
         <Route path="/search/:searchQuery" exact>
           <SearchResult />
         </Route>
+        <ProtectedRoute path="/checkout" exact={true} loaded={loaded}>
+          <CheckOut />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
