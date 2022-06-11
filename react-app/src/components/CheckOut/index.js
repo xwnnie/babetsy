@@ -51,6 +51,9 @@ function CheckOut() {
       products: cartItems,
       order_number: `ORDER_${orderNumber}`,
       created_at: createdAt.toString(),
+      full_name: sessionUser.full_name,
+      phone: sessionUser.phone,
+      address: sessionUser.address
     };
     // console.log("********", payload);
     dispatch(reset());

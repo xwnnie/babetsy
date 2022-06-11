@@ -44,6 +44,7 @@ const OrderHistory = () => {
                 <EditAddressBtn />
               ) : null}
               {/* <div>Order detail:</div> */}
+
               <table className="order-table">
                 <thead>
                   <tr className="order-table-header">
@@ -65,6 +66,12 @@ const OrderHistory = () => {
                   ))}
                 </tbody>
               </table>
+              <div>
+                <div>Shipping Address</div>
+                <div>{purchases[0].full_name}</div>
+                <div>{purchases[0].phone}</div>
+                <div>{purchases[0].address}</div>
+              </div>
               {/* <hr /> */}
             </div>
           );

@@ -33,7 +33,10 @@ def create_order():
                     product_id=int(product['id']),
                     quantity=int(product['quantity']),
                     order_number=payload['order_number'],
-                    created_at=payload['created_at']
+                    created_at=payload['created_at'],
+                    full_name=payload['full_name'],
+                    phone=payload['phone'],
+                    address=payload['address']
                 )
                 # if order:
                 #     print("new order")
