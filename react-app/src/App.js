@@ -20,6 +20,7 @@ import MyReviews from "./components/MyReviews";
 import MyFaves from "./components/MyFaves";
 import Footer from "./components/Footer";
 import Search from "./components/Search";
+import SearchResult from "./components/Search/SearchResults";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -111,6 +112,9 @@ function App() {
         <ProtectedRoute path="/my-favorites" exact={true} loaded={loaded}>
           <MyFaves />
         </ProtectedRoute>
+        <Route path="/search/:searchQuery" exact>
+          <SearchResult />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

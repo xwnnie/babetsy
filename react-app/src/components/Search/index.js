@@ -18,9 +18,10 @@ const Search = () => {
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Search products"
       />
       <button type="submit">
-        <i className="fa-solid fa-magnifying-glass"></i>
+        <span class="material-symbols-outlined">search</span>
       </button>
     </form>
   );

@@ -1,13 +1,14 @@
 #nav-search {
     position: absolute;
-    top: 130px;
+    top: 123px;
     right: 150px;
     border: none;
     border-radius: 2px;
     width: 180px;
-    height: 23px;
+    height: 28px;
     margin-top: 6px;
     padding-bottom: 6px;
+    display: flex;
 }
 
 #nav-search input {
@@ -15,19 +16,35 @@
     border: none;
     border-bottom: 1px solid black;
     background-color: #faf9f8;
+    font-family: inherit;
+    padding-left: 15px;
 }
 
 #nav-search input:focus {
     background-color: #faf9f8;
 }
 
+#nav-search input::placeholder {
+    color: black;
+}
+
 #nav-search button {
     background-color: #faf9f8;
     border: none;
-    height: 19px;
+    /* height: 15px; */
     cursor: pointer;
-    position: absolute;
-    right: 1%
+    
+}
+
+#nav-search span{
+    font-size: 28px;
+}
+
+#search-h2 {
+    margin: auto;
+    width: fit-content;
+    margin-top: 30px;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 800px) {
