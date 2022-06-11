@@ -11,10 +11,14 @@ const MyAccount = () => {
   return (
     <div>
       <AccountSideBar />
-      <div className="account-container">
-        <div>
-          <div>My Account</div>
+      <div className="account-container ">
+        <div>Settings</div>
+        <div className="account-details">
           <div>{sessionUser?.username}</div>
+          <div>First name: </div>
+          <div>Last name: </div>
+          <div>Date of birth</div>
+          <div>Phone number</div>
           <div>{sessionUser?.address}</div>
           <EditAddressBtn />
         </div>

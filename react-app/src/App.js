@@ -19,6 +19,9 @@ import MyAccount from "./components/MyAccount";
 import MyReviews from "./components/MyReviews";
 import MyFaves from "./components/MyFaves";
 import Footer from "./components/Footer";
+import Search from "./components/Search";
+import SearchResult from "./components/Search/SearchResults";
+import CheckOut from "./components/CheckOut";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -68,6 +71,7 @@ function App() {
       {sessionUser ? <MyNav /> : <NavBar />}
       <CategoryNav />
       <Footer />
+      <Search />
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />
@@ -108,6 +112,12 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/my-favorites" exact={true} loaded={loaded}>
           <MyFaves />
+        </ProtectedRoute>
+        <Route path="/search/:searchQuery" exact>
+          <SearchResult />
+        </Route>
+        <ProtectedRoute path="/checkout" exact={true} loaded={loaded}>
+          <CheckOut />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
