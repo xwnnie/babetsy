@@ -13,15 +13,15 @@ export const setCartItems = (items) => {
   };
 };
 
-export const addItem = (productId) => {
+const addItem = (item) => {
   return {
     type: ADD_ITEM,
-    productId,
+    item,
   };
 };
 
-export const updateQuantity = (productId, quantity) => {
-  if (quantity < 1) return removeItem(productId);
+const updateQuantity = (buyerId, productId, quantity) => {
+  if (quantity < 1) return removeCartItem(buyerId, productId);
   return {
     type: UPDATE_QUANTITY,
     productId,
@@ -29,17 +29,101 @@ export const updateQuantity = (productId, quantity) => {
   };
 };
 
-export const removeItem = (productId) => {
+const removeItem = (productId) => {
   return {
     type: REMOVE_ITEM,
     productId,
   };
 };
 
-export const reset = () => {
+const reset = () => {
   return {
     type: RESET,
   };
+};
+
+
+export const addCartItem = (payload) => async (dispatch) => {
+  const response = await fetch(`/api/cart`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(addItem(data));
+    return data;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return "An error occurred. Please try again.";
+  }
+};
+
+export const updateCartItemQuantity = (payload) => async (dispatch) => {
+  const response = await fetch(`/api/cart/${payload.buyer_id}/${payload.product_id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(updateQuantity(data.buyer_id, data.product_id, data.quantity));
+    return data;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return "An error occurred. Please try again.";
+  }
+};
+
+export const removeCartItem = (buyerId, productId) => async (dispatch) => {
+  const response = await fetch(`/api/cart/${buyerId}/${productId}`, {
+    method: "DELETE",
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(removeItem(productId));
+    return data;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data;
+    }
+  } else {
+    return ["An error occurred. Please try again."];
+  }
+};
+
+
+export const clearCartItems = (buyerId) => async (dispatch) => {
+  const response = await fetch(`/api/cart/${buyerId}/clear`, {
+    method: "DELETE",
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(reset());
+    return data;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data;
+    }
+  } else {
+    return ["An error occurred. Please try again."];
+  }
 };
 
 const initialState = {};
@@ -54,10 +138,7 @@ export default function cartReducer(state = initialState, action) {
     case ADD_ITEM:
       return {
         ...state,
-        [action.productId]: {
-          id: action.productId,
-          quantity: 1,
-        },
+        [action.item.product_id]: action.item,
       };
     case UPDATE_QUANTITY:
       return {

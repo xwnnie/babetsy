@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
 import { addOrder } from "../../store/orders";
-import { reset } from "../../store/cart";
+import { clearCartItems } from "../../store/cart";
 
 import EditAddressBtn from "../EditAddress";
 
@@ -19,9 +19,9 @@ function CheckOut() {
   cartItems = Object.values(cartItems);
   cartItems = cartItems.map((item) => ({
     ...item,
-    price: products[item.id]?.price,
-    name: products[item.id]?.name,
-    image_url: products[item.id]?.image_url,
+    price: products[item.product_id]?.price,
+    name: products[item.product_id]?.name,
+    image_url: products[item.product_id]?.image_url,
   }));
 
   let value = cartItems.reduce(
@@ -58,7 +58,7 @@ function CheckOut() {
       total
     };
     // console.log("********", payload);
-    dispatch(reset());
+    dispatch(clearCartItems(sessionUser.id));
     dispatch(addOrder(payload));
     history.push("/my-orders");
   };
@@ -76,10 +76,15 @@ function CheckOut() {
             <div className="">Review order details</div>
             <div className="cart-items-list checkout-items">
               {cartItems.map((item) => (
-                <div key={item.id}>
-                  {" "}
-                  <img src={item.image_url} className="checkout-img" alt={item.name}/>
-                  <div>${item.price} x {item.quantity}</div>
+                <div key={item.product_id}>
+                  <img
+                    src={item.image_url}
+                    className="checkout-img"
+                    alt={item.name}
+                  />
+                  <div>
+                    ${item.price} x {item.quantity}
+                  </div>
                 </div>
               ))}
             </div>

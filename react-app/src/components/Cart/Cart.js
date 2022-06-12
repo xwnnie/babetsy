@@ -13,9 +13,9 @@ function Cart() {
   cartItems = Object.values(cartItems);
   cartItems = cartItems.map((item) => ({
     ...item,
-    price: products[item.id]?.price,
-    name: products[item.id]?.name,
-    image_url: products[item.id]?.image_url,
+    price: products[item.product_id]?.price,
+    name: products[item.product_id]?.name,
+    image_url: products[item.product_id]?.image_url,
   }));
 
   let value = cartItems.reduce(
@@ -41,7 +41,7 @@ function Cart() {
           ) : (
             <div className="cart-items-list">
               {cartItems.map((item) => (
-                <CartItem key={item.id} item={item} />
+                <CartItem key={item.product_id} item={item} />
               ))}
             </div>
           )}
