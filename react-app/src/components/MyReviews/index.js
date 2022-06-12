@@ -31,7 +31,7 @@ const MyReviews = () => {
           <div>Reviews on purchased items</div>
         </div>
         {purchasedProducts.map((product) => (
-            <SingleReview product={product} key={product.id}/>
+            <SingleReview product={product} key={product?.id}/>
         )
         )}
       </div>

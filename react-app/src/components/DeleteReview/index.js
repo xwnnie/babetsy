@@ -11,7 +11,7 @@ const DeleteReviewBtn = ({ reviewId }) => {
         className="table-delete-btn review-edit-btns"
         onClick={() => setShowModal(true)}
       >
-        <i className="fa-solid fa-trash-can" />
+        <span className="material-symbols-outlined">delete</span>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

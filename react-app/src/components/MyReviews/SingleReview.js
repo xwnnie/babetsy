@@ -71,7 +71,7 @@ const SingleReview = ({ product }) => {
   );
 
   const editReviewForm = (
-    <form onSubmit={handleEditOnSubmit} className="review-form">
+    <form onSubmit={handleEditOnSubmit} className="review-form edit">
       <textarea
         className="review-textarea"
         value={content}
@@ -95,7 +95,11 @@ const SingleReview = ({ product }) => {
   return (
     <div className="my-review-container">
       <Link to={`/products/${product.id}`}>
-        <img src={product?.image_url} className="review-img" alt={product?.name}/>
+        <img
+          src={product?.image_url}
+          className="review-img"
+          alt={product?.name}
+        />
       </Link>
       <div>
         <Link to={`/products/${product.id}`}>
@@ -103,15 +107,14 @@ const SingleReview = ({ product }) => {
         </Link>
         {currReview ? (
           <div className="review-content">
-            {/* <div>My review: </div> */}
             <div>{currReview.content}</div>
             {!showEditForm ? (
-              <div>
+              <div className="edit-review-btns-container">
                 <button
                   onClick={() => setShowEditForm(true)}
                   className="review-edit-btns"
                 >
-                  <i className="fa-solid fa-pen-to-square" />
+                  <span className="material-symbols-outlined">edit</span>
                 </button>
                 <DeleteReviewBtn reviewId={currReview?.id} />
               </div>
