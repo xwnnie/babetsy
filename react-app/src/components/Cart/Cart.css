@@ -9,12 +9,13 @@
     margin: auto;
     margin-top: 0px;
     padding: 0 8px;
-    width: 800px;
+    width: 1000px;
 }
 
 .cart-container {
     display: flex;
     flex-direction: row;
+    width: 800px;
 }
 
 .cart-items-list{
@@ -56,6 +57,7 @@
     width: fit-content;
     font-size: 30px;
     margin-bottom: 25px;
+    margin-top: 30px;
 }
 
 .cart-img {

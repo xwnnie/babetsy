@@ -95,7 +95,7 @@ const SingleReview = ({ product }) => {
   return (
     <div className="my-review-container">
       <Link to={`/products/${product.id}`}>
-        <img src={product?.image_url} className="review-img" />
+        <img src={product?.image_url} className="review-img" alt={product?.name}/>
       </Link>
       <div>
         <Link to={`/products/${product.id}`}>

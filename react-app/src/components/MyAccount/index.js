@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 
-import OrderHistory from "../OrderHistory";
 import EditAddressBtn from "../EditAddress";
 import AccountSideBar from "../AccountSideBar";
 
@@ -20,8 +19,6 @@ const MyAccount = () => {
           <div>Address: {sessionUser?.address}</div>
           <EditAddressBtn />
         </div>
-
-        {/* <OrderHistory /> */}
       </div>
     </div>
   );

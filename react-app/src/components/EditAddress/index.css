@@ -1,0 +1,12 @@
+.edit-address-pen {
+    position: absolute;
+    top: 21px;
+    right: 10px;
+    border: none;
+    background-color: inherit;
+    
+}
+
+.edit-address-pen span{
+    font-size: 18px;
+}

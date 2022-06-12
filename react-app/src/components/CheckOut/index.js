@@ -64,53 +64,56 @@ function CheckOut() {
   };
 
   return (
-    <div className="cart">
+    <div>
+      <div className="cart-header">Check Out</div>
       <Link to="/cart" className="back-to-cart-link">
-        <span class="material-symbols-outlined">keyboard_backspace</span>
+        <span className="material-symbols-outlined">keyboard_backspace</span>
         <span className="back-to-cart-link-text">Back to shopping bag</span>
       </Link>
-      <div className="cart-header">Check Out</div>
-      <div>
-        <div>Your shipping address: </div>
-        <div>{sessionUser?.full_name}</div>
-        <div>{sessionUser?.phone}</div>
-        <div>{sessionUser?.address}</div>
-        <EditAddressBtn />
-      </div>
-      <div className="cart-container">
-        <div className="order-detail-container">
-          <div className="">View order details</div>
-          <div className="cart-items-list checkout-items">
-            {cartItems.map((item) => (
-              <div key={item.id}>
-                {" "}
-                <img src={item.image_url} className="checkout-img" />{" "}
-              </div>
-            ))}
+      <div className="cart">
+        <div className="cart-container">
+          <div className="order-detail-container">
+            <div className="">Review order details</div>
+            <div className="cart-items-list checkout-items">
+              {cartItems.map((item) => (
+                <div key={item.id}>
+                  {" "}
+                  <img src={item.image_url} className="checkout-img" alt={item.name}/>
+                  <div>${item.price} x {item.quantity}</div>
+                </div>
+              ))}
+            </div>
+            <div className="checkout-shipping-container">
+              <div>Shipping </div>
+              <div>{sessionUser?.full_name}</div>
+              <div>{sessionUser?.phone}</div>
+              <div>{sessionUser?.address}</div>
+              <EditAddressBtn />
+            </div>
           </div>
-        </div>
 
-        <div className="order-review">
-          <div className="order-review-line">
-            <span>Order Value:</span> <span>${value}</span>
+          <div className="order-review checkout">
+            <div className="order-review-line">
+              <span>Order Value:</span> <span>${value}</span>
+            </div>
+            <div className="order-review-line">
+              <span>Shipping:</span>{" "}
+              <span>{shipping === 0 ? "Free" : "$9.99"}</span>
+            </div>
+            <hr />
+            <div className="order-review-line">
+              <span>Total: </span>
+              <span>${total}</span>
+            </div>
+            <button
+              onClick={!cartItems || !cartItems.length ? null : onSubmit}
+              className={`checkout-btn ${
+                !cartItems || !cartItems.length ? "no-item" : null
+              }`}
+            >
+              <span>Complete purchase</span>
+            </button>
           </div>
-          <div className="order-review-line">
-            <span>Shipping:</span>{" "}
-            <span>{shipping === 0 ? "Free" : "$9.99"}</span>
-          </div>
-          <hr />
-          <div className="order-review-line">
-            <span>Total: </span>
-            <span>${total}</span>
-          </div>
-          <button
-            onClick={!cartItems || !cartItems.length ? null : onSubmit}
-            className={`checkout-btn ${
-              !cartItems || !cartItems.length ? "no-item" : null
-            }`}
-          >
-            <span>Complete purchase</span>
-          </button>
         </div>
       </div>
     </div>
