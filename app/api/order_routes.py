@@ -36,7 +36,8 @@ def create_order():
                     created_at=payload['created_at'],
                     full_name=payload['full_name'],
                     phone=payload['phone'],
-                    address=payload['address']
+                    address=payload['address'],
+                    total=payload['total']
                 )
                 # if order:
                 #     print("new order")

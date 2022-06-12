@@ -24,8 +24,7 @@ const OrderHistory = () => {
       <AccountSideBar />
       <div className="account-container">
         <div id="note">
-          Note: After placed, orders can be updated or
-          canceled for the first one hour. Please contact customer service for any further questions.
+          Note: After placed, orders can be canceled for the first one hour. Please contact customer service for any further questions.
         </div>
         {orders.map((order) => {
           purchases = Object.values(order);
@@ -40,10 +39,9 @@ const OrderHistory = () => {
               {new Date() - new Date(purchases[0].created_at) < 3600000 ? (
                 <CancelOrderBtn orderNumber={purchases[0].order_number} />
               ) : null}
-              {new Date() - new Date(purchases[0].created_at) < 3600000 ? (
+              {/* {new Date() - new Date(purchases[0].created_at) < 3600000 ? (
                 <EditAddressBtn />
-              ) : null}
-              {/* <div>Order detail:</div> */}
+              ) : null} */}
 
               <table className="order-table">
                 <thead>
@@ -66,6 +64,7 @@ const OrderHistory = () => {
                   ))}
                 </tbody>
               </table>
+              <div>Order Total: ${purchases[0].total}</div>
               <div>
                 <div>Shipping Address</div>
                 <div>{purchases[0].full_name}</div>

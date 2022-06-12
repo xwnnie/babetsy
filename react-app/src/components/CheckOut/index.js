@@ -30,6 +30,7 @@ function CheckOut() {
   );
   value = Math.round(value * 100) / 100;
   let shipping = value > 25 ? 0 : 9.99;
+  let total = Math.round((value + shipping) * 100) / 100;
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -53,7 +54,8 @@ function CheckOut() {
       created_at: createdAt.toString(),
       full_name: sessionUser.full_name,
       phone: sessionUser.phone,
-      address: sessionUser.address
+      address: sessionUser.address,
+      total
     };
     // console.log("********", payload);
     dispatch(reset());
@@ -99,7 +101,7 @@ function CheckOut() {
           <hr />
           <div className="order-review-line">
             <span>Total: </span>
-            <span>${Math.round((value + shipping) * 100) / 100}</span>
+            <span>${total}</span>
           </div>
           <button
             onClick={!cartItems || !cartItems.length ? null : onSubmit}

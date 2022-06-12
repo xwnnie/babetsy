@@ -1,17 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { reset } from "../../store/cart";
-import { addOrder } from "../../store/orders";
+// import { reset } from "../../store/cart";
+// import { addOrder } from "../../store/orders";
 
 import CartItem from "./CartItem";
 import "./Cart.css";
 
 function Cart() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const history = useHistory();
 
   const products = useSelector((state) => state.products);
-  const sessionUser = useSelector((state) => state.session.user);
+  // const sessionUser = useSelector((state) => state.session.user);
 
   let cartItems = useSelector((state) => state.cart);
   cartItems = Object.values(cartItems);
@@ -28,6 +28,7 @@ function Cart() {
   );
   value = Math.round(value * 100) / 100;
   let shipping = value > 25 ? 0 : 9.99;
+  let total = Math.round((value + shipping) * 100) / 100;
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -60,7 +61,7 @@ function Cart() {
           <hr />
           <div className="order-review-line">
             <span>Total: </span>
-            <span>${Math.round((value + shipping) * 100) / 100}</span>
+            <span>${total}</span>
           </div>
           <button
             onClick={!cartItems || !cartItems.length ? null : onSubmit}

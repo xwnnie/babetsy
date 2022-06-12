@@ -11,6 +11,7 @@ class Order(db.Model):
     phone = db.Column(db.String(20), nullable=False)
     address = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.String, nullable=False)
+    total = db.Column(db.String(20), nullable=False)
 
     product_id = db.Column(db.Integer, db.ForeignKey(
         "products.id"), nullable=False)
@@ -30,5 +31,6 @@ class Order(db.Model):
             "created_at": self.created_at,
             'phone': self.phone,
             'full_name': self.full_name,
-            'address': self.address
+            'address': self.address,
+            'total': self.total
         }
