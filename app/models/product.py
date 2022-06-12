@@ -17,6 +17,7 @@ class Product(db.Model):
     reviews = db.relationship("Review", back_populates="product")
 
     orders = db.relationship("Order", back_populates="product")
+    cart = db.relationship("Cart", back_populates="product")
 
     favored_by = db.relationship(
         "User", back_populates="favorite_products", secondary=favorites)
