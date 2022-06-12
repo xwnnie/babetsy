@@ -1,6 +1,6 @@
-const SET_ORDERS = "projects/SET_ORDERS";
-const CREATE_ORDER = "projects/CREATE_ORDER";
-const REMOVE_ORDER = "project/REMOVE_ORDER";
+const SET_ORDERS = "products/SET_ORDERS";
+const CREATE_ORDER = "products/CREATE_ORDER";
+const REMOVE_ORDER = "products/REMOVE_ORDER";
 
 export const setOrders = (orders) => {
   return {

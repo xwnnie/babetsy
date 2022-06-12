@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import FaveHeart from "../FaveHeart";
 
 import "./index.css";

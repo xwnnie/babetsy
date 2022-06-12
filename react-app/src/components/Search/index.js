@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import "./index.css";
 
@@ -21,7 +20,7 @@ const Search = () => {
         placeholder="Search products"
       />
       <button type="submit">
-        <span class="material-symbols-outlined">search</span>
+        <span className="material-symbols-outlined">search</span>
       </button>
     </form>
   );

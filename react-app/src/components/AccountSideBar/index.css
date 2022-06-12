@@ -5,8 +5,6 @@
     width: 256px;
     height: 100vh;
     background: #faf9f8;
-    /* border-radius: 0px; */
-    /* box-shadow: 0px 0px 1px #b0b3b7, 0px 0px 2px #ced1d4; */
 }
 
 .sidebar-menu {
@@ -21,7 +19,7 @@
 }
 
 .sidebar-menu-item a.selected {
-    color:rgb(214, 3, 3);
+    color:rgb(160, 3, 3);
 }
 
 .sidebar-header {

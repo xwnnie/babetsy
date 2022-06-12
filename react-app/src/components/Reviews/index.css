@@ -40,6 +40,7 @@
     height: 150px;
     resize: none;
     border: none;
+    padding: 10px 5px;
 }
 
 /* .review-form button {
@@ -70,7 +71,12 @@
 
 .review-edit-btns {
     border: none;
-    background-color: #faf9f8;
+    background-color: inherit;
+    padding: 2px;
+}
+
+.review-edit-btns span {
+    font-size: 16px;
 }
 
 

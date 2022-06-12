@@ -12,3 +12,6 @@ class OrderForm(FlaskForm):
     products = FieldList(FormField(ProductForm))
     order_number = StringField('order_number', validators=[DataRequired()])
     created_at = StringField('created_at')
+    full_name = StringField('full_name', validators=[DataRequired()])
+    phone = StringField('phone', validators=[DataRequired()])
+    address = StringField('address', validators=[DataRequired()])

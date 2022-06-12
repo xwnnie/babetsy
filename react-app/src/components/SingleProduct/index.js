@@ -1,7 +1,7 @@
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addItem, updateQuantity } from "../../store/cart";
+import { addCartItem, updateCartItemQuantity} from "../../store/cart";
 
 import ShowReviewsBtn from "../Reviews";
 import FaveHeart from "../FaveHeart";
@@ -26,10 +26,22 @@ const SingleProduct = () => {
       history.push("/login");
       return;
     }
+    let payload;
+
     if (cartItem) {
-      return dispatch(updateQuantity(product.id, cartItem.quantity + 1));
+      payload = {
+        buyer_id: sessionUser.id,
+        product_id: product.id,
+        quantity: cartItem.quantity + 1,
+      };
+      return dispatch(updateCartItemQuantity(payload));
     }
-    dispatch(addItem(product.id));
+    payload = {
+      buyer_id: sessionUser.id,
+      product_id: product.id,
+      quantity: 1
+    }
+    dispatch(addCartItem(payload));
   };
 
   return (

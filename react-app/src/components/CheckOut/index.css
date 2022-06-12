@@ -1,14 +1,40 @@
 .checkout-img {
     width: 100px;
+    height: 100px;
+    float: left;
+    object-fit: cover;
+}
+
+.order-review.checkout {
+    margin-left: 64.5px;
 }
 
 .checkout-items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 500px;
+    width: 450px;
 }
 
 .order-detail-container {
     display: flex;
     flex-direction: column;
+}
+
+.back-to-cart-link {
+    position: absolute;
+    left: 100px;
+    top: 130px;
+    display: flex;
+}
+
+.back-to-cart-link-text {
+    padding-left: 5px;
+    padding-top: 2px;
+}
+
+.checkout-shipping-container {
+    margin-top: 30px;
+    background-color: white;
+    padding: 10px;
+    position: relative;
 }

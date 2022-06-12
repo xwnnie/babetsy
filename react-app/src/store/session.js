@@ -12,9 +12,9 @@ const removeUser = () => ({
   type: REMOVE_USER,
 });
 
-const updateAddress = (address) => ({
+const updateAddress = (user) => ({
   type: UPDATE_USER_ADDRESS,
-  address,
+  user,
 });
 
 const initialState = { user: null };
@@ -74,7 +74,7 @@ export const logout = () => async (dispatch) => {
 };
 
 export const signUp =
-  (username, email, password, address) => async (dispatch) => {
+  (username, fullName, email, password, phone, address) => async (dispatch) => {
     const response = await fetch("/api/auth/signup", {
       method: "POST",
       headers: {
@@ -82,8 +82,10 @@ export const signUp =
       },
       body: JSON.stringify({
         username,
+        full_name: fullName,
         email,
         password,
+        phone,
         address,
       }),
     });
@@ -113,7 +115,7 @@ export const editAddress = (payload, userId) => async (dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
-    dispatch(updateAddress(data.address));
+    dispatch(updateAddress(data));
     return null;
   } else if (response.status < 500) {
     const data = await response.json();
@@ -132,7 +134,7 @@ export default function reducer(state = initialState, action) {
     case REMOVE_USER:
       return { user: null };
     case UPDATE_USER_ADDRESS: 
-      return {...state,user: {...state.user, address: action.address}}
+      return {...state,user: {...state.user, address: action.user.address, phone: action.user.phone, full_name: action.user.full_name}}
     default:
       return state;
   }

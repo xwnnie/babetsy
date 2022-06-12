@@ -12,10 +12,13 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     address = db.Column(db.String(255), nullable=False)
+    phone = db.Column(db.String(20), nullable=False)
+    full_name = db.Column(db.String(100), nullable=False)
 
     reviews = db.relationship("Review", back_populates="author")
 
     orders = db.relationship("Order", back_populates="buyer")
+    cart = db.relationship("Cart", back_populates="buyer")
 
     favorite_products = db.relationship(
         "Product", back_populates="favored_by", secondary=favorites)
@@ -37,7 +40,10 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'address': self.address,
+            'full_name': self.full_name,
+            'phone': self.phone,
             'reviews': {review.id: review.to_dict() for review in self.reviews},
             'orders': {},
+            'cart': {cart.product_id: cart.to_dict() for cart in self.cart},
             'favorite_products': [product.id for product in self.favorite_products]
         }

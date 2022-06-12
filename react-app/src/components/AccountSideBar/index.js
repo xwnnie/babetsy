@@ -1,17 +1,9 @@
 import "./index.css";
-import { NavLink, useHistory } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { logout } from "../../store/session";
+import { NavLink } from "react-router-dom";
 
 
 const AccountSideBar = () => {
-  const history = useHistory();
-//   const dispatch = useDispatch();
-//   const onLogout = async (e) => {
-//     history.push("/");
-//     await dispatch(logout());
-//   };
-//   const sessionUser = useSelector((state) => state.session.user);
+
   return (
     <div className="sidebar-container">
       <div className="sidebar-menu main">

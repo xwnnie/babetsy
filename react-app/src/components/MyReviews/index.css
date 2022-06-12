@@ -18,4 +18,24 @@
     font-size: 16px;
     background-color: white;
     padding: 10px;
+    padding-bottom: 20px;
+    width: 285px;
+    position: relative;
+    overflow-wrap: break-word;
+}
+
+.review-content div {
+    width: 220px;
+    font-size: 14px;
+}
+
+.edit-review-btns-container {
+    position: absolute;
+    right: -175px;
+    top: 5px;
+}
+
+.review-form.edit {
+    position: absolute;
+    top: 55px
 }

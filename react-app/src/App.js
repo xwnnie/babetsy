@@ -7,6 +7,7 @@ import { loadProducts } from "./store/products";
 import { loadReviews } from "./store/reviews";
 import { setOrders } from "./store/orders";
 import { setFavorites } from "./store/favorites";
+import { setCartItems } from "./store/cart";
 
 import CategoryNav from "./components/CategoryNav";
 import MyNav from "./components/MyNav";
@@ -56,6 +57,7 @@ function App() {
           const data = await res.json();
           dispatch(setOrders(data.orders));
           dispatch(setFavorites(data.favorite_products));
+          dispatch(setCartItems(data.cart));
         }
       }
       setLoaded(true);
