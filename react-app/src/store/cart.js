@@ -1,9 +1,17 @@
+const SET_ITEMS = "cart/SET_ITEMS";
 const ADD_ITEM = "cart/ADD_ITEM";
 const REMOVE_ITEM = "cart/REMOVE_ITEM";
 const UPDATE_QUANTITY = "cart/UPDATE_QUANTITY";
 const RESET = "cart/RESET";
 
 /* ----- ACTIONS ------ */
+
+export const setCartItems = (items) => {
+  return {
+    type: SET_ITEMS,
+    items,
+  };
+};
 
 export const addItem = (productId) => {
   return {
@@ -34,29 +42,33 @@ export const reset = () => {
   };
 };
 
-
 const initialState = {};
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
+    case SET_ITEMS:
+      return {
+        ...state,
+        ...action.items
+      }
     case ADD_ITEM:
       return {
         ...state,
         [action.productId]: {
-            id: action.productId,
-            quantity: 1,
-        }
+          id: action.productId,
+          quantity: 1,
+        },
       };
     case UPDATE_QUANTITY:
       return {
         ...state,
         [action.productId]: {
-        ...state[action.productId],
-        quantity: action.quantity,
-        }
+          ...state[action.productId],
+          quantity: action.quantity,
+        },
       };
     case REMOVE_ITEM:
-      const newState = { ...state};
+      const newState = { ...state };
       delete newState[action.productId];
       return newState;
     case RESET:

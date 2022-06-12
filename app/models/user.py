@@ -44,5 +44,6 @@ class User(db.Model, UserMixin):
             'phone': self.phone,
             'reviews': {review.id: review.to_dict() for review in self.reviews},
             'orders': {},
+            'cart': {cart.product_id: cart.to_dict() for cart in self.cart},
             'favorite_products': [product.id for product in self.favorite_products]
         }
