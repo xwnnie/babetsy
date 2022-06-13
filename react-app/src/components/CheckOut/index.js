@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-
 import { addOrder } from "../../store/orders";
 import { clearCartItems } from "../../store/cart";
 
@@ -48,7 +47,7 @@ function CheckOut() {
       full_name: sessionUser.full_name,
       phone: sessionUser.phone,
       address: sessionUser.address,
-      total
+      total,
     };
     // console.log("********", payload);
     dispatch(clearCartItems(sessionUser.id));
@@ -63,28 +62,32 @@ function CheckOut() {
         <span className="back-to-cart-link-text">Back to shopping bag</span>
       </Link>
       <div className="cart">
-        <div className="cart-container">
+        <div className="cart-container checkout">
           <div className="order-detail-container">
-            <div className="">Order details</div>
+            <div className="order-detail-header">Order Review </div>
             <div className="cart-items-list checkout-items">
               {cartItems.map((item) => (
-                <div key={item.product_id}>
-                  <img
-                    src={item.image_url}
-                    className="checkout-img"
-                    alt={item.name}
-                  />
-                  <div>
-                    ${item.price} x {item.quantity}
+                <Link to={`/products/${item.product_id}`}>
+                  <div key={item.product_id}>
+                    <img
+                      src={item.image_url}
+                      className="checkout-img"
+                      alt={item.name}
+                    />
+                    <div className="order-detail-name">
+                      ${item.price} x {item.quantity}
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
             <div className="checkout-shipping-container">
-              <div>Shipping </div>
-              <div>{sessionUser?.full_name}</div>
-              <div>{sessionUser?.phone}</div>
-              <div>{sessionUser?.address}</div>
+              <div className="checkout-shipping-header">Shipping Address</div>
+              <div className="checkout-shipping-address">
+                <div>{sessionUser?.full_name}</div>
+                <div>{sessionUser?.phone}</div>
+                <div>{sessionUser?.address}</div>
+              </div>
               <EditAddressBtn />
             </div>
           </div>
@@ -102,15 +105,7 @@ function CheckOut() {
               <span>Total: </span>
               <span>${total}</span>
             </div>
-            {/* <button
-              onClick={!cartItems || !cartItems.length ? null : onSubmit}
-              className={`checkout-btn ${
-                !cartItems || !cartItems.length ? "no-item" : null
-              }`}
-            >
-              <span>Complete purchase</span>
-            </button> */}
-            <CheckOutBtn cartItems={cartItems} onSubmit={onSubmit}/>
+            <CheckOutBtn cartItems={cartItems} onSubmit={onSubmit} />
           </div>
         </div>
       </div>
