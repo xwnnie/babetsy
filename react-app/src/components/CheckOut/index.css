@@ -13,6 +13,7 @@
 .order-review.checkout {
     margin-left: 20px;
     width: 285px;
+    
 }
 
 .checkout-items {
@@ -20,12 +21,19 @@
     grid-template-columns: repeat(4, 1fr);
     row-gap: 15px;
     width: 560px;
+    
+}
+
+.order-detail-items {
+    /* background-color: white; */
+    /* padding: 10px; */
 }
 
 .order-detail-container {
     display: flex;
     flex-direction: column;
-    margin-right: 20px
+    margin-right: 20px;
+    /* background-color: white */
 }
 
 .order-detail-header {
@@ -61,6 +69,7 @@
 
 .checkout-shipping-header {
     width: fit-content;
+    font-size: 18px;
     margin: auto;
     margin-bottom: 10px;
 }
@@ -68,4 +77,15 @@
 .checkout-shipping-address div{
     font-size: 14px;
     margin-bottom: 3px;
+}
+
+.redirect-msg-container {
+    padding: 30px 30px 40px 30px;
+    width: 280px;
+}
+
+.redirect-msg {
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
 }

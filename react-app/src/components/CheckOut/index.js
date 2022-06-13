@@ -64,23 +64,26 @@ function CheckOut() {
       <div className="cart">
         <div className="cart-container checkout">
           <div className="order-detail-container">
-            <div className="order-detail-header">Order Review </div>
-            <div className="cart-items-list checkout-items">
-              {cartItems.map((item) => (
-                <Link to={`/products/${item.product_id}`}>
-                  <div key={item.product_id}>
-                    <img
-                      src={item.image_url}
-                      className="checkout-img"
-                      alt={item.name}
-                    />
-                    <div className="order-detail-name">
-                      ${item.price} x {item.quantity}
+            <div className="order-detail-items">
+                <div className="order-detail-header">Order Review </div>
+                <div className="cart-items-list checkout-items">
+                {cartItems.map((item) => (
+                    <Link to={`/products/${item.product_id}`}>
+                    <div key={item.product_id}>
+                        <img
+                        src={item.image_url}
+                        className="checkout-img"
+                        alt={item.name}
+                        />
+                        <div className="order-detail-name">
+                        ${item.price} x {item.quantity}
+                        </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                    </Link>
+                ))}
+                </div>                
             </div>
+
             <div className="checkout-shipping-container">
               <div className="checkout-shipping-header">Shipping Address</div>
               <div className="checkout-shipping-address">
