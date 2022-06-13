@@ -8,7 +8,7 @@ const ShowReviewsBtn = ({reviewsCount, reviews}) => {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Reviews({reviewsCount})</button>
+      <button className="show-review-btn" onClick={() => setShowModal(true)}>REVIEWS ({reviewsCount})</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <ReviewsList setShowModal={setShowModal} reviews={reviews}/>
