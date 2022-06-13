@@ -35,7 +35,11 @@
     top: 5px;
 }
 
+.review-content-container {
+    position: relative;
+}
+
 .review-form.edit {
     position: absolute;
-    top: 55px
+    top: 30px
 }
