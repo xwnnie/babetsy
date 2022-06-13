@@ -12,17 +12,18 @@ const SingleReview = ({ product }) => {
   reviews = Object.values(reviews);
   let currReview = reviews.filter(
     (review) =>
-      review.author_id === sessionUser?.id && review.product_id === product.id
+      review.author_id === sessionUser?.id && review?.product_id === product?.id
   );
   currReview = currReview[0];
   // console.log(currReview)
 
+  const [errors, setErrors] = useState([]);
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [showEditForm, setShowEditForm] = useState(false);
   const [content, setContent] = useState("" || currReview?.content);
 
   const handleCreateOnSubmit = async (e) => {
-      let createdAt = new Date();
+    let createdAt = new Date();
     e.preventDefault();
     const payload = {
       content,
@@ -31,8 +32,13 @@ const SingleReview = ({ product }) => {
       created_at: createdAt.toString(),
       updated_at: createdAt.toString(),
     };
-    await dispatch(addReview(payload));
-    setShowCreateForm(false);
+    const data = await dispatch(addReview(payload));
+    if (data) {
+      setErrors(data);
+    } else {
+      setShowCreateForm(false);
+    }
+
     // setContent("")
   };
 
@@ -41,15 +47,26 @@ const SingleReview = ({ product }) => {
     let updatedAt = new Date();
     const payload = {
       content,
-      updated_at: updatedAt.toString()
+      updated_at: updatedAt.toString(),
     };
-    await dispatch(updateReview(payload, currReview.id));
-    setShowEditForm(false);
+    const data = await dispatch(updateReview(payload, currReview.id));
+    if (data) {
+      setErrors(data);
+    } else {
+      setShowEditForm(false);
+    }
     // setContent("");
   };
 
   const reviewForm = (
     <form onSubmit={handleCreateOnSubmit} className="review-form">
+      <div className="auth-error">
+        {errors.map((error, ind) => (
+          <div key={ind}>
+            <span class="material-symbols-outlined">error</span> {error}
+          </div>
+        ))}
+      </div>
       <textarea
         className="review-textarea"
         value={content}
@@ -72,6 +89,13 @@ const SingleReview = ({ product }) => {
 
   const editReviewForm = (
     <form onSubmit={handleEditOnSubmit} className="review-form edit">
+      <div className="auth-error">
+        {errors.map((error, ind) => (
+          <div key={ind}>
+            <span class="material-symbols-outlined">error</span> {error}
+          </div>
+        ))}
+      </div>
       <textarea
         className="review-textarea"
         value={content}
@@ -81,7 +105,7 @@ const SingleReview = ({ product }) => {
         <button
           type="cancel"
           className="review-cancel-btn"
-          onClick={() => setShowCreateForm(false)}
+          onClick={() => setShowEditForm(false)}
         >
           Cancel
         </button>
@@ -94,15 +118,15 @@ const SingleReview = ({ product }) => {
 
   return (
     <div className="my-review-container">
-      <Link to={`/products/${product.id}`}>
+      <Link to={`/products/${product?.id}`}>
         <img
           src={product?.image_url}
           className="review-img"
           alt={product?.name}
         />
       </Link>
-      <div>
-        <Link to={`/products/${product.id}`}>
+      <div className="review-content-container">
+        <Link to={`/products/${product?.id}`}>
           <div className="review-product-name">{product?.name}</div>
         </Link>
         {currReview ? (

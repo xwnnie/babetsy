@@ -58,7 +58,7 @@ export const addReview = (payload) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(createReview(data));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {

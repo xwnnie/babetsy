@@ -26,7 +26,7 @@ const SignUpForm = () => {
         setErrors(data);
       }
     } else {
-      setErrors(["Repeat password doesn't match Password"]);
+      setErrors([...errors, "Repeat password doesn't match Password"]);
     }
   };
 
