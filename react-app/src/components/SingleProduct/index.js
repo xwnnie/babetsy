@@ -1,5 +1,6 @@
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import ReactTooltip from "react-tooltip";
 
 import { addCartItem, updateCartItemQuantity} from "../../store/cart";
 
@@ -22,7 +23,7 @@ const SingleProduct = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const addToCart = () => {
     if (!sessionUser) {
-      alert("login to use this feature. redirecting... ");
+      // alert("login to use this feature. redirecting... ");
       history.push("/login");
       return;
     }
@@ -58,9 +59,11 @@ const SingleProduct = () => {
         <button
           className={"plus-button" + (cartItem ? " selected" : "")}
           onClick={addToCart}
+          data-tip={sessionUser ? null : "Log into your account to add items to your shopping bag"}
         >
           <i className="fa-solid fa-bag-shopping" /> Add to Bag
         </button>
+        <ReactTooltip place="bottom" effect="solid" />
         <ShowReviewsBtn reviewsCount={reviews?.length} reviews={reviews} />
         <div>{product?.description}</div>
       </div>

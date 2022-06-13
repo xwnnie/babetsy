@@ -19,10 +19,14 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, fullName, email, password, phone, address));
+      const data = await dispatch(
+        signUp(username, fullName, email, password, phone, address)
+      );
       if (data) {
         setErrors(data);
       }
+    } else {
+      setErrors(["Repeat password doesn't match Password"]);
     }
   };
 
@@ -62,9 +66,11 @@ const SignUpForm = () => {
     <div className="login-form-container">
       <form onSubmit={onSignUp} className="login-form signup-form">
         <div className="login-form-logo">babetsy</div>
-        <div>
+        <div className="auth-error">
           {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
+            <div key={ind}>
+              <span class="material-symbols-outlined">error</span> {error}
+            </div>
           ))}
         </div>
         <div>
@@ -73,7 +79,8 @@ const SignUpForm = () => {
             name="username"
             onChange={updateUsername}
             value={username}
-            placeholder="Username"
+            placeholder="Username*"
+            required
           ></input>
         </div>
         <div>
@@ -82,54 +89,58 @@ const SignUpForm = () => {
             name="fullName"
             onChange={updateFullName}
             value={fullName}
-            placeholder="Full Name"
+            placeholder="Full Name*"
+            required
           ></input>
         </div>
         <div>
           <input
             type="text"
             name="email"
-            placeholder="Email"
+            placeholder="Email*"
             onChange={updateEmail}
             value={email}
+            required
           ></input>
         </div>
         <div>
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Password*"
             onChange={updatePassword}
             value={password}
+            required
           ></input>
         </div>
         <div>
           <input
             type="password"
             name="repeat_password"
-            placeholder="Repeat Password"
+            placeholder="Repeat Password*"
             onChange={updateRepeatPassword}
             value={repeatPassword}
-            required={true}
+            required
           ></input>
         </div>
         <div>
           <input
-            type="text"
+            type="tel"
             name="phone"
             onChange={updatePhone}
             value={phone}
-            placeholder="Phone Number"
+            placeholder="Phone Number*"
+            required
           ></input>
         </div>
         <div>
           <input
             type="text"
             name="address"
-            placeholder="Address"
+            placeholder="Address*"
             onChange={updateAddress}
             value={address}
-            required={true}
+            required
           ></input>
         </div>
         <div className="submit-group">

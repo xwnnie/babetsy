@@ -11,12 +11,20 @@ const MyAccount = () => {
     <div>
       <AccountSideBar />
       <div className="account-container ">
-        <div>Settings</div>
+        {/* <div>Settings</div> */}
         <div className="account-details">
-          <div>Username: {sessionUser?.username}</div>
-          <div>Full name: {sessionUser?.full_name}</div>
-          <div>Phone number: {sessionUser?.phone}</div>
-          <div>Address: {sessionUser?.address}</div>
+          <div>
+            Username: <span id="username">{sessionUser?.username}</span>
+          </div>
+          <div>
+            Full Name: <span id="full_name">{sessionUser?.full_name}</span>
+          </div>
+          <div>
+            Phone number: <span id="phone">{sessionUser?.phone}</span>
+          </div>
+          <div>
+            Address: <span id="address">{sessionUser?.address}</span>
+          </div>
           <EditAddressBtn />
         </div>
       </div>

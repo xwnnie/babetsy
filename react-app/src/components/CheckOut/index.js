@@ -1,16 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 import { addOrder } from "../../store/orders";
 import { clearCartItems } from "../../store/cart";
 
 import EditAddressBtn from "../EditAddress";
+import CheckOutBtn from "./CheckOutButton";
 
 import "./index.css";
 
 function CheckOut() {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const products = useSelector((state) => state.products);
   const sessionUser = useSelector((state) => state.session.user);
@@ -32,15 +33,7 @@ function CheckOut() {
   let shipping = value > 25 ? 0 : 9.99;
   let total = Math.round((value + shipping) * 100) / 100;
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    window.alert(
-      "Purchased the following:\n" +
-        `${cartItems
-          .map((item) => `${item.quantity} of ${item.name}`)
-          .join("\n")}`
-    );
-
+  const onSubmit = () => {
     let orderNumber = Math.floor(
       Math.random(1000000000000000, 999999999999999) * 1000000000000000
     );
@@ -60,7 +53,6 @@ function CheckOut() {
     // console.log("********", payload);
     dispatch(clearCartItems(sessionUser.id));
     dispatch(addOrder(payload));
-    history.push("/my-orders");
   };
 
   return (
@@ -110,14 +102,15 @@ function CheckOut() {
               <span>Total: </span>
               <span>${total}</span>
             </div>
-            <button
+            {/* <button
               onClick={!cartItems || !cartItems.length ? null : onSubmit}
               className={`checkout-btn ${
                 !cartItems || !cartItems.length ? "no-item" : null
               }`}
             >
               <span>Complete purchase</span>
-            </button>
+            </button> */}
+            <CheckOutBtn cartItems={cartItems} onSubmit={onSubmit}/>
           </div>
         </div>
       </div>
