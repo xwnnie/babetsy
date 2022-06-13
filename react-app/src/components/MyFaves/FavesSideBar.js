@@ -14,11 +14,20 @@ const FavesSideBar = () => {
   ];
 
   return (
-    <div className="sidebar-container">
+    <div className="sidebar-container fave-sidebar">
       <div className="sidebar-menu main">
         <div className="sidebar-menu-item sidebar-header">Categories</div>
         <div className="sidebar-menu-item">
-          {categories.map((category) => (
+          <NavLink
+            to={`/my-favorites`}
+            exact={true}
+            activeClassName="selected"
+          >
+            All favorites
+          </NavLink>
+        </div>
+        {categories.map((category) => (
+          <div className="sidebar-menu-item">
             <NavLink
               to={`/my-favorites/${category.name.toLowerCase()}`}
               exact={true}
@@ -27,8 +36,8 @@ const FavesSideBar = () => {
             >
               {category.name}
             </NavLink>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

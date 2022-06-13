@@ -71,13 +71,21 @@
 .cart-item-button {
     min-width: 24px;
     height: 24px;
-    background-color: white;
+    background-color: inherit;
     margin-left: 8px;
     border: none;
 }
 
+.cart-item-button.exceed-limit {
+    cursor: not-allowed;
+}
+
+.cart-item-button.exceed-limit span {
+    color:rgb(168, 161, 161)
+}
+
 .cart-item-button span {
-    font-size: 20px
+    font-size: 18px
 }
 
 
@@ -125,7 +133,9 @@ input[type="number"] {
     height: 20px;
 }
 
-
+.add-to-bag-btn.exceed-limit {
+    cursor: not-allowed;
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

@@ -1,3 +1,4 @@
+import { loadProducts } from "./products";
 const SET_ORDERS = "products/SET_ORDERS";
 const CREATE_ORDER = "products/CREATE_ORDER";
 const REMOVE_ORDER = "products/REMOVE_ORDER";
@@ -41,6 +42,7 @@ export const addOrder = (payload) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(createOrder(data));
+    dispatch(loadProducts());
     return null;
   } else if (response.status < 500) {
     const data = await response.json();
