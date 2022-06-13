@@ -36,7 +36,7 @@ const removeItem = (productId) => {
   };
 };
 
-const reset = () => {
+export const reset = () => {
   return {
     type: RESET,
   };

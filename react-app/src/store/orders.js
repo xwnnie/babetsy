@@ -1,6 +1,7 @@
 const SET_ORDERS = "products/SET_ORDERS";
 const CREATE_ORDER = "products/CREATE_ORDER";
 const REMOVE_ORDER = "products/REMOVE_ORDER";
+const RESET_ORDERS = "products/RESET_ORDERS";
 
 export const setOrders = (orders) => {
   return {
@@ -20,6 +21,12 @@ export const removeOrder = (orderNumber) => {
   return {
     type: REMOVE_ORDER,
     orderNumber,
+  };
+};
+
+export const resetOrders = () => {
+  return {
+    type: RESET_ORDERS,
   };
 };
 
@@ -88,6 +95,8 @@ const orderReducer = (state = initialState, action) => {
       delete newState[action.orderNumber];
       return newState;
     }
+    case RESET_ORDERS:
+      return initialState
     default:
       return state;
   }

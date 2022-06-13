@@ -1,6 +1,7 @@
 const SET_FAVORITES = "favorites/SET_FAVORITES";
 const CREATE_FAVORITE = "favorites/CREATE_FAVORITE";
 const REMOVE_FAVORITE = "favorites/REMOVE_FAVORITE";
+const RESET_FAVORITES = "favorites/RESET_FAVORITES";
 
 export const setFavorites = (productsArr) => ({
   type: SET_FAVORITES,
@@ -16,6 +17,12 @@ const removeFavorite = (productId) => ({
   type: REMOVE_FAVORITE,
   productId,
 });
+
+export const resetFavorites = () => {
+  return {
+    type: RESET_FAVORITES,
+  };
+};
 
 
 export const addFavorite = (userId, productId) => async (dispatch) => {
@@ -72,6 +79,8 @@ const favoriteReducer = (state = initialState, action) => {
         return [...state, action.productId]
     case REMOVE_FAVORITE: 
         return state.filter(productId => productId !== action.productId)
+    case RESET_FAVORITES:
+        return initialState
     default:
       return state;
   }
