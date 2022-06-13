@@ -30,7 +30,9 @@ const EditAddressForm = ({ setShowModal }) => {
     // 
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="edit-address-form">
+      <div className="edit-form-logo">BABETSY</div>
+      <div className="edit-address-header">Edit Your Shipping Address</div>
       <div className="auth-error">
         {errors.map((error, ind) => (
           <div key={ind}>
@@ -38,16 +40,19 @@ const EditAddressForm = ({ setShowModal }) => {
           </div>
         ))}
       </div>
+      <label>Full Name</label>
       <input
         type="text"
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
       />
+      <label>Phone Number</label>
       <input
         type="text"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
+      <label>Address</label>
       <input
         type="text"
         value={address}

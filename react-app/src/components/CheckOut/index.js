@@ -65,7 +65,7 @@ function CheckOut() {
       <div className="cart">
         <div className="cart-container">
           <div className="order-detail-container">
-            <div className="">Review order details</div>
+            <div className="">Order details</div>
             <div className="cart-items-list checkout-items">
               {cartItems.map((item) => (
                 <div key={item.product_id}>
