@@ -11,3 +11,29 @@
     width: 700px;
     padding: 15px 20px;
 }
+
+.account-details div{
+    margin: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.account-details span{
+    font-weight: normal;
+}
+
+.account-details #username{
+    margin-left: 128.3px;
+}
+
+.account-details #full_name {
+    margin-left: 127.5px;
+}
+
+.account-details #phone {
+    margin-left: 100px;
+}
+
+.account-details #address {
+    margin-left: 140px;
+}
