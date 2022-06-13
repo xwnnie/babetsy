@@ -112,7 +112,7 @@ function App() {
         <ProtectedRoute path="/my-reviews" exact={true} loaded={loaded}>
           <MyReviews />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-favorites" exact={true} loaded={loaded}>
+        <ProtectedRoute path="/my-favorites" loaded={loaded}>
           <MyFaves />
         </ProtectedRoute>
         <Route path="/search/:searchQuery" exact>

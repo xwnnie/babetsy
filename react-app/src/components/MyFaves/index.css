@@ -4,3 +4,25 @@
     margin-top: 30px;
     font-size: 26px;
 }
+
+.favorite-products-container {
+    position: absolute;
+    left: 28%;
+    top: 150px;
+}
+.products-container.fave-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 40px;
+    column-gap: 20px;
+    /* padding: 30px 30px 40px 30px; */
+    width: 830px;
+    margin: auto;
+    margin-top: 40px;
+}
+.product-card.fave-page img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    float: left;
+}
