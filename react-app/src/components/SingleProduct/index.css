@@ -16,14 +16,43 @@
     margin-left: 80px;
     width: 700px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.single-product-info div, button {
+    margin-bottom: 10px;
+}
+
+.add-to-bag-btn {
+    color: white;
+    background-color: black;
+    border: none;
+    height: 35px;
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.add-to-bag-btn i {
+    margin-right: 10px;
 }
 
 .single-product-container .heart {
     position: absolute;
     top: -45px;
-    right: 30px
+    right: 0px
 }
 
 .fave-heart:hover {
     fill: red
+}
+
+.single-product-name {
+    font-size: 22px;
+    padding-bottom: 15px;
+}
+
+.product-description {
+    width: 550px;
+    text-align: justify;
 }

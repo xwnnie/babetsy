@@ -22,7 +22,12 @@ const Redirect = ({setShowModal, onSubmit}) => {
     return () => clearTimeout(timer);
   }, []);
 
-  return <div>{message}</div>;
+  return (
+    <div className="redirect-msg-container">
+      <div className="edit-form-logo">BABETSY</div>
+      <div className="redirect-msg">{message}</div>
+    </div>
+  );
 };
 
 export default Redirect;

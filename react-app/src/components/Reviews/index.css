@@ -1,3 +1,12 @@
+.show-review-btn {
+    border: 1px solid rgb(107, 104, 104);
+    background-color: inherit;
+    width: 250px;
+    height: 32px;
+    margin-top: 20px
+}
+
+
 .reviews-container {
     height: 100vh;
     width: 500px;
