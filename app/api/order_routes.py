@@ -30,7 +30,7 @@ def create_order():
             for product in payload["products"]:
                 order = Order(
                     buyer_id=int(payload['buyer_id']),
-                    product_id=int(product['id']),
+                    product_id=int(product['product_id']),
                     quantity=int(product['quantity']),
                     order_number=payload['order_number'],
                     created_at=payload['created_at'],
