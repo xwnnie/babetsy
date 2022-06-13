@@ -29,7 +29,7 @@ export const addFavorite = (userId, productId) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(createFavorite(productId));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
@@ -51,7 +51,7 @@ export const unFavorite = (userId, productId) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(removeFavorite(productId));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {

@@ -37,6 +37,7 @@ export const loadReviews = () => async (dispatch) => {
   if (response.ok) {
     const reviews = await response.json();
     dispatch(setReviews(reviews));
+    return null
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
@@ -99,7 +100,7 @@ export const deleteReview = (reviewId) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(removeReview(reviewId));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
