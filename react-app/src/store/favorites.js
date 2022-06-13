@@ -1,6 +1,7 @@
 const SET_FAVORITES = "favorites/SET_FAVORITES";
 const CREATE_FAVORITE = "favorites/CREATE_FAVORITE";
 const REMOVE_FAVORITE = "favorites/REMOVE_FAVORITE";
+const RESET_FAVORITES = "favorites/RESET_FAVORITES";
 
 export const setFavorites = (productsArr) => ({
   type: SET_FAVORITES,
@@ -17,6 +18,12 @@ const removeFavorite = (productId) => ({
   productId,
 });
 
+export const resetFavorites = () => {
+  return {
+    type: RESET_FAVORITES,
+  };
+};
+
 
 export const addFavorite = (userId, productId) => async (dispatch) => {
   const response = await fetch(
@@ -29,7 +36,7 @@ export const addFavorite = (userId, productId) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(createFavorite(productId));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
@@ -51,7 +58,7 @@ export const unFavorite = (userId, productId) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(removeFavorite(productId));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
@@ -72,6 +79,8 @@ const favoriteReducer = (state = initialState, action) => {
         return [...state, action.productId]
     case REMOVE_FAVORITE: 
         return state.filter(productId => productId !== action.productId)
+    case RESET_FAVORITES:
+        return initialState
     default:
       return state;
   }

@@ -36,7 +36,7 @@ const removeItem = (productId) => {
   };
 };
 
-const reset = () => {
+export const reset = () => {
   return {
     type: RESET,
   };
@@ -76,7 +76,7 @@ export const updateCartItemQuantity = (payload) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(updateQuantity(data.buyer_id, data.product_id, data.quantity));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
@@ -95,7 +95,7 @@ export const removeCartItem = (buyerId, productId) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(removeItem(productId));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
@@ -115,7 +115,7 @@ export const clearCartItems = (buyerId) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(reset());
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {

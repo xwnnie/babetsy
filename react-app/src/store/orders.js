@@ -1,6 +1,7 @@
 const SET_ORDERS = "products/SET_ORDERS";
 const CREATE_ORDER = "products/CREATE_ORDER";
 const REMOVE_ORDER = "products/REMOVE_ORDER";
+const RESET_ORDERS = "products/RESET_ORDERS";
 
 export const setOrders = (orders) => {
   return {
@@ -23,6 +24,12 @@ export const removeOrder = (orderNumber) => {
   };
 };
 
+export const resetOrders = () => {
+  return {
+    type: RESET_ORDERS,
+  };
+};
+
 export const addOrder = (payload) => async (dispatch) => {
   const response = await fetch(`/api/orders`, {
     method: "POST",
@@ -34,7 +41,7 @@ export const addOrder = (payload) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(createOrder(data));
-    return data;
+    return null;
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
@@ -88,6 +95,8 @@ const orderReducer = (state = initialState, action) => {
       delete newState[action.orderNumber];
       return newState;
     }
+    case RESET_ORDERS:
+      return initialState
     default:
       return state;
   }

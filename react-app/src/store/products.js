@@ -13,6 +13,7 @@ export const loadProducts = () => async (dispatch) => {
     if (response.ok) {
       const products = await response.json();
       dispatch(setProducts(products));
+      return null;
     } else if (response.status < 500) {
       const data = await response.json();
       if (data.errors) {

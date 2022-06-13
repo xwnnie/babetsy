@@ -1,4 +1,7 @@
-// constants
+import { reset } from "./cart";
+import { resetOrders } from "./orders";
+import { resetFavorites } from "./favorites";
+
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
 const UPDATE_USER_ADDRESS = "session/UPDATE_USER_ADDRESS";
@@ -70,6 +73,9 @@ export const logout = () => async (dispatch) => {
 
   if (response.ok) {
     dispatch(removeUser());
+    dispatch(reset());
+    dispatch(resetOrders());
+    dispatch(resetFavorites());
   }
 };
 
