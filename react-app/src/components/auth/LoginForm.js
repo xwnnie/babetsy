@@ -54,9 +54,11 @@ const LoginForm = () => {
     <div className="login-form-container">
       <form onSubmit={onLogin} className="login-form">
         <div className="login-form-logo">babetsy</div>
-        <div>
+        <div className="auth-error">
           {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
+            <div key={ind}>
+              <span class="material-symbols-outlined">error</span> {error}
+            </div>
           ))}
         </div>
         <div>
@@ -66,6 +68,7 @@ const LoginForm = () => {
             placeholder="Email"
             value={email}
             onChange={updateEmail}
+            required
           />
         </div>
         <div>
@@ -75,6 +78,7 @@ const LoginForm = () => {
             placeholder="Password"
             value={password}
             onChange={updatePassword}
+            required
           />
         </div>
         <div className="submit-group">

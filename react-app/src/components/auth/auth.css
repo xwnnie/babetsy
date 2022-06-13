@@ -11,12 +11,13 @@
 .login-form {
     margin: auto;
     width: 300px;
-    height: 300px;
+    height: 320px;
     background-color: white;
     position: absolute;
     top: 160px;
     left: 400px;
     padding: 40px;
+    /* padding-bottom: 20px; */
 }
 
 .signup-form {
@@ -71,4 +72,16 @@
 
 .auth-form-link span {
     color: rgb(167, 49, 9);
+}
+
+.auth-error {
+    font-size: 11px;
+    color:rgb(167, 49, 9);
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.auth-error span {
+    font-size: 11px;
 }
