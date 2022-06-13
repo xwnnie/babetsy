@@ -6,9 +6,8 @@ import { updateCartItemQuantity, removeCartItem } from "../../store/cart";
 
 function CartItem({ item }) {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
   const [quantity, setQuantity] = useState(item.quantity);
-
 
   useEffect(() => {
     setQuantity(item.quantity);
@@ -25,20 +24,25 @@ function CartItem({ item }) {
         </Link>
         <div className="cart-item-price">${item.price}</div>
         <div className="cart-item-menu">
-          <input
-            type="number"
+          <select
             value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-            onBlur={() =>
+            onChange={(e) => {
+              setQuantity(e.target.value);
               dispatch(
                 updateCartItemQuantity({
                   buyer_id: sessionUser.id,
                   product_id: item.product_id,
-                  quantity: Number(quantity),
+                  quantity: Number(e.target.value),
                 })
-              )
-            }
-          />
+              );
+            }}
+          >
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+          </select>
           <button
             className="cart-item-button"
             onClick={() =>
@@ -54,15 +58,20 @@ function CartItem({ item }) {
             <span className="material-symbols-outlined">remove</span>
           </button>
           <button
-            className="cart-item-button"
-            onClick={() =>
-              dispatch(
-                updateCartItemQuantity({
-                  buyer_id: sessionUser.id,
-                  product_id: item.product_id,
-                  quantity: item.quantity + 1,
-                })
-              )
+            className={
+              "cart-item-button" + (item?.quantity >= 5 ? " exceed-limit" : "")
+            }
+            onClick={
+              item?.quantity >= 5
+                ? null
+                : () =>
+                    dispatch(
+                      updateCartItemQuantity({
+                        buyer_id: sessionUser.id,
+                        product_id: item.product_id,
+                        quantity: item.quantity + 1,
+                      })
+                    )
             }
           >
             <span className="material-symbols-outlined">add</span>
