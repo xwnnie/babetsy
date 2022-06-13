@@ -56,11 +56,12 @@ const SingleProduct = () => {
         <FaveHeart productId={parseInt(productId)} />
         <div>{product?.name}</div>
         <div>${product?.price}</div>
+        <div>{product?.quantity <= 0 ? "Out of Stock" : "In Stock"}</div>
         <button
           className={
-            "add-to-bag-btn" + (cartItem?.quantity >= 5 ? " exceed-limit" : "")
+            "add-to-bag-btn" + (cartItem?.quantity >= 5 || cartItem?.quantity >= product?.quantity ? " exceed-limit" : "")
           }
-          onClick={cartItem?.quantity >= 5 ? null : addToCart}
+          onClick={cartItem?.quantity >= 5 || cartItem?.quantity >= product?.quantity ? null : addToCart}
           data-tip={
             !sessionUser
               ? "Log into your account to add items to your shopping bag"
@@ -70,7 +71,7 @@ const SingleProduct = () => {
           }
         >
           <i className="fa-solid fa-bag-shopping" /> {" "}
-          {cartItem?.quantity >= 5 ? "Limit 5 per purchase": "Add to bag"}
+          {cartItem?.quantity >= 5 ? "Limit 5 per purchase": cartItem?.quantity >= product?.quantity ? "Not enough inventory" : "Add to bag"}
         </button>
         <ReactTooltip place="bottom" effect="solid" />
         <ShowReviewsBtn reviewsCount={reviews?.length} reviews={reviews} />

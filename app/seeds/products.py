@@ -9,7 +9,7 @@ def seed_products():
         {
             "name": "Bunny Critter Plush Nursery Rocker", 
             "price": 99.99, 
-            "quantity": 1000000, 
+            "quantity": 2, 
             "description": "Rock-a-bye baby in a super-cute plush rocker. This sweet seat is just their size and will give them hours of entertainment. Hop to it!", 
             "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202223/0003/img19o.jpg", 
             "category_id": 6     
