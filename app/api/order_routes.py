@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import db, Order
+from app.models import db, Order, Product
 from app.forms.order_form import OrderForm
 
 order_routes = Blueprint('orders', __name__)
@@ -42,6 +42,8 @@ def create_order():
                 # if order:
                 #     print("new order")
                 db.session.add(order)
+                oldProduct = Product.query.get(product['product_id']);
+                oldProduct.quantity = oldProduct.quantity - int(product['quantity'])
             db.session.commit()
             order_number = payload['order_number']
             all_orders = Order.query.filter(

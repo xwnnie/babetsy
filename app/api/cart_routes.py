@@ -27,6 +27,10 @@ def create_cart():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         # if current_user.id == int(form.data['author_id']):
+        prevCart = Cart.query.filter(
+            Cart.buyer_id == form.data['buyer_id'], Cart.product_id == form.data['product_id']).all()
+        if prevCart:
+            return
         cart = Cart(
             buyer_id=int(form.data['buyer_id']),
             product_id=int(form.data['product_id']),
