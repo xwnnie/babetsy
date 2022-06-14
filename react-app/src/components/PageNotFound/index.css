@@ -1,13 +1,24 @@
 .not-found-container {
+    background-image: url("https://images.pexels.com/photos/907274/pexels-photo-907274.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    height: 700px;
+    margin: auto;
+    width: 1300px;
+    margin-top: 20px;
+}
+
+.not-found-text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 150px;
+   padding-top: 150px;
+    color: white;
 }
 
-.not-found-container img {
-    width: 300px;
+.not-found-text-container .login-form-logo{
+    font-size: 30px;
     margin: auto;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 

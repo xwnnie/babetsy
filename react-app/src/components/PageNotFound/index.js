@@ -28,19 +28,23 @@ const PageNotFound = () => {
 
   return (
     <div className="not-found-container">
-      {/* <img
+      <div className="not-found-text-container">
+        {/* <img
         src={logo}
         className="logo-404"
         alt="page-not-found"
         onClick={handleOnClick}
       /> */}
-      <div className="login-form-logo" onClick={handleOnClick}>
-        BABETSY
-      </div>
-      <div className="not-found-msg">404: The requested URL was not found.</div>
-      <div className="not-found-msg">
-        You will be redirected to home page in <span>{timeLeft}</span>{" "}
-        seconds...
+        <div className="login-form-logo" onClick={handleOnClick}>
+          BABETSY
+        </div>
+        <div className="not-found-msg">
+          404: The requested URL was not found.
+        </div>
+        <div className="not-found-msg">
+          You will be redirected to home page in <span>{timeLeft}</span>{" "}
+          seconds...
+        </div>
       </div>
     </div>
   );
