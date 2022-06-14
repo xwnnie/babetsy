@@ -28,7 +28,7 @@ const MyFaves = () => {
   const categoryId = categories[categoryName];
   // console.log(history.location.pathname, categoryName);
   if (categoryId) {
-    products = products.filter((product) => product.category_id == categoryId);
+    products = products.filter((product) => product?.category_id == categoryId);
   }
 
   const handleOnClick = (id) => {

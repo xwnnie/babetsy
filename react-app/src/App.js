@@ -24,6 +24,7 @@ import Search from "./components/Search";
 import SearchResult from "./components/Search/SearchResults";
 import CheckOut from "./components/CheckOut";
 import Summer from "./components/Summer";
+import PageNotFound from "./components/PageNotFound";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -126,6 +127,9 @@ function App() {
         <ProtectedRoute path="/checkout" exact={true} loaded={loaded}>
           <CheckOut />
         </ProtectedRoute>
+        <Route>
+          <PageNotFound />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
