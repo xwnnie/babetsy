@@ -46,6 +46,9 @@
     background-image: url("https://images.pexels.com/photos/7055937/pexels-photo-7055937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 }
 
+.summer-header.search-results {
+    background-image: url("https://images.pexels.com/photos/3661268/pexels-photo-3661268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+}
 
 @media only screen and (max-width: 1200px) {
     .products-project {
