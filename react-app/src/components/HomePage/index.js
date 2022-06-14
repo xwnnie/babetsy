@@ -1,14 +1,16 @@
-
+import { useHistory } from "react-router-dom";
 import "./index.css";
 
 const HomePage = () => {
+    const history = useHistory();
+
   return (
     <div className="home-page-container">
       {/* <h1>HomePage</h1> */}
       <div className="ad-1">
         <div className="ad-text">
           <h1>Hello, sunshine!</h1>
-          <button>Shop now</button>
+          <button onClick={() => history.push("/summer")}>Shop now</button>
         </div>
       </div>
       <div className="ad-donate">

@@ -8,7 +8,7 @@
 .favorite-products-container {
     position: absolute;
     left: 28%;
-    top: 150px;
+    top: 200px;
 }
 .products-container.fave-page {
     display: grid;

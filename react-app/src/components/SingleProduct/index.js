@@ -61,12 +61,16 @@ const SingleProduct = () => {
         <button
           className={
             "add-to-bag-btn" +
-            (cartItem?.quantity >= 5 || cartItem?.quantity >= product?.quantity
+            (cartItem?.quantity >= 5 ||
+            cartItem?.quantity >= product?.quantity ||
+            product?.quantity == 0
               ? " exceed-limit"
               : "")
           }
           onClick={
-            cartItem?.quantity >= 5 || cartItem?.quantity >= product?.quantity
+            cartItem?.quantity >= 5 ||
+            cartItem?.quantity >= product?.quantity ||
+            product?.quantity == 0
               ? null
               : addToCart
           }
@@ -81,7 +85,7 @@ const SingleProduct = () => {
           <i className="fa-solid fa-bag-shopping" />
           {cartItem?.quantity >= 5
             ? "Limit 5 per purchase"
-            : cartItem?.quantity >= product?.quantity
+            : cartItem?.quantity >= product?.quantity || product?.quantity == 0
             ? "Not enough inventory"
             : "Add to bag"}
         </button>
