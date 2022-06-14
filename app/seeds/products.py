@@ -643,6 +643,38 @@ def seed_products():
             "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0043/plan-toys-x-pbk-punch-drop-o.jpg",
             "category_id": 6
         },
+        {
+            "name": "Train Light-Up Musical Rocker",
+            "price": 199.99,
+            "quantity": 1000,
+            "description": "All aboard! Young engineers will love taking rides on their very own vintage steam engine, which makes real train sounds and has a working headlight. The padded fabric provides a comfy seat, and the wooden rails ensure smooth rocking.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0518/train-light-up-musical-rocker-o.jpg",
+            "category_id": 6
+        },
+        {
+            "name": "Peter Rabbit™ Plush",
+            "price": 49.99,
+            "quantity": 1000,
+            "description": "Give them the gift of a new best friend with this sweet Peter Rabbit™ plush. A classic toy through the years, it's full of cozy cuddles and snuggles.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202225/0005/peter-rabbit-plush-o.jpg",
+            "category_id": 6
+        },
+        {
+            "name": "Llama Plush Collection",
+            "price": 149.99,
+            "quantity": 1000,
+            "description": "These huggable llamas offer little ones cuddly companionship all day long.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0086/llama-plush-collection-o.jpg",
+            "category_id": 6
+        },
+        {
+            "name": "Skip Hop x pbk Animal Friends Classic Activity Gym",
+            "price": 129.99,
+            "quantity": 1000,
+            "description": "With lots of creatures to see, feel and grab, this activity gym entertains and stimulates your baby during playtime. Bright animals and fun sounds encourage exploration and learning.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0163/skip-hop-x-pbk-animal-friends-classic-activity-gym-o.jpg",
+            "category_id": 6
+        },
     ]
 
     for p in products:

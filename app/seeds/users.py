@@ -5,10 +5,15 @@ from app.models import db, User, Product
 def seed_users():
     demo = User(
         username='Demo', email='demo@aa.io', password='password', full_name='Demo User', phone='3022536253', address='60 N. Cardinal Drive Richmond Hill, NY 11418')
-    # marnie = User(
-    #     username='marnie', email='marnie@aa.io', password='password', address='52 Brown Ave. Bensalem, PA 19020')
-    # bobbie = User(
-    #     username='bobbie', email='bobbie@aa.io', password='password', address='37 E. Princess Rd. Evans, GA 30809')
+    marnie = User(
+        username='marnie', email='marnie@aa.io', password='password', full_name='Marnie White', phone='3022536253', address='52 Brown Ave. Bensalem, PA 19020')
+    bobbie = User(
+        username='bobbie', email='bobbie@aa.io', password='password', full_name='Bobbie Brown', phone='3022536253',  address='37 E. Princess Rd. Evans, GA 30809')
+    john = User(username='john', email='john@aa.io', password='password', full_name='John Smith',
+                phone='3022536253',  address='37 E. Princess Rd. Evans, GA 30809')
+    austin = User(username='austin', email='austin@aa.io', password='password', full_name='Austin Wang',
+                  phone='3022536253',  address='37 E. Princess Rd. Evans, GA 30809')
+
 
     product1 = Product.query.get(1)
     product2 = Product.query.get(2)
@@ -16,8 +21,10 @@ def seed_users():
     demo.favorite_products.append(product2)
 
     db.session.add(demo)
-    # db.session.add(marnie)
-    # db.session.add(bobbie)
+    db.session.add(marnie)
+    db.session.add(bobbie)    
+    db.session.add(john)
+    db.session.add(austin)
 
     db.session.commit()
 

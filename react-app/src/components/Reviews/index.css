@@ -38,10 +38,20 @@
     margin: 30px;
 }
 
+.reviews-list .content {
+    font-size: 15px;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+}
+
 .review-author, .review-date {
     font-size: 13px;
     padding-top: 2px;
     color: rgb(51, 49, 49);
+}
+
+.review-date {
+    margin-bottom: 30px;
 }
 
 .review-textarea {
