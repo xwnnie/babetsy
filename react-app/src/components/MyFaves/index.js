@@ -21,6 +21,7 @@ const MyFaves = () => {
     bath: 4,
     decor: 5,
     toys: 6,
+    accessories: 7
   };
 
   const categoryName = history.location.pathname.split("/")[2];

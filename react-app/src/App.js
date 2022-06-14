@@ -23,6 +23,7 @@ import Footer from "./components/Footer";
 import Search from "./components/Search";
 import SearchResult from "./components/Search/SearchResults";
 import CheckOut from "./components/CheckOut";
+import Summer from "./components/Summer";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -86,6 +87,7 @@ function App() {
             "/bath",
             "/decor",
             "/toys",
+            "/accessories",
           ]}
           exact={true}
         >
@@ -93,6 +95,9 @@ function App() {
         </Route>
         <Route path="/products/:productId" exact={true}>
           <SingleProduct />
+        </Route>
+        <Route path="/summer" exact={true}>
+          <Summer />
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm />

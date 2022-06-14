@@ -6,6 +6,7 @@ import "./index.css";
 const FavesSideBar = () => {
   const categories = [
     { id: 1, name: "Clothing" },
+    { id: 7, name: "Accessories" },
     { id: 2, name: "Furniture" },
     { id: 3, name: "Bedding" },
     { id: 4, name: "Bath" },

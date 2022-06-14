@@ -328,11 +328,65 @@ def seed_products():
             "price": 299.99,
             "quantity": 1000,
             "description": "Keep their little fingers safe and make clean-up fun with an open toy bin. Built-in cubbies put toys within reach and fixed dividers organize books, toys and everything else.",
-            "image_url": " https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202204/0029/romantic-toy-bin-o.jpg",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202204/0029/romantic-toy-bin-o.jpg",
             "category_id": 2
         },
-       
-
+        {
+            "name": "Flounced Swimsuit",
+            "price": 19.99,
+            "quantity": 1000,
+            "description": "Baby Exclusive. Fully lined swimsuit in textured fabric with narrow, ruffle-trimmed shoulder straps joined at back.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F00%2F12%2F001210accda41f157f56330043428bbf18dea141.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_girls_clothing_swimwear_swimsuits%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 1
+        },
+        {
+            "name": "Poncho Towel",
+            "price": 24.99,
+            "quantity": 1000,
+            "description": "Poncho towel in soft cotton terry with velour at outer side. Hood with appliqués and open sides with narrow ties.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F46%2Fe9%2F46e9eba40396233017db6c363a10779f840d8def.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bhome_bathshower_accessories_towels_bathtowels%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
+            "category_id": 4
+        },
+        {
+            "name": "Textured Swim Trunks",
+            "price": 14.99,
+            "quantity": 1000,
+            "description": "Kids Exclusive. Textured swim trunks. Elasticized waistband with drawstring. Lined front.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F9b%2F20%2F9b207f9346d298acc751773abe51ce6b11f0c169.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 1
+        },
+        {
+            "name": "Paper Straw Cooler Bag",
+            "price": 17.99,
+            "quantity": 1000,
+            "description": "Semi-circular cooler bag in braided paper straw. Zipper and two handles at top, sun appliqué at one side, and insulating foil lining. Width 5 in. Height 6 3/4 in. Length 7 in.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F9f%2F81%2F9f815bd55d25023c252ae1753cecb5927e6c6442.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "Cotton Sun Hat",
+            "price": 6.99,
+            "quantity": 1000,
+            "description": "Sun hat in airy, woven cotton fabric. Wavy brim and ties underneath. Lined.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F6a%2F48%2F6a48ef3935fa9b631aae72ee194e2db352b4dd9b.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_baby_boy_accessories_hats%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "Backpack",
+            "price": 14.99,
+            "quantity": 1000,
+            "description": "Backpack in woven fabric. Adjustable shoulder straps, handle, and concealed zipper at top. Outer compartment and padded backplate. Depth 3 1/2 in. Width 7 in. Height 8 3/4 in.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fb6%2F9d%2Fb69dce625e903f931d5b067a015981731167c02d.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_baby_boy_accessories%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "Strawberry-shaped Hat",
+            "price": 7.99,
+            "quantity": 1000,
+            "description": "Lightly padded, strawberry-shaped hat in jersey. Felt appliqué at top and elasticized cuff. Lined.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F03%2F8d%2F038db0bb0962c7bd3328e253e8520b2115aa9c6b.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_baby_boy_accessories_hats%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
     ]
 
     for p in products:
