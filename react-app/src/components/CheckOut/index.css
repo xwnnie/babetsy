@@ -89,3 +89,18 @@
     margin: auto;
     margin-top: 20px;
 }
+
+.redirect-msg-container button  {
+    background-color: black;
+    color: white;
+    border: none;
+    height: 35px;
+    width: 180px;
+    margin-top: 30px;
+    margin-left: 45px;
+}
+
+.redirect-msg-container button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}

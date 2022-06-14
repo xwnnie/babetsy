@@ -10,8 +10,9 @@ const CancelOrderForm = ({ orderNumber, setShowModal }) => {
     setShowModal(false);
   };
   return (
-    <div>
-      <p>Do you really want to cancel this order?</p>
+    <div className="redirect-msg-container">
+      <div className="edit-form-logo">BABETSY</div>
+      <p className="redirect-msg">Do you really want to cancel this order?</p>
       <button onClick={handleOnClick}>Cancel Order</button>
     </div>
   );

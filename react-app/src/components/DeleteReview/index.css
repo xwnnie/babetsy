@@ -1,0 +1,17 @@
+.cancel-order-form {
+    display: flex;
+}
+
+.cancel-order-form .cancel-order-submit-btn {
+    height: 30px;
+    width: 100px;
+}
+
+.cancel-order-form .cancel-order-cancel-btn {
+    border: 1px solid black;
+    height: 30px;
+    background-color: white;
+    color: black;
+    width: 100px;
+    margin-left: 15px;
+}
