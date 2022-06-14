@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteReview } from "../../store/reviews";
-// import "./DeleteTaskForm.css";
+
+import "./index.css";
 
 const DeleteReviewForm = ({ setShowModal, reviewId}) => {
   const dispatch = useDispatch();
@@ -10,13 +11,14 @@ const DeleteReviewForm = ({ setShowModal, reviewId}) => {
     setShowModal(false);
   };
   return (
-    <div className="">
-      <p>Do you really want to delete this review?</p>
-      <form onSubmit={handleSubmit}>
-        <button type="cancel" className="">
+    <div className="redirect-msg-container">
+      <div className="edit-form-logo">BABETSY</div>
+      <p className="redirect-msg">Do you really want to delete this review?</p>
+      <form onSubmit={handleSubmit} className="cancel-order-form">
+        <button className="cancel-order-cancel-btn" onClick={() => setShowModal(false)}>
           Cancel
         </button>
-        <button type="submit" className="">
+        <button type="submit" className="cancel-order-submit-btn">
           Delete
         </button>
       </form>
