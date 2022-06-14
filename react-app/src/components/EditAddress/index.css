@@ -24,7 +24,8 @@
     margin: 10px auto;
     color: rgb(149, 1, 1);
     font-size: 25px;
-    font-style: italic;
+    /* font-style: italic; */
+    font-family: 'Kalam', cursive;
 }
 
 .edit-address-header {

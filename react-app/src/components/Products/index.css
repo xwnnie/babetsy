@@ -2,11 +2,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 40px;
-    column-gap: 20px;
+    column-gap: 30px;
     /* padding: 30px 30px 40px 30px; */
-    width: 1230px;
+    width: 1000px;
     margin: auto;
-    margin-top: 40px;
+    margin-left: 5px;
+    margin-top: 20px;
 }
 
 .product-card {
@@ -16,8 +17,8 @@
 }
 
 .product-card img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     float: left;
 }
@@ -26,22 +27,22 @@
     background-image: url("https://static.zara.net/photos///contents/mkt/spots/ss22-north-kids-babyboy/subhome-xmedia-23-2//w/2295/IMAGE-landscape-e12c37f2-e1b0-4f39-a940-a0c19863b753-default_0.jpg?ts=1654784960084");
 }
 .summer-header.accessories {
-    background-image: url("https://images.pexels.com/photos/2253892/pexels-photo-2253892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("https://images.pexels.com/photos/6393158/pexels-photo-6393158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 }
 .summer-header.furniture {
     background-image: url("https://images.pexels.com/photos/4933871/pexels-photo-4933871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 }
 .summer-header.bath {
-    background-image: url("https://images.pexels.com/photos/4965348/pexels-photo-4965348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 }
 .summer-header.bedding {
-    background-image: url("https://images.pexels.com/photos/36793/baby-birth-child-gift.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("https://images.pexels.com/photos/234137/pexels-photo-234137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 }
 .summer-header.toys {
     background-image: url("https://images.pexels.com/photos/4964356/pexels-photo-4964356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 }
 .summer-header.decor {
-    background-image: url("https://static.zara.net/photos///contents/mkt/spots/ss22-north-kids-shoes-bags/subhome-xmedia-23//w/2295/landscape-831d1d1e-a8f2-4f9d-97e5-77087e38bada_0.jpg?ts=1654784560735");
+    background-image: url("https://images.pexels.com/photos/7055937/pexels-photo-7055937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 }
 
 
