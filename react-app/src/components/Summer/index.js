@@ -9,7 +9,7 @@ const Summer = () => {
 
   const productsObj = useSelector((state) => state.products);
   let products = Object.values(productsObj);
-  const summerProducts = [42, 43, 44, 45, 46, 47, 48];
+  const summerProducts = [42, 43, 44, 45, 46, 47, 48, 60];
   products = products.filter((product) => summerProducts.includes(product.id));
 
   const handleOnClick = (id) => {

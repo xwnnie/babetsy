@@ -108,11 +108,11 @@ def seed_products():
             "category_id": 2
         },
         {
-            "name": "west elm x pbk Mid-Century Bassinet & Mattress Pad Set",
+            "name": "Babyletto Lolly 3-in-1 Convertible Crib",
             "price": 449.99,
             "quantity": 1000,
-            "description": "Keep your newborn nearby in this beautifully constructed bassinet made from solid eucalyptus wood. Featuring rounded spindles and angled legs, the frame is a nod to Mid-Century modern style.",
-            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202150/0403/west-elm-x-pbk-mid-century-bassinet-mattress-pad-set-o.jpg",
+            "description": "The Babyletto® Lolly Convertible Crib is a stylish space-saving solution for any modern nursery. With thought-out details like natural spindles and feet and a sturdy pinewood frame, this sleek crib is perfect for the smallest of spaces. Plus, it includes a toddler rail to transform from a crib to toddler bed for easy conversion.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202222/0068/babyletto-lolly-3-in-1-convertible-crib-o.jpg",
             "category_id": 2
         },
         {
@@ -180,19 +180,19 @@ def seed_products():
             "category_id": 4
         },
         {
-            "name": "Disney Mickey Mouse Bath Mat",
-            "price": 45.99,
+            "name": "Quinn White Washed Hamper",
+            "price": 125.99,
             "quantity": 1000,
-            "description": "Put a little magic under their feet with our Disney's Mickey Mouse bath mat. The iconic design is crafted of looped and tufted cotton for a super-plush feel with great absorbency and backed in nonslip latex for safety.",
-            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202224/0027/disney-mickey-mouse-bath-mat-o.jpg",
+            "description": "With a classic drum shape and lid, this woven hamper keeps dirty clothes stylishly contained.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202223/0017/quinn-white-washed-hamper-o.jpg",
             "category_id": 4
         },
         {
-            "name": "Shark Towel Collection",
-            "price": 45.99,
+            "name": "Splish Splash Bath Mat",
+            "price": 40.99,
             "quantity": 1000,
-            "description": "Chomp! Add animal-inspired fun to their clean routine with this Shark Towel Collection. Crafted from pure cotton, they’re super absorbent and gentle on the skin.",
-            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0155/shark-towel-collection-o.jpg",
+            "description": "Give bath time a bright accent with an-ultra splashy quote and a soft and absorbent mat.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0062/splish-splash-bath-mat-o.jpg",
             "category_id": 4
         },
         {
@@ -308,11 +308,11 @@ def seed_products():
             "category_id": 3
         },
         {
-            "name": "west elm kids x pbk x Sarah Sherman Samuel Arches Twin Over Twin Bunk Bed",
-            "price": 2799.99,
+            "name": "Modern House Bookcase",
+            "price": 599.99,
             "quantity": 1000,
-            "description": "Their space will shape up nicely when you add this arched bunk bed. Its sturdy, expertly crafted wooden frame adds a hint of rustic charm, while its grand scale creates a striking silhouette. Great for smaller bedrooms, this piece also sleeps two for the space of one. Designed in collaboration with west elm and celebrated interiors expert, Sarah Sherman Samuel.",
-            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202208/0221/sarah-sherman-samuel-arches-twin-over-twin-bunk-bed-1-o.jpg",
+            "description": "Perfect for their bedroom or play space, our minimalist bookcase creates the perfect home for all their favorite things. With three shelves divided into both small and large cubbies, there’s room for everything from toys to books and more.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202225/0012/modern-house-bookcase-o.jpg",
             "category_id": 2
         },        
         {
@@ -386,6 +386,262 @@ def seed_products():
             "description": "Lightly padded, strawberry-shaped hat in jersey. Felt appliqué at top and elasticized cuff. Lined.",
             "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F03%2F8d%2F038db0bb0962c7bd3328e253e8520b2115aa9c6b.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_baby_boy_accessories_hats%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
             "category_id": 7
+        },
+        {
+            "name": "Dress and Accessory",
+            "price": 29.99,
+            "quantity": 1000,
+            "description": "Dress in woven fabric with a matching hairband. Dress with buttons at back, short puff sleeves with concealed elastic at cuffs, and gathered seam above a flared skirt. Lining in woven cotton fabric. Elasticized hairband with decorative flowers.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F21%2F77%2F21771d36e85deebf6421483a303fef9b41387186.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 1
+        },
+        {
+            "name": "2-pack Ribbed Shirts",
+            "price": 14.99,
+            "quantity": 1000,
+            "description": "Baby Exclusive. Short-sleeved shirts in soft, ribbed, cotton jersey with a button placket. Scalloped edges at neckline, button placket, and cuffs.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc0%2F98%2Fc0989b5a341cba3cbcdea6796f012a0a91026dd7.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_baby_boy_clothing_tshirtsshirts_tshirts%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 1
+        },
+        {
+            "name": "3-pack Jumpsuits with Zipper",
+            "price": 29.99,
+            "quantity": 1000,
+            "description": "Long-sleeved jumpsuits in soft cotton jersey with a zip at front and along one leg. Covered feet.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F4b%2F20%2F4b20a8758f7faca8fcbc78411d1a415def5ce5ef.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 1
+        },
+        {
+            "name": "2-pack cotton jersey dresses",
+            "price": 14.99,
+            "quantity": 1000,
+            "description": "Two wide, sleeveless dresses in soft cotton jersey, one with an all-over print. Narrow cut at the top with narrow shoulder straps, and gathered tiers on the skirt.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Ff0%2Fda%2Ff0da4ddca6a645373869249befe3a7e2e57f1079.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 1
+        },
+        {
+            "name": "2-piece cotton set",
+            "price": 14.99,
+            "quantity": 1000,
+            "description": "Set with a blouse and pair of shorts in a cotton weave. Blouse with a round neckline, two buttons at the top and a flounced seam at the top that continues over the shoulders. Long sleeves with soft, narrow elastication at the cuffs. Unlined. Shorts with soft, covered elastication at the waist. Unlined.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F45%2F45%2F4545bbd907e91ebf43842085ef614e0e31666a40.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 1
+        },
+        {
+            "name": "2-pack Jumpsuits with Zip",
+            "price": 19.99,
+            "quantity": 1000,
+            "description": "Jumpsuits in soft organic cotton jersey. Zip at front with chin guard, and extending along one leg. Ribbing at neckline, cuffs, and hems.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fa9%2F94%2Fa99487db54ee405d57c476152a7f7f25fcb81fa0.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_baby_boy_clothing_nightwear%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 1
+        },
+        {
+            "name": "3-pack Ribbed Hats with Ears",
+            "price": 14.99,
+            "quantity": 1000,
+            "description": "Ribbed hats in soft cotton jersey with ears and foldover cuff.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fe8%2F41%2Fe8411ba8dd175dd1ee480141a9f53f88019073c8.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_baby_boy_accessories_hats%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "2-piece Set",
+            "price": 14.99,
+            "quantity": 1000,
+            "description": "Fleece-lined set with a hat and mittens in a soft cable knit. Hat with faux fur pompom at top, small faux suede appliqué at front, earflaps, and ties under chin. Mittens with ribbed cuffs. Sizes 0-2 months and 2-6 months without thumbs.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F0f%2F99%2F0f99de77c0dea69ee71af342aa7a26be0b67cff4.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_newborn_sets%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "3-pack Triangular Scarves",
+            "price": 14.99,
+            "quantity": 1000,
+            "description": "Double-layered triangular scarves in soft, organic cotton jersey. Snap fastener at back of neck.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc2%2F01%2Fc20189773bd61726e1d6b1a50c9f0a2ada2c9300.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "Cotton Hat",
+            "price": 12.99,
+            "quantity": 1000,
+            "description": "Baby Exclusive. Hat in soft cotton poplin with ruffle trim at front, elastic at back, and ties under chin. Cotton lining.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F99%2F33%2F99339d270db178756a9b51727b665ea2494c6f2f.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "2-pack Cotton Hats",
+            "price": 12.99,
+            "quantity": 1000,
+            "description": "Hats in double-layers of soft cotton jersey. One hat with a printed pattern.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F42%2Fbf%2F42bfbdd460ad4c5de653dc20fa7ed383be236d31.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "Swim Cap UPF 50",
+            "price": 12.99,
+            "quantity": 1000,
+            "description": "Swim cap UV-protective material with a visor at front. Flap at back to protect back of neck. UPF 50.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F03%2F60%2F03601d4f75c908ccdfd2ae22ee6fd85e54e72be3.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_babygirl_swimwear%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "Disney Princess Towel Collection",
+            "price": 62.99,
+            "quantity": 1000,
+            "description": "Inspire bathtime fun with fluffy towels featuring their favorite Disney Princess characters. Super plush, soft and absorbent, they’re woven from pure cotton, embroidered with three iconic designs and finished in a soft pink hue.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0809/disney-princess-towel-collection-4-o.jpg",
+            "category_id": 4
+        },
+        {
+            "name": "Super Soft Lamb Baby Hooded Towel And Washcloth",
+            "price": 45.99,
+            "quantity": 1000,
+            "description": "Let a sweet animal friend join in on their clean routine with this lamb-inspired set. Made from pure cotton, these luxuriously soft bath time pieces are absorbent and smooth on their skin.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202208/0036/super-soft-lamb-baby-hooded-towel-and-washcloth-o.jpg",
+            "category_id": 4
+        },
+        {
+            "name": "Rainbow Bath Accessories",
+            "price": 39.99,
+            "quantity": 1000,
+            "description": "Pastel stripes in the colors of the rainbow give their bathroom a cheerful look. Sized for little hands, our bath accessories are lightweight, shatter-resistant and made to last.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0247/rainbow-bath-accessories-o.jpg",
+            "category_id": 4
+        },
+        {
+            "name": "Tassel Bath Mat",
+            "price": 39.99,
+            "quantity": 1000,
+            "description": "Brighten up the room with a colorful spot for drying off. Extra absorbent and soft underfoot, our exclusive pink bath mat features multicolored tassels along the border turning a bathroom must-have into a style statement.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202208/0095/tassel-bath-mat-o.jpg",
+            "category_id": 4
+        },
+        {
+            "name": "6-pack Triangular Scarves",
+            "price": 19.99,
+            "quantity": 1000,
+            "description": "Double-layered triangular scarves in soft organic cotton jersey with adjustable snap fastening at back of neck.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F84%2F5d%2F845dccec39769939f9c470d820982fd80bb503be.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "2-pack Cotton Turbans",
+            "price": 9.99,
+            "quantity": 1000,
+            "description": "Turbans in soft cotton jersey with a decorative gathered detail at front.",
+            "image_url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F22%2Fb7%2F22b79e258b1369f890cc3722f1fd3a67baf86493.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_baby_girl_accessories_hats%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+            "category_id": 7
+        },
+        {
+            "name": "Peanuts® Shower Curtain",
+            "price": 79.99,
+            "quantity": 1000,
+            "description": "Snoopy® soaking in a sudsy bath decorate this playful Peanuts® Shower Curtain. It’ll add some fun to their bathtime or showertime routine. Plus, keyhole buttons make for easy hanging.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0092/peanuts-shower-curtain-o.jpg",
+            "category_id": 4
+        },
+        {
+            "name": "Jungle Bath Squirties Set",
+            "price": 24.99,
+            "quantity": 1000,
+            "description": "Make bath time fun with playful jungle animals. Bound to be a bathtub favorite, these colorful floating animals are easy to fill up and squirt.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0151/jungle-bath-squirties-set-o.jpg",
+            "category_id": 4
+        },
+        {
+            "name": "Shark Shower Curtain",
+            "price": 65.99,
+            "quantity": 1000,
+            "description": "Bath time becomes extra adventurous with this array of blue-hued sharks and schools of sweet fish.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0224/shark-shower-curtain-o.jpg",
+            "category_id": 4
+        },
+        {
+            "name": "Disney Winnie The Pooh Crib Mobile",
+            "price": 69.99,
+            "quantity": 1000,
+            "description": "Their dreams will be as sweet as honey when Disney's Winnie the Pooh watches over the crib. The adorable bear, plush clouds and gentle honeybees rotate overhead while a soothing lullaby plays.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202204/0030/disney-winnie-the-pooh-crib-mobile-o.jpg",
+            "category_id": 5
+        },
+        {
+            "name": "Ceramic Rainbow Nightlight",
+            "price": 39.99,
+            "quantity": 1000,
+            "description": "Help them drift off to dreamland with this rainbow-shaped nightlight. It emits a soft glow and is a comforting addition to their sleep space.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202204/0026/ceramic-rainbow-nightlight-o.jpg",
+            "category_id": 5
+        },
+        {
+            "name": "Chasing Paper Wallpaper Puppy Pile",
+            "price": 50.99,
+            "quantity": 1000,
+            "description": "Puppies on peel-and-stick wallpaper? There's nothing to not love here! This fabric wallpaper sticks to nearly any surface and is fade-resistant to last through the years. And when you’re ready to remove, it comes off easily with no mess.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202210/0026/chasing-paper-wallpaper-puppy-pile-o.jpg",
+            "category_id": 5
+        },
+        {
+            "name": "Minted® Vintage Airplane Personalized Wall Art by Jessie Steury",
+            "price": 78.99,
+            "quantity": 1000,
+            "description": "This personalizable art piece by Jessie Steury is ready to take off and land in their space. Minted crowdsources artwork from a global community of artists, the public votes and we select winners exclusively for Pottery Barn Kids. By supporting this collection, you're helping independent artists across the world.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202205/0065/minted-vintage-airplane-wall-art-by-jessie-steury-o.jpg",
+            "category_id": 5
+        },
+        {
+            "name": "Ava Regency Dresser",
+            "price": 1299.99,
+            "quantity": 1000,
+            "description": "Inspired by the glamorous furniture from Hollywood's Golden Age, the Ava Regency Collection is a classic for a reason. Artful curves, appliqué trim inserts and tapered feet are masterfully crafted throughout the collection to bring a cohesive look to the room. Each piece is constructed from made-to-last materials to ensure safety, stability and longevity.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202207/0211/ava-regency-dresser-o.jpg",
+            "category_id": 2
+        },
+        {
+            "name": "Babyletto Hudson 3-in-1 Convertible Crib",
+            "price": 499.99,
+            "quantity": 1000,
+            "description": "The Babyletto® Hudson Convertible Crib is a stylish solution for any modern nursery. Boasting a mid-century design with thought-out details like rounded spindles and feet and a sturdy pinewood frame, this sleek crib is perfect for every space. Plus, it includes a toddler rail to transform from a crib to toddler bed for easy conversion.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202222/0163/babyletto-hudson-3-in-1-convertible-crib-o.jpg",
+            "category_id": 2
+        },
+        {
+            "name": "Camden Convertible Crib",
+            "price": 799.99,
+            "quantity": 1000,
+            "description": "Designed with clean lines, our Camden Convertible Crib makes a modern statement in their room, and it converts to a toddler bed as your child grows. Built to last from quality materials like solid New Zealand pine, it offers safety, longevity and enduring style. Plus, it’s GREENGUARD Gold Certified to contribute to cleaner indoor air for a safer sleep space.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202222/0162/camden-convertible-crib-o.jpg",
+            "category_id": 2
+        },
+        {
+            "name": "Modern Farmhouse Extra-Wide Dresser & Topper Set",
+            "price": 1499.99,
+            "quantity": 1000,
+            "description": "Natural wood, clean lines and slatted details come together in our Modern Farmhouse Collection, a rustic-meets-contemporary design concept that grows with your little ones. This nursery set is an all-in-one storage and changing solution. The dresser boasts six drawers – all secured on waxed wooden gliders – for tucking in clothes, fresh linens and more; the topper keeps essentials within easy reach. This collection is built to our high, exacting standards to ensure safety, stability and longevity.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202218/0187/modern-farmhouse-extra-wide-dresser-topper-set-o.jpg",
+            "category_id": 2
+        },
+        {
+            "name": "Disney Winnie the Pooh Organic Crib Fitted Sheet Bundle - Set of 2",
+            "price": 88.99,
+            "quantity": 1000,
+            "description": "Update their sleep space with charming illustrations from Disney Winnie the Pooh. Made from GOTS certified organic cotton, this set includes two crib fitted sheets to keep your little Pooh Bear warm and cozy through the night.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202205/0002/disney-winnie-the-pooh-picture-perfect-organic-crib-fitted-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "Star Wars™ The Mandalorian™ Grogu™ Heirloom Baby Blanket",
+            "price": 75.99,
+            "quantity": 1000,
+            "description": "It's wise to bundle your precious cargo in our cozy Grogu™ Heirloom Baby Blanket. Great for snuggling at home or strolling across the galaxy. It’s knitted from exceptionally warm acrylic yarn and backed in silky-soft vela plush.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202205/0086/star-wars-the-mandalorian-grogu-heirloom-baby-blanket-1-o.jpg",
+            "category_id": 3
+        },
+        {
+            "name": "Plan Toys x pbk Punch Drop",
+            "price": 45.99,
+            "quantity": 1000,
+            "description": "This superfun punch drop toy from Plan Toys® develops your little one’s hand-eye coordination. They can hammer the balls into the box and watch them roll out for maximum fun! Plan Toys® is the first company in the world to manufacture toys from reclaimed rubberwood to provide a more sustainable solution for playtime.",
+            "image_url": "https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202212/0043/plan-toys-x-pbk-punch-drop-o.jpg",
+            "category_id": 6
         },
     ]
 

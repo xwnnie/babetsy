@@ -140,7 +140,7 @@ const SingleReview = ({ product }) => {
                 >
                   <span className="material-symbols-outlined">edit</span>
                 </button>
-                <DeleteReviewBtn reviewId={currReview?.id} />
+                <DeleteReviewBtn reviewId={currReview?.id} setContent={setContent}/>
               </div>
             ) : null}
           </div>
