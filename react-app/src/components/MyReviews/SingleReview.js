@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -21,6 +21,14 @@ const SingleReview = ({ product }) => {
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [showEditForm, setShowEditForm] = useState(false);
   const [content, setContent] = useState("" || currReview?.content);
+
+  useEffect(() => {
+      if (content && content.length >= 250) {
+          setErrors(["Review content should be less than 250 characters"])
+      } else {
+          setErrors([])
+      }
+  }, [content])
 
   const handleCreateOnSubmit = async (e) => {
     let createdAt = new Date();
@@ -140,7 +148,7 @@ const SingleReview = ({ product }) => {
                 >
                   <span className="material-symbols-outlined">edit</span>
                 </button>
-                <DeleteReviewBtn reviewId={currReview?.id} />
+                <DeleteReviewBtn reviewId={currReview?.id} setContent={setContent}/>
               </div>
             ) : null}
           </div>

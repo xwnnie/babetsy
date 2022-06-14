@@ -11,7 +11,7 @@ const ReviewsList = ({ setShowModal, reviews }) => {
           date = new Date(review.updated_at);
           return (
             <div key={review.id}>
-              <div className="review-content">{review.content}</div>
+              <div className="content">{review.content}</div>
               <div className="review-author">{review.author_name}</div>
               <div className="review-date">{date.toDateString()}</div>
             </div>

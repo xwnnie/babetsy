@@ -8,6 +8,12 @@ function CartItem({ item }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [quantity, setQuantity] = useState(item.quantity);
+  const product = useSelector((state) => state.products[item?.product_id]);
+  // console.log("+++++++++++", product)
+  let rangeQuantityValues = [...Array(Math.min(6, product.quantity + 1)).keys()]
+  rangeQuantityValues = rangeQuantityValues.slice(1)
+  console.log("*******", rangeQuantityValues)
+
 
   useEffect(() => {
     setQuantity(item.quantity);
@@ -37,11 +43,14 @@ function CartItem({ item }) {
               );
             }}
           >
-            <option value={1}>1</option>
+            {rangeQuantityValues.map(value => (
+              <option value={value} key={value}>{value}</option>
+            ))}
+            {/* <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
             <option value={4}>4</option>
-            <option value={5}>5</option>
+            <option value={5}>5</option> */}
           </select>
           <button
             className="cart-item-button"

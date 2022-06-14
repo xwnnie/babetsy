@@ -3,12 +3,13 @@ import { deleteReview } from "../../store/reviews";
 
 import "./index.css";
 
-const DeleteReviewForm = ({ setShowModal, reviewId}) => {
+const DeleteReviewForm = ({ setShowModal, reviewId, setContent}) => {
   const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
     await dispatch(deleteReview(reviewId));
     setShowModal(false);
+    setContent("");
   };
   return (
     <div className="redirect-msg-container">
