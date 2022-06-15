@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import "./index.css";
+import Recommend from "./Recommend";
 
 const HomePage = () => {
     const history = useHistory();
@@ -13,6 +14,7 @@ const HomePage = () => {
           <button onClick={() => history.push("/summer")}>Shop now</button>
         </div>
       </div>
+      <Recommend />
       <div className="ad-donate">
         <div className="ad-donate-text">
           <p>

@@ -95,3 +95,57 @@
     color: rgb(228, 31, 10);
     font-family: 'Kalam', cursive;
 }
+
+.recommend-container {
+    position: relative;
+    width: 950px;
+}
+
+.recommend-container div.recommend-products {
+    display: flex;
+    /* justify-content: center;  */
+    width: 900px;
+}
+
+.recommend-container img.recommend-product-img {
+    width: 200px;
+    padding: 0px 10px ;
+    margin-bottom: 10px;
+}
+
+.recommend-arrow-left {
+    position: absolute;
+    left: -52px;
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    bottom: 150px;
+    
+}
+.recommend-arrow-left span {
+    font-size: 30px;
+}
+
+.recommend-arrow-right span {
+    font-size: 30px;
+}
+
+.recommend-arrow-right {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    bottom: 150px;
+}
+
+.recommend-product-price {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.recommend-product-name {
+    font-size: 14px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
