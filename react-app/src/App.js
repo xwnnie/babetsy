@@ -41,7 +41,6 @@ function App() {
   useEffect(() => {
     (async () => {
       await dispatch(authenticate());
-      setLoaded(true);
     })();
   }, [dispatch]);
 
@@ -110,25 +109,25 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path="/cart" exact={true}>
+        <ProtectedRoute path="/cart" exact={true} loaded={loaded}>
           <Cart />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-account" exact={true}>
+        <ProtectedRoute path="/my-account" exact={true} loaded={loaded}>
           <MyAccount />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-orders" exact={true}>
+        <ProtectedRoute path="/my-orders" exact={true} loaded={loaded}>
           <OrderHistory />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-reviews" exact={true}>
+        <ProtectedRoute path="/my-reviews" exact={true} loaded={loaded}>
           <MyReviews />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-favorites" exact={true}>
+        <ProtectedRoute path="/my-favorites" loaded={loaded}>
           <MyFaves />
         </ProtectedRoute>
         <Route path="/search/:searchQuery" exact>
           <SearchResult />
         </Route>
-        <ProtectedRoute path="/checkout" exact={true}>
+        <ProtectedRoute path="/checkout" exact={true} loaded={loaded}>
           <CheckOut />
         </ProtectedRoute>
         <Route>

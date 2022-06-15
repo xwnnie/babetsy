@@ -3,8 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { signUp } from "../../store/session";
 
+import ErrorMessage from "../ErrorMessage"
+
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState({});
   const [username, setUsername] = useState("");
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,6 +19,8 @@ const SignUpForm = () => {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
+  
+
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
@@ -23,10 +28,17 @@ const SignUpForm = () => {
         signUp(username, fullName, email, password, phone, address)
       );
       if (data) {
-        setErrors(data);
+        // console.log(data);
+        let errorsObj = {};
+        data.forEach((error) => {
+          const [label, message] = error.split(" : ");
+          errorsObj[label] = message
+        });
+        // console.log(errorsObj.username);
+        setErrorMessages(errorsObj);
       }
     } else {
-      setErrors([...errors, "Repeat password doesn't match Password"]);
+      setErrors(["Repeat password doesn't match Password"]);
     }
   };
 
@@ -66,13 +78,7 @@ const SignUpForm = () => {
     <div className="login-form-container">
       <form onSubmit={onSignUp} className="login-form signup-form">
         <div className="login-form-logo">BABETSY</div>
-        <div className="auth-error">
-          {errors.map((error, ind) => (
-            <div key={ind}>
-              <span class="material-symbols-outlined">error</span> {error}
-            </div>
-          ))}
-        </div>
+        <div className="auth-error"></div>
         <div>
           <input
             type="text"
@@ -82,6 +88,7 @@ const SignUpForm = () => {
             placeholder="Username*"
             required
           ></input>
+          <ErrorMessage message={errorMessages.username} />
         </div>
         <div>
           <input
@@ -92,6 +99,7 @@ const SignUpForm = () => {
             placeholder="Full Name*"
             required
           ></input>
+          <ErrorMessage message={errorMessages.full_name} />
         </div>
         <div>
           <input
@@ -102,6 +110,7 @@ const SignUpForm = () => {
             value={email}
             required
           ></input>
+          <ErrorMessage message={errorMessages.email} />
         </div>
         <div>
           <input
@@ -112,6 +121,7 @@ const SignUpForm = () => {
             value={password}
             required
           ></input>
+          <ErrorMessage message={errorMessages.password} />
         </div>
         <div>
           <input
@@ -122,6 +132,11 @@ const SignUpForm = () => {
             value={repeatPassword}
             required
           ></input>
+          {errors.map((error, ind) => (
+            <div key={ind} className="error-message">
+              <span class="material-symbols-outlined">error</span> {error}
+            </div>
+          ))}
         </div>
         <div>
           <input
@@ -132,6 +147,7 @@ const SignUpForm = () => {
             placeholder="Phone Number*"
             required
           ></input>
+          <ErrorMessage message={errorMessages.phone} />
         </div>
         <div>
           <input
@@ -142,6 +158,7 @@ const SignUpForm = () => {
             value={address}
             required
           ></input>
+          <ErrorMessage message={errorMessages.address} />
         </div>
         <div className="submit-group">
           <button type="submit" className="login-btn">

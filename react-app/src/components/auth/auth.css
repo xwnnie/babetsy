@@ -1,6 +1,6 @@
 .login-form-container {
     width: 1200px;
-    height: 700px;
+    min-height: 700px;
     background-image: url("https://cdn.mos.cms.futurecdn.net/fQ9Q96MGxUVc85fZL7sPnQ-1280-80.jpg.webp");
     background-size: cover;
     margin: auto;
@@ -11,7 +11,8 @@
 .login-form {
     margin: auto;
     width: 300px;
-    height: 320px;
+    min-height: 300px;
+    height: auto;
     background-color: white;
     position: absolute;
     top: 160px;
@@ -21,8 +22,9 @@
 }
 
 .signup-form {
-    height: 500px;
-    top: 90px
+    min-height: 400px;
+    height: auto;
+    top: 70px
 }
 
 .login-form-logo {
@@ -39,17 +41,21 @@
     width: 280px;
     padding-left: 10px;
     height: 30px;
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 .login-form input::placeholder {
     color: black
 }
 
+.submit-group {
+    margin-top: 15px;
+}
+
 .submit-group button {
     width: 297px;
     height: 35px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-radius: 2px;
 }
 
@@ -66,7 +72,7 @@
 
 .auth-form-link {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 15px;
     width: fit-content;
 }
 

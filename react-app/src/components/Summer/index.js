@@ -17,7 +17,9 @@ const Summer = () => {
   };
   return (
     <div className="summer-container">
-      <div className="summer-header"><div>SUMMER COLLECTION</div></div>
+      <div className="summer-header">
+        <div>SUMMER COLLECTION</div>
+      </div>
       <div className="products-container">
         {products.map((product) => (
           <div key={product.id} className="product-card">
@@ -27,8 +29,15 @@ const Summer = () => {
               alt={product.name}
               onClick={(e) => handleOnClick(product.id)}
             />
-            <div>${product.price}</div>
-            <div className="products-page-name">{product.name}</div>
+            <div onClick={(e) => handleOnClick(product.id)}>
+              ${product.price}
+            </div>
+            <div
+              className="products-page-name"
+              onClick={(e) => handleOnClick(product.id)}
+            >
+              {product.name}
+            </div>
           </div>
         ))}
       </div>

@@ -7,9 +7,9 @@ def phone_validation(form, field):
     # Checking if a phone number is valid
     phone = field.data
     if not phone.isnumeric():
-        raise ValidationError('do not use letters or symbols like - or ( ).')
+        raise ValidationError('Do not use letters or symbols like - or ( ).')
     if len(str(phone)) != 10:
-        raise ValidationError('must be 10 digits.')
+        raise ValidationError('Must be 10 digits.')
 
 class AddressForm(FlaskForm):
     address = StringField(
