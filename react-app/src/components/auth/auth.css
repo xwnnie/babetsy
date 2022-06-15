@@ -6,6 +6,7 @@
     margin: auto;
     margin-top: 20px;
     position: relative;
+    
 }
 
 .login-form {
@@ -18,13 +19,13 @@
     top: 160px;
     left: 400px;
     padding: 40px;
-    /* padding-bottom: 20px; */
+    padding-bottom: 20px;
 }
 
 .signup-form {
     min-height: 400px;
     height: auto;
-    top: 70px
+    top: 65px
 }
 
 .login-form-logo {
