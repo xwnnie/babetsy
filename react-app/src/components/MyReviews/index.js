@@ -28,12 +28,11 @@ const MyReviews = () => {
       <AccountSideBar />
       <div className="account-container">
         <div>
-          <div>Reviews on purchased items</div>
+          <div className="my-reviews-header">Reviews on your purchased items: </div>
         </div>
         {purchasedProducts.map((product) => (
-            <SingleReview product={product} key={product?.id}/>
-        )
-        )}
+          <SingleReview product={product} key={product?.id} />
+        ))}
       </div>
     </div>
   );

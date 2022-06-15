@@ -41,8 +41,18 @@ const Products = () => {
               alt={product.name}
               onClick={(e) => handleOnClick(product.id)}
             />
-            <div>${product.price}</div>
-            <div className="products-page-name">{product.name}</div>
+            <div
+              className="products-page-price"
+              onClick={(e) => handleOnClick(product.id)}
+            >
+              ${product.price}
+            </div>
+            <div
+              className="products-page-name"
+              onClick={(e) => handleOnClick(product.id)}
+            >
+              {product.name}
+            </div>
           </div>
         ))}
       </div>

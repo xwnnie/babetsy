@@ -113,7 +113,7 @@ const SingleReview = ({ product }) => {
         <button
           type="cancel"
           className="review-cancel-btn"
-          onClick={() => {setShowEditForm(false); setErrors([])}}
+          onClick={() => {setShowEditForm(false); setErrors([]); setContent(currReview.content)}}
         >
           Cancel
         </button>

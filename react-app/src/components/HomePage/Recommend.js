@@ -41,8 +41,18 @@ const Recommend = () => {
               onClick={(e) => handleOnClick(product.id)}
               className="recommend-product-img"
             />
-            <div className="recommend-product-price">${product.price}</div>
-            <div className="recommend-product-name">{product.name}</div>
+            <div
+              className="recommend-product-price"
+              onClick={(e) => handleOnClick(product.id)}
+            >
+              ${product.price}
+            </div>
+            <div
+              className="recommend-product-name"
+              onClick={(e) => handleOnClick(product.id)}
+            >
+              {product.name}
+            </div>
           </div>
         ))}
       </div>

@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { editAddress } from "../../store/session";
+import ErrorMessage from "../ErrorMessage";
 
 const EditAddressForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState({});
   const [fullName, setFullName] = useState(sessionUser.full_name);
   const [phone, setPhone] = useState(sessionUser.phone);
   const [address, setAddress] = useState(sessionUser.address);
@@ -23,7 +25,12 @@ const EditAddressForm = ({ setShowModal }) => {
     };
     const data = await dispatch(editAddress(payload, sessionUser.id));
     if (data) {
-      setErrors(data);
+      let errorsObj = {};
+      data.forEach((error) => {
+        const [label, message] = error.split(" : ");
+        errorsObj[label] = message;
+      });
+      setErrorMessages(errorsObj);
     } else {
       setShowModal(false);
     }
@@ -34,11 +41,11 @@ const EditAddressForm = ({ setShowModal }) => {
       <div className="edit-form-logo">BABETSY</div>
       <div className="edit-address-header">Edit Your Shipping Address</div>
       <div className="auth-error">
-        {errors.map((error, ind) => (
+        {/* {errors.map((error, ind) => (
           <div key={ind}>
             <span class="material-symbols-outlined">error</span> {error}
           </div>
-        ))}
+        ))} */}
       </div>
       <label>Full Name</label>
       <input
@@ -46,18 +53,21 @@ const EditAddressForm = ({ setShowModal }) => {
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
       />
+      <ErrorMessage message={errorMessages.full_name} />
       <label>Phone Number</label>
       <input
         type="text"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
+      <ErrorMessage message={errorMessages.phone} />
       <label>Address</label>
       <input
         type="text"
         value={address}
         onChange={(e) => setAddress(e.target.value)}
       />
+      <ErrorMessage message={errorMessages.address} />
       <button className="" type="submit">
         Save
       </button>

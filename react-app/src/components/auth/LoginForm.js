@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { login } from "../../store/session";
 
+import ErrorMessage from "../ErrorMessage";
+
 import "./auth.css";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const user = useSelector((state) => state.session.user);
@@ -16,7 +19,12 @@ const LoginForm = () => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     if (data) {
-      setErrors(data);
+      let errorsObj = {};
+      data.forEach((error) => {
+        const [label, message] = error.split(" : ");
+        errorsObj[label] = message;
+      });
+      setErrorMessages(errorsObj);
     }
   };
 
@@ -55,11 +63,11 @@ const LoginForm = () => {
       <form onSubmit={onLogin} className="login-form">
         <div className="login-form-logo">BABETSY</div>
         <div className="auth-error">
-          {errors.map((error, ind) => (
+          {/* {errors.map((error, ind) => (
             <div key={ind}>
               <span class="material-symbols-outlined">error</span> {error}
             </div>
-          ))}
+          ))} */}
         </div>
         <div>
           <input
@@ -70,6 +78,7 @@ const LoginForm = () => {
             onChange={updateEmail}
             required
           />
+          <ErrorMessage message={errorMessages.email} />
         </div>
         <div>
           <input
@@ -80,6 +89,7 @@ const LoginForm = () => {
             onChange={updatePassword}
             required
           />
+          <ErrorMessage message={errorMessages.password} />
         </div>
         <div className="submit-group">
           <button type="submit" className="login-btn">

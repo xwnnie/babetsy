@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 
 import { addOrder } from "../../store/orders";
 import { clearCartItems } from "../../store/cart";
@@ -11,11 +11,13 @@ import "./index.css";
 
 function CheckOut() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const products = useSelector((state) => state.products);
   const sessionUser = useSelector((state) => state.session.user);
 
   let cartItems = useSelector((state) => state.cart);
+
   cartItems = Object.values(cartItems);
   cartItems = cartItems.map((item) => ({
     ...item,
@@ -23,6 +25,8 @@ function CheckOut() {
     name: products[item.product_id]?.name,
     image_url: products[item.product_id]?.image_url,
   }));
+
+  if (!cartItems.length) history.push("/");
 
   let value = cartItems.reduce(
     (accu, item) => accu + item.quantity * item.price,
