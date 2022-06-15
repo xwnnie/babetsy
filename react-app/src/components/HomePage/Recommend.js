@@ -22,6 +22,7 @@ const Recommend = () => {
 
   return (
     <div className="recommend-container">
+      <div className="recommend-msg">We thought you might like</div>
       {pivot <= 0 ? null : (
         <button
           onClick={() => setPivot(pivot - 4)}
