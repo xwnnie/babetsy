@@ -88,8 +88,10 @@ A logged in user can check out items in their shopping cart. On the checkout pag
 
 
 ## Order History
-After an order is placed, they can cancel it within one hour on order history page. 
-<img width="1479" alt="babetsy-order-history" src="https://user-images.githubusercontent.com/50897748/173942210-3d28fc78-bbd1-48d9-9ba5-a32dd8ddd249.png">
+A logged in user can view all placed orders in order history.
+   * After an order is placed, they can cancel it within one hour on order history page. 
+<img width="1475" alt="babetsy-order2" src="https://user-images.githubusercontent.com/50897748/173958908-7bb28183-cc79-400b-8a2b-a0cdad319411.png">
+
 
 
 
