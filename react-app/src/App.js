@@ -110,25 +110,25 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path="/cart" exact={true} loaded={loaded}>
+        <ProtectedRoute path="/cart" exact={true}>
           <Cart />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-account" exact={true} loaded={loaded}>
+        <ProtectedRoute path="/my-account" exact={true}>
           <MyAccount />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-orders" exact={true} loaded={loaded}>
+        <ProtectedRoute path="/my-orders" exact={true}>
           <OrderHistory />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-reviews" exact={true} loaded={loaded}>
+        <ProtectedRoute path="/my-reviews" exact={true}>
           <MyReviews />
         </ProtectedRoute>
-        <ProtectedRoute path="/my-favorites" loaded={loaded}>
+        <ProtectedRoute path="/my-favorites" exact={true}>
           <MyFaves />
         </ProtectedRoute>
         <Route path="/search/:searchQuery" exact>
           <SearchResult />
         </Route>
-        <ProtectedRoute path="/checkout" exact={true} loaded={loaded}>
+        <ProtectedRoute path="/checkout" exact={true}>
           <CheckOut />
         </ProtectedRoute>
         <Route>
