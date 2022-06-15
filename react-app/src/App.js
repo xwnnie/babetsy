@@ -24,6 +24,7 @@ import Search from "./components/Search";
 import SearchResult from "./components/Search/SearchResults";
 import CheckOut from "./components/CheckOut";
 import Summer from "./components/Summer";
+import Newborn from "./components/Summer/Newborn";
 import PageNotFound from "./components/PageNotFound";
 
 import LoginForm from "./components/auth/LoginForm";
@@ -99,6 +100,9 @@ function App() {
         </Route>
         <Route path="/summer" exact={true}>
           <Summer />
+        </Route>
+        <Route path="/newborn" exact={true}>
+          <Newborn />
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm />
