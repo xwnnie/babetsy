@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms.validators import DataRequired, ValidationError, Length
 
 
 def phone_validation(form, field):
@@ -13,8 +13,8 @@ def phone_validation(form, field):
 
 class AddressForm(FlaskForm):
     address = StringField(
-        'address', validators=[DataRequired()])
+        'address', validators=[DataRequired(), Length(min=1, max=100)])
     full_name = StringField(
-        'full_name', validators=[DataRequired()])
+        'full_name', validators=[DataRequired(), Length(min=1, max=30)])
     phone = StringField(
         'phone', validators=[DataRequired(), phone_validation])

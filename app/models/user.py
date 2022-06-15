@@ -12,7 +12,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(30), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     address = db.Column(db.String(100), nullable=False)
-    phone = db.Column(db.String(20), nullable=False)
+    phone = db.Column(db.String(10), nullable=False)
     full_name = db.Column(db.String(30), nullable=False)
 
     reviews = db.relationship("Review", back_populates="author")
