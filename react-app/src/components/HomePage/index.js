@@ -14,6 +14,9 @@ const HomePage = () => {
           <button onClick={() => history.push("/summer")}>Shop now</button>
         </div>
       </div>
+      <div className="free-shipping-ad">
+        <div>Free shipping on all orders over $25</div>
+      </div>
       <Recommend />
       <div className="ad-donate">
         <div className="ad-donate-text">
@@ -29,7 +32,7 @@ const HomePage = () => {
       </div>
       <div className="ad-1 ad-2">
         <div className="ad-1-text ad-2-text">
-          <h1>Ready for your newborn?</h1>
+          <h1>Ready to welcome a new member?</h1>
           <button onClick={() => history.push("/newborn")}>Shop now</button>
         </div>
       </div>
