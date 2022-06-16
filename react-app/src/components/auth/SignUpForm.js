@@ -88,7 +88,7 @@ const SignUpForm = () => {
             placeholder="Username*"
             required
           ></input>
-          <ErrorMessage message={errorMessages.username} />
+          <ErrorMessage label={"Username"} message={errorMessages.username} />
         </div>
         <div>
           <input
@@ -99,7 +99,7 @@ const SignUpForm = () => {
             placeholder="Full Name*"
             required
           ></input>
-          <ErrorMessage message={errorMessages.full_name} />
+          <ErrorMessage label={"Full Name"} message={errorMessages.full_name} />
         </div>
         <div>
           <input
@@ -110,7 +110,7 @@ const SignUpForm = () => {
             value={email}
             required
           ></input>
-          <ErrorMessage message={errorMessages.email} />
+          <ErrorMessage label={"Email"} message={errorMessages.email} />
         </div>
         <div>
           <input
@@ -121,7 +121,7 @@ const SignUpForm = () => {
             value={password}
             required
           ></input>
-          <ErrorMessage message={errorMessages.password} />
+          <ErrorMessage label={"Password"} message={errorMessages.password} />
         </div>
         <div>
           <input
@@ -147,7 +147,7 @@ const SignUpForm = () => {
             placeholder="Phone Number*"
             required
           ></input>
-          <ErrorMessage message={errorMessages.phone} />
+          <ErrorMessage label={"Phone"} message={errorMessages.phone} />
         </div>
         <div>
           <input
@@ -158,7 +158,7 @@ const SignUpForm = () => {
             value={address}
             required
           ></input>
-          <ErrorMessage message={errorMessages.address} />
+          <ErrorMessage label={"Address"} message={errorMessages.address} />
         </div>
         <div className="submit-group">
           <button type="submit" className="login-btn">
