@@ -47,21 +47,21 @@ const EditAddressForm = ({ setShowModal }) => {
           </div>
         ))} */}
       </div>
-      <label>Full Name</label>
+      <label>Full Name*</label>
       <input
         type="text"
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
       />
       <ErrorMessage message={errorMessages.full_name} />
-      <label>Phone Number</label>
+      <label>Phone Number*</label>
       <input
         type="text"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
       <ErrorMessage message={errorMessages.phone} />
-      <label>Address</label>
+      <label>Address*</label>
       <input
         type="text"
         value={address}
