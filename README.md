@@ -66,34 +66,20 @@ Users can log into an existing account, sign up or test the site by clicking on 
 <img width="1489" alt="babetsy-homepage2" src="https://user-images.githubusercontent.com/50897748/173942850-483ae900-55bb-4144-a6ae-4a2b7af3ef74.png">
 
 
-## Navigation
-A user can view all product listings by clicking on a category on the category navigation bar.
-<img width="1466" alt="babetsy-category" src="https://user-images.githubusercontent.com/50897748/173941220-ae015a6d-d4ee-4683-9eda-0477cb97037e.png">
+## Browse products and view product details
+   * A user can view all product listings by clicking on a category on the category navigation bar.
+   * A user can view details of a single product, such as name, image, price, description and reviews.
+![product-detail](https://user-images.githubusercontent.com/50897748/173993790-eef9d083-c639-495e-8653-5195aca12c2b.gif)
 
 
-## Single Product
-A user can view details of a single product, such as name, image, price, description and reviews.
-<img width="1483" alt="babetsy-single" src="https://user-images.githubusercontent.com/50897748/173941539-633b1bc4-bb6c-4147-9be0-f9d708f37ca8.png">
-
-
-## Cart
-A logged in user can add a product to the shopping bag, update the quantity and remove the product from their shopping bag.
-<img width="1474" alt="babetsy-cart" src="https://user-images.githubusercontent.com/50897748/173941652-b47a063c-d98f-46a2-8426-19cb65ef476c.png">
-
-
-## Place Order
-A logged in user can check out items in their shopping cart. On the checkout page, they can update their shipping address. 
-<img width="1476" alt="babetsy-checkout" src="https://user-images.githubusercontent.com/50897748/173941929-e7da7324-fb40-4473-8d50-66a8d85e7bc6.png">
-
-
-
-## Order History
-A logged in user can view all placed orders in order history.
+## Add to Cart and Place Order
+   * A logged in user can add a product to the shopping bag, update the quantity and remove the product from their shopping bag.
+   * A logged in user can check out items in their shopping cart. On the checkout page, they can update their shipping address. 
    * After an order is placed, they can cancel it within one hour on order history page. 
-<img width="1475" alt="babetsy-order2" src="https://user-images.githubusercontent.com/50897748/173958908-7bb28183-cc79-400b-8a2b-a0cdad319411.png">
-
-
-
+   * A logged in user can view all placed orders in order history.
+![checkout](https://user-images.githubusercontent.com/50897748/173993444-2355ca9c-f644-4dca-9cc6-49939bdb234e.gif)
+  
+  
 
 ## Reviews on purchased products
 A logged in user can post, edit and delete review on purchased products
