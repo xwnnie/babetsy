@@ -140,11 +140,12 @@ export default function reducer(state = initialState, action) {
     case REMOVE_USER:
       return { user: null };
     case UPDATE_USER_ADDRESS: 
-      const newState = {...state};
-      newState.user.address = action.user.address;
-      newState.user.phone = action.user.phone;
-      newState.user.full_name = action.user.full_name;
-      return newState
+      // const newState = {...state};
+      // newState.user.address = action.user.address;
+      // newState.user.phone = action.user.phone;
+      // newState.user.full_name = action.user.full_name;
+      // return newState
+      return {...state,user: {...state.user, address: action.user.address, phone: action.user.phone, full_name: action.user.full_name}}
     default:
       return state;
   }

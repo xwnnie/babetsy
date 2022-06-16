@@ -55,7 +55,8 @@ def update_address(id):
             user.full_name = form.data['full_name']
             user.phone = form.data['phone']
             db.session.commit()
-            return user.to_dict()
+            # return user.to_dict()
+            return {"address": user.address, "full_name": user.full_name, "phone": user.phone}
         else:
             return {'errors': ['User does not exist']}, 404
     return{'errors': validation_errors_to_error_messages(form.errors)}, 401
