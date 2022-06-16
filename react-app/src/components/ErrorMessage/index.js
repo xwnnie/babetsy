@@ -8,7 +8,7 @@ const ErrorMessage = ({ label, message }) => {
       <span className="material-symbols-outlined">error</span>
       {/* {message ? (label ? `${label}: ` : "") + `${message}` : ""} */}
       {/* {label ? ({label}) : ""}  */}
-      {label.length ? ` ${label}: ` : ""}
+      {label ? ` ${label}: ` : ""}
       {message}
     </p>
   );
