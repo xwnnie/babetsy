@@ -64,7 +64,7 @@ function App() {
       }
       setLoaded(true);
     })();
-  }, [dispatch, sessionUser]);
+  }, [dispatch, sessionUser?.id]);
 
   if (!loaded) {
     return null;
