@@ -26,6 +26,7 @@ import CheckOut from "./components/CheckOut";
 import Summer from "./components/Summer";
 import Newborn from "./components/Summer/Newborn";
 import PageNotFound from "./components/PageNotFound";
+import ChatBot from "./components/ChatBot";
 
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -76,6 +77,7 @@ function App() {
       <CategoryNav />
       <Footer />
       <Search />
+      <ChatBot />
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />
