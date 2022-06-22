@@ -5,20 +5,23 @@ class MessageParser {
   }
 
   parse(message) {
-    if (message.includes("hello")) {
+    if (message.toLowerCase().includes("hello")) {
       this.actionProvider.handleHello();
-    }
-  }
-
-  parse(message) {
-    if (message.includes("order")) {
+    } else if (message.toLowerCase().includes("order")) {
       this.actionProvider.checkOrder();
+    } else if (
+      message.toLowerCase().includes("free") ||
+      message.toLowerCase().includes("shipping")
+    ) {
+      this.actionProvider.freeShipping();
+    } else if (message.toLowerCase().includes("address")) {
+      this.actionProvider.updateAddress();
+    } else if (message.toLowerCase().includes("account")) {
+      this.actionProvider.account();
+    } else {
+      this.actionProvider.else();
     }
   }
-
-  //   parse(message) {
-  //     console.log(message);
-  //   }
 }
 
 export default MessageParser;

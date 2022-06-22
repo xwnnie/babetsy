@@ -25,14 +25,58 @@ class ActionProvider {
     }));
   }
 
-  checkOrder() {
-      let text = "Order History";
-      let url =  "https://babetsy.herokuapp.com/my-orders";
-      const orderLink = text.link(url);
-
+  freeShipping() {
     const message = this.createChatBotMessage(
-      `Please check your ${orderLink} here: https://babetsy.herokuapp.com/my-orders.`
+      "Free shipping on all orders over $25"
     );
+
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+  }
+
+  checkOrder() {
+    const message = this.createChatBotMessage("Select an option below", {
+      widget: "orders",
+    });
+
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+  }
+
+  updateAddress() {
+    const message = this.createChatBotMessage(
+      "Please update your address here",
+      {
+        widget: "updateAddress",
+      }
+    );
+
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+  }
+
+  account() {
+    const message = this.createChatBotMessage(
+      "Access your account",
+      {
+        widget: "updateAddress",
+      }
+    );
+
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+  }
+
+  else() {
+    const message = this.createChatBotMessage("Sorry I don't understand");
 
     this.setState((prev) => ({
       ...prev,
