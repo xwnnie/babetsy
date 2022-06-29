@@ -37,7 +37,7 @@ class ActionProvider {
   }
 
   checkOrder() {
-    const message = this.createChatBotMessage("Select an option below", {
+    const message = this.createChatBotMessage("Check your orders: ", {
       widget: "orders",
     });
 
@@ -49,7 +49,7 @@ class ActionProvider {
 
   updateAddress() {
     const message = this.createChatBotMessage(
-      "Please update your address here",
+      "Update your address here:",
       {
         widget: "updateAddress",
       }
@@ -63,7 +63,7 @@ class ActionProvider {
 
   account() {
     const message = this.createChatBotMessage(
-      "Access your account",
+      "Access your account:",
       {
         widget: "updateAddress",
       }
@@ -76,7 +76,9 @@ class ActionProvider {
   }
 
   else() {
-    const message = this.createChatBotMessage("Sorry I don't understand");
+    const message = this.createChatBotMessage(
+      "Sorry I don't understand.  Please try some keywords like \"orders\", \"my account\" or \"free shipping policy\"."
+    );
 
     this.setState((prev) => ({
       ...prev,

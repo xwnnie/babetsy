@@ -31,6 +31,18 @@
     bottom: 505px;
     right: 55px;
     z-index: 4;
-
+    border: none;
     /* color: #ccdd9f; */
+}
+
+.close-chatbot-btn span {
+    font-size: 18px;
+}
+
+.chatbot-option-link {
+    color: rgb(14, 119, 167);
+    text-decoration: underline;
+    margin-left: 66px;
+    list-style-type: circle;
+    font-size: 15px;
 }

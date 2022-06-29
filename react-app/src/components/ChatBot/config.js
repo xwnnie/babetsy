@@ -1,8 +1,11 @@
+// import { useSelector } from "react-redux";
+
 import { createChatBotMessage } from "react-chatbot-kit";
 
 import Orders from "./Orders";
 import Address from "./Address";
 
+// const sessionUser = useSelector(state => state.session.user);
 const config = {
   initialMessages: [
     createChatBotMessage(`Hello there, what can I do for you?`),

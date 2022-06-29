@@ -27,7 +27,7 @@ const ChatBot = () => {
             onClick={() => setShowBot(false)}
             className="close-chatbot-btn"
           >
-            X
+            <span class="material-symbols-outlined">close</span>
           </button>
           <div className="App chatbot">
             <header className="App-header">

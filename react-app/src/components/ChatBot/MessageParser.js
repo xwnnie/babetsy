@@ -1,3 +1,7 @@
+
+const greetings = ["hello", "hi", "hey", "how are you"]
+
+
 class MessageParser {
   constructor(actionProvider, state) {
     this.actionProvider = actionProvider;
@@ -5,7 +9,7 @@ class MessageParser {
   }
 
   parse(message) {
-    if (message.toLowerCase().includes("hello")) {
+    if (greetings.some(greeting => message.toLowerCase().split().includes(greeting))) {
       this.actionProvider.handleHello();
     } else if (message.toLowerCase().includes("order")) {
       this.actionProvider.checkOrder();
