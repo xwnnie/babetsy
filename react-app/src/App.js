@@ -77,7 +77,7 @@ function App() {
       <CategoryNav />
       <Footer />
       <Search />
-      <ChatBot />
+      {sessionUser ? <ChatBot /> : null}
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />
